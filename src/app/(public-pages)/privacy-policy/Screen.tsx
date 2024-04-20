@@ -5,10 +5,10 @@ import arrowLeft from "@/public/assests/arrowLeft.svg";
 import arrowRight from "@/public/assests/arrowRight.svg";
 import Logo from "@/public/assests/logo.svg";
 
-import policy from "../../../../constants/privacyPolicy"
+import policy from "@/src/constants/privacyPolicy"
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import Footer from "@/components/app-reusables/Footer";
+import { Button } from "@/src/components/ui/button";
+import Footer from "@/src/components/app-reusables/Footer";
 
 const Screen = () => {
   const [activeHeadingIndex, setActiveHeadingIndex] = useState(0);

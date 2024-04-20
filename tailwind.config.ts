@@ -65,6 +65,9 @@ const config = {
           DEFAULT: "var(--card)",
           foreground: "var(--card-foreground)",
         },
+        "custom-yellow": "hsl(46, 79%, 70%)",
+        "custom-yellow2": "hsl(46, 63%, 47%)",
+
       },
       borderRadius: {
         lg: "var(--radius)",

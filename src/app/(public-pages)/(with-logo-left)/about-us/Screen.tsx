@@ -1,11 +1,11 @@
 "use client"
 
 import React, { useState} from "react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/src/components/ui/button";
 import arrowLeft from "@/public/assests/arrowLeft.svg"
 import arrowRight from "@/public/assests/arrowRight.svg"
 
-import items from "../../../../../constants/aboutUs"
+import items from "@/src/constants/aboutUs"
 import Image from "next/image";
 
 
