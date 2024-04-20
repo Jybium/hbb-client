@@ -1,9 +1,17 @@
 import type { Metadata } from 'next'
-import { Space_Grotesk } from 'next/font/google'
+import localFont from "next/font/local";
 import './globals.css'
-import Footer from '../components/app-reusables/Footer';
 
-const font = Space_Grotesk({ subsets: ["latin"], weight: "400" });
+// Define local fonts
+const SpaceGrotesk = localFont({
+  src: [
+    { path: "/fonts/SpaceGrotesk-Bold.ttf", weight: "400", style: "normal" },
+    { path: "/fonts/SpaceGrotesk-Light.ttf", weight: "300", style: "light" },
+    { path: "/fonts/SpaceGrotesk-Medium.ttf", weight: "500", style: "medium" },
+    { path: "/fonts/SpaceGrotesk-Bold.ttf", weight: "600", style: "bold" },
+    { path: "/fonts/SpaceGrotesk-Black.ttf", weight: "700", style: "black" },
+  ],
+});
 
 export const metadata: Metadata = {
   title: "Honey Bunny Bun | Easy way to link up with your favourite models",

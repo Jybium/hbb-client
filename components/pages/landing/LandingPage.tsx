@@ -1,16 +1,16 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import SplashScreen from "../app-reusables/SplashScreen";
-import landingPage from "../../constants/landingPage";
-import Logo from "../../public/assests/logo.svg";
+import SplashScreen from "@/components/app-reusables/SplashScreen";
+import landingPage from "@/constants/landingPage";
+import Logo from "@/public/icons/logo.svg";
 
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Button } from "../ui/button";
-import Footer from "../app-reusables/Footer";
-import Modal from "../app-reusables/Modal";
+import { Button } from "../../ui/button";
+import Footer from "../../app-reusables/Footer";
+import Modal from "../../app-reusables/Modal";
 
 const Landingpage = () => {
   const router = useRouter();
@@ -18,27 +18,27 @@ const Landingpage = () => {
   const [showModal, setShowModal] = useState(false);
   const [text, setText] = useState<number>(0);
 
- useEffect(() => {
-   // Check if the user has seen the splash screen before
-   const hasSeenSplash = localStorage.getItem("hasSeenSplash");
+  useEffect(() => {
+    // Check if the user has seen the splash screen before
+    const hasSeenSplash = localStorage.getItem("hasSeenSplash");
 
-   if (hasSeenSplash === "true") {
-     // Skip splash screen
-     setLoading(false);
-   } else {
-     // Show splash screen and set it to false after 3 seconds
-     setTimeout(() => {
-       setLoading(false);
-       localStorage.setItem("hasSeenSplash", "true");
-     }, 3000);
-   }
- }, []);
+    if (hasSeenSplash === "true") {
+      // Skip splash screen
+      setLoading(false);
+    } else {
+      // Show splash screen and set it to false after 3 seconds
+      setTimeout(() => {
+        setLoading(false);
+        localStorage.setItem("hasSeenSplash", "true");
+      }, 3000);
+    }
+  }, []);
 
- useEffect(() => {
-   setTimeout(() => {
-     setText(1);
-   }, 10000);
- }, []);
+  useEffect(() => {
+    setTimeout(() => {
+      setText(1);
+    }, 10000);
+  }, []);
 
   const handleSignUpClick = () => {
     setShowModal(true);
@@ -70,35 +70,34 @@ const Landingpage = () => {
   }
 
   return (
-    <main className="md:h-screen h-screen w-full max-w-[1728px] max-h-[1117px]">
-      <section className="sm:grid lg:flex items-center content-cente w-full lg:h-[88%] h-[88%] bg-background">
-        <section className="lg:flex grid justify-between items-center content-cente lg:h-full h-[88%] m-auto w-[90%] ">
-          <div className="hidden md:grid sm:grid  text-center mx-au content-center w-full lg:w-auto">
+    <main className="h-screen w-full max-w-[1728px]">
+      <section className="sm:grid lg:flex items-center content-cente w-full h-[85vh] lg:h-[85vh] bg-background">
+        <section className="w-full flex flex-col lg:flex-row items-center justify-center gap-4 pt-16 lg:pt-0 lg:gap-32">
+          <div className="text-center content-center w-full lg:w-auto">
             <Image
               src={Logo}
               alt="logo"
               width={400}
               height={400}
-              priority
-              className="block sm:w-[60%] md:w-[50%] lg:w-[400px] mx-auto"
+              className="block w-40 lg:w-80 mx-auto"
             />
           </div>
 
-          <section className="lg:w-[57%] w-full lg:h-[80%] h-full items-center justify-center grid mt-4 sm:mt-0">
-            <div className="text-white">
-              <h1 className="text-[32px] font-[500] leading-[40px] text-white md:text-[64px] md:leading-[81px]">
+          <div className="mx-4 lg:w-1/2 lg:h-[50%] h-full justify-center flex flex-col gap-6 mt-4 sm:mt-0 ">
+            <div className="grid gap-y-4 lg:gap-y-2">
+              <h1 className="text-[34px] font-[500] leading-[40px] text-white md:text-[48px] 2xl:text-[52px] md:leading-[81px]">
                 {landingPage[text].heading}
               </h1>
-              <p className="text-lg mt-4 mb-16">{landingPage[text].text}</p>
+              <p className="text-sm lg:w-4/5 font-thin">{landingPage[text].text}</p>
             </div>
-            <div className="flex md:gap-x-6 gap-x-3">
+            <div className="flex flex-col gap-y-4 lg:flex-row md:gap-x-6 gap-x-3 mt-8">
               <Button
                 asChild
                 className={`${
                   text === 1
                     ? "bg-base2 text-white"
                     : "bg-white text-text border border-white"
-                } md:px-[48px] px-[40px] py-[14px] md:py-[20px] rounded-[40px] `}
+                } md:px-[48px] px-[40px] py-[14px] md:py-[20px] rounded-[40px] text-xs h-10`}
               >
                 <p
                   className="cursor-pointer py-5"
@@ -109,17 +108,18 @@ const Landingpage = () => {
               </Button>
               <Button
                 asChild
-                className="md:px-[48px] px-[40px] py-[14px] md:py-[20px] rounded-[40px] border border-white text-white"
+                variant="secondary"
+                className="md:px-[48px] px-[40px] py-[14px] md:py-[20px] rounded-[40px] border border-white text-white h-10 text-xs"
               >
                 <Link href="/log-in" className="text-white py-5">
                   Log in
                 </Link>
               </Button>
             </div>
-          </section>
+          </div>
         </section>
       </section>
-      <div className="md:h-fit h-fit">
+      <div className="h-[15vh]">
         <Footer />
       </div>
       <div
