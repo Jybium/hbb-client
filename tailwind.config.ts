@@ -67,6 +67,7 @@ const config = {
         },
         "custom-yellow": "hsl(46, 79%, 70%)",
         "custom-yellow2": "hsl(46, 63%, 47%)",
+        "custom-red": "hsl(0, 79%, 63%)",
 
       },
       borderRadius: {
