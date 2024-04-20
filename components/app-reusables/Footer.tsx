@@ -6,27 +6,27 @@ import { Copyright } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer>
-      <div className="px-[4%]  py-[20px] md:py-[15px]">
-        <div className=" pb-[8px] border-b-[1px] border-[#D9D9D9] md:w-[674px] mx-auto">
-          <div className="flex justify-between md:w-[582px] mx-auto items-center">
+    <footer className="h-full flex items-center justify-center w-full">
+      <div className="px-[4%] w-full">
+        <div className=" pb-[8px] border-b-[1px] border-[#D9D9D9] md:w-2/4 mx-auto">
+          <div className="flex justify-between lg:w-5/6 mx-auto items-center">
             <Link href="/about-us">
-              <button className="text-[11px] md:text-[14px] text-text font-[400]">
+              <button className="text-[11px] md:text-xs text-text font-[400]">
                 About
               </button>
             </Link>
             <Link href="/terms-of-use">
-              <button className="text-[11px] md:text-[14px] text-text font-[400]">
+              <button className="text-[11px] md:text-xs text-text font-[400]">
                 Terms of service
               </button>
             </Link>
             <Link href="/privacy-policy">
-              <button className="text-[11px] md:text-[14px] text-text font-[400]">
+              <button className="text-[11px] md:text-xs text-text font-[400]">
                 Privacy policy
               </button>
             </Link>
             <Link href="/contact-us">
-              <button className="text-[11px] md:text-[14px] text-text font-[400]">
+              <button className="text-[11px] md:text-xs text-text font-[400]">
                 Contact us
               </button>
             </Link>
