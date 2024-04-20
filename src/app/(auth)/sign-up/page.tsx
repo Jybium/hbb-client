@@ -3,7 +3,7 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import Modal from "@/components/app-reusables/Modal";
+import Modal from "@/src/components/app-reusables/Modal";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 
@@ -14,7 +14,7 @@ import Image from "next/image";
 import {
   Password,
   Text,
-} from "@/components/app-reusables/InputField";
+} from "@/src/components/app-reusables/InputField";
 import { ChevronLeft, X } from "lucide-react";
 import { useRouter } from "next/navigation";
 

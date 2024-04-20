@@ -1,7 +1,5 @@
 "use client"
 
-
-
 import React, { useState, useRef, LegacyRef } from "react";
 import Logo from "@/public/assests/logo.svg";
 import { useRouter } from "next/navigation";

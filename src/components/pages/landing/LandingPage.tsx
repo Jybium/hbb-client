@@ -1,16 +1,16 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import SplashScreen from "@/components/app-reusables/SplashScreen";
-import landingPage from "@/constants/landingPage";
+import SplashScreen from "@/src/components/app-reusables/SplashScreen";
+import landingPage from "@/src/constants/landingPage";
 import Logo from "@/public/icons/logo.svg";
 
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Button } from "../../ui/button";
-import Footer from "../../app-reusables/Footer";
-import Modal from "../../app-reusables/Modal";
+import { Button } from "@/src/components/ui/button";
+import Footer from "@/src/components/app-reusables/Footer";
+import Modal from "@/src/components/app-reusables/Modal";
 
 const Landingpage = () => {
   const router = useRouter();
@@ -109,7 +109,7 @@ const Landingpage = () => {
               <Button
                 asChild
                 variant="secondary"
-                className="md:px-[48px] px-[40px] py-[14px] md:py-[20px] rounded-[40px] border border-white text-white h-10 text-xs"
+                className="md:px-[48px] px-[40px] py-[14px] md:py-[20px] b rounded-[40px] border border-white text-white h-10 text-xs"
               >
                 <Link href="/log-in" className="text-white py-5">
                   Log in

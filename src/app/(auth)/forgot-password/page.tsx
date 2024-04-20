@@ -9,10 +9,10 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
 import Logo from "@/public/assests/logo.svg";
-import { Text } from "@/components/app-reusables/InputField";
+import { Text } from "@/src/components/app-reusables/InputField";
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import Modal from "@/components/app-reusables/Modal";
+import Modal from "@/src/components/app-reusables/Modal";
 
 
 const FormSchema = z
