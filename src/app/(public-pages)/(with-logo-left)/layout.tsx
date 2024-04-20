@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 
 import Logo from "@/public/assests/logo.svg";
-import Footer from "../../../../components/app-reusables/Footer";
+import Footer from "@/src/components/app-reusables/Footer";
 
 const layout = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -24,7 +24,7 @@ const layout = ({ children }: { children: React.ReactNode }) => {
           </section>
         </section>
       </section>
-      <div className="md:h-1/6 h-fit">
+      <div className="h-[15vh]">
         <Footer />
       </div>
     </main>
