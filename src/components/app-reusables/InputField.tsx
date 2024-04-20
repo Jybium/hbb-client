@@ -12,8 +12,8 @@ import { GrHide } from "react-icons/gr";
 import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import { UseFormRegister, UseFormSetError } from "react-hook-form";
-import { inputFieldDataType } from "../../types/inputfield";
-import { FormInput } from "../../src/app/(auth)/sign-up/page";
+import { inputFieldDataType } from "@/src/types/inputfield";
+import { FormInput } from "@/src/app/(auth)/sign-up/page";
 
 type FormValues = {
   email: string;
