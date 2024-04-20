@@ -3,7 +3,7 @@
 
 
 import React, { useState, useRef, LegacyRef } from "react";
-import Logo from "../../../public/assests/logo.svg";
+import Logo from "@/public/assests/logo.svg";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";

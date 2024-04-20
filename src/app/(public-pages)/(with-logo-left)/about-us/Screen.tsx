@@ -2,10 +2,10 @@
 
 import React, { useState} from "react";
 import { Button } from "@/components/ui/button";
-import arrowLeft from "../../../../public/assests/arrowLeft.svg"
-import arrowRight from "../../../../public/assests/arrowRight.svg"
+import arrowLeft from "..//assests/arrowLeft.svg"
+import arrowRight from "..//assests/arrowRight.svg"
 
-import items from "../../../../constants/aboutUs"
+import items from "../../../../../constants/aboutUs"
 import Image from "next/image";
 
 

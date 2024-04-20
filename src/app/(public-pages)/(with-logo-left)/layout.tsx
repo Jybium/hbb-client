@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
 
-import Logo from "../../../public/assests/logo.svg";
-import Footer from "../../../components/app-reusables/Footer";
+import Logo from "@/public/assests/logo.svg";
+import Footer from "../../../../components/app-reusables/Footer";
 
 const layout = ({ children }: { children: React.ReactNode }) => {
   return (

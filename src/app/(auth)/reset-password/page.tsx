@@ -3,7 +3,7 @@
 
 import React, { ChangeEvent, useState } from "react";
 
-import Logo from "../../../public/assests/logo.svg";
+import Logo from "@/public/assests/logo.svg";
 import Image from "next/image";
 import Link from "next/link";
 import { X } from "lucide-react";

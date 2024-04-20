@@ -1,6 +1,6 @@
 import React from "react";
 
-import logo from "../../../public/assests/logo.svg"
+import logo from "@/public/assests/logo.svg"
 import Link from "next/link";
 import { X } from "lucide-react";
 import Image from "next/image";

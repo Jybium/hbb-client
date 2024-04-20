@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
-import Logo from "../../../public/assests/logo.svg";
+import Logo from "@/public/assests/logo.svg";
 import { Text } from "@/components/app-reusables/InputField";
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";

@@ -1,11 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
-import arrowLeft from "../../../public/assests/arrowLeft.svg";
-import arrowRight from "../../../public/assests/arrowRight.svg";
-import Logo from "../../../public/assests/logo.svg";
+import arrowLeft from "@/public/assests/arrowLeft.svg";
+import arrowRight from "@/public/assests/arrowRight.svg";
+import Logo from "@/public/assests/logo.svg";
 
-import terms from "../../../constants/termOfUse";
+import policy from "../../../../constants/privacyPolicy"
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Footer from "@/components/app-reusables/Footer";
@@ -16,8 +16,8 @@ const Screen = () => {
 
   const handleNextSlide = () => {
     setActiveSlideIndex((prevIndex) => {
-      if (prevIndex === terms[activeHeadingIndex].slides.length - 1) {
-        if (activeHeadingIndex === terms.length - 1) {
+      if (prevIndex === policy[activeHeadingIndex].slides.length - 1) {
+        if (activeHeadingIndex === policy.length - 1) {
           return prevIndex;
         } else {
           setActiveHeadingIndex((prevIndex) => prevIndex + 1);
@@ -36,7 +36,7 @@ const Screen = () => {
       } else if (prevIndex === 0) {
         setActiveHeadingIndex((prevIndex) => prevIndex - 1);
         // Fixed potential issue with accessing activeHeadingIndex immediately after setting it
-        return terms[activeHeadingIndex - 1].slides.length - 1;
+        return policy[activeHeadingIndex - 1].slides.length - 1;
       } else {
         return prevIndex - 1;
       }
@@ -51,13 +51,13 @@ const Screen = () => {
   const isPreviousButtonVisible =
     activeHeadingIndex !== 0 || activeSlideIndex !== 0;
   const isNextButtonVisible =
-    activeHeadingIndex !== terms.length - 1 ||
-    activeSlideIndex !== terms[activeHeadingIndex].slides.length - 1;
+    activeHeadingIndex !== policy.length - 1 ||
+    activeSlideIndex !== policy[activeHeadingIndex].slides.length - 1;
 
   return (
     <main className="md:h-screen w-full ">
-      <section className="px-[4%] md:px-[4%] lg:px-[4%]  2xl:px-[6%]  py-[50px] md:py-[20px] bg-base">
-        <div className="md:pb-[0px] pb-[20px] bg-base">
+      <section className="px-[4%] md:px-[20%] lg:px-[4%]  2xl:px-[6%]  py-[20px] bg-base">
+        <div className="md:pb-[20px] pb-[20px] bg-base">
           <Image
             className="md:w-[86px] w-[196px] mx-auto md:mx-[0px]"
             width={63}
@@ -66,12 +66,12 @@ const Screen = () => {
             alt="logo"
           />
         </div>
-     
-          <section className="lg:flex grid justify-between items-start content-center mx-auto w-[90%] lg:max-h-[04px] min-h-[704px] gap-[32px] lg:gap-0 lg:gap-x-8 bg-background">
-            <div className="lg:w-[681px]">
+        <section className="flex justify-center content-center w-full h-[82%] bg-background">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-[25px] min-h-[704px] ">
+            <div className="lg:pr-[80px]">
               <div className="pb-[20px] md:pb-[40px] mb-[24px] md:mb-[30px] border-b-[1px] border-white">
-                <h4 className="text-[32px] md:text-[64px] md:lading-[81px] font-[500] text-white">
-                  Terms of service
+                <h4 className="text-[32px] md:text-[64px] md:leading-[71px] font-[500] text-white">
+                  policy of service
                 </h4>
                 <h4 className="text-[15px] font-[400] leaing-[22.5px] text-white mt-[16px] md:mt-[32px] md:text-[18px]">
                   At Honey Bunny Bun, we highly value your privacy and trust.
@@ -81,10 +81,10 @@ const Screen = () => {
                 </h4>
               </div>
               <div className="border-b-[1px] lg:border-b-[0px] border-white pb-[10px] ">
-                {terms.map((heading, index) => (
+                {policy.map((heading, index) => (
                   <div key={index}>
                     <ul
-                      className={`tex-[16px] font-[700] ml-[20px] w-fit mb-[16px] md:mb-[32px] ${
+                      className={`tex-[16px] font-[700] ml-[20px] w-fit mb-[16px] md:mb-[24px] ${
                         activeHeadingIndex === index
                           ? "text-tertiary border-b-[1px] border-tertiary"
                           : "text-white"
@@ -97,9 +97,8 @@ const Screen = () => {
                 ))}
               </div>
             </div>
-
-            <div className="bg-rgba-6ab5d2-16 px-[24px] py-[36px] rounded-[24px] h-full flex flex-col overflow-x-scroll lg:w-[767px] lg:h-[704px] w-full">
-              {terms.map((terms, index) => (
+            <div className="bg-rgba-6ab5d2-16 px-[24px] py-[36px] rounded-[24px] h-full flex flex-col">
+              {policy.map((policy, index) => (
                 <div key={index}>
                   <div>
                     <div
@@ -110,14 +109,14 @@ const Screen = () => {
                       }
                     >
                       <h4 className="text-white text-[22px] md:text-[24px] font-[700] leading-[28px] md:leading-[30.6px]">
-                        {terms.title}
+                        {policy.title}
                       </h4>
                       <h4 className="text-white text-[16px] md:text-[18px] md:leading-[27px] font-[400] mt-[16px]">
-                        {terms.description}
+                        {policy.description}
                       </h4>
                     </div>
                     {activeHeadingIndex === index &&
-                      terms.slides.map((slide, slideIndex) => (
+                      policy.slides.map((slide, slideIndex) => (
                         <div key={slideIndex}>
                           {activeSlideIndex === slideIndex &&
                             slide.sections.map((section, sectionIndex) => (
@@ -183,10 +182,10 @@ const Screen = () => {
                 </div>
               </div>
             </div>
-          </section>
-       
+          </div>
+        </section>
       </section>
-      <div className="md:h-fit h-fit">
+      <div className="md:h-1/6 h-fit">
         <Footer />
       </div>
     </main>
