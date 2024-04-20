@@ -6,14 +6,9 @@ import { AspectRatio } from "../ui/aspect-ratio";
 
 const SplashScreen = () => {
   return (
-    <div className="image-container">
+    <div className="splash-bg h-screen w-full">
       
-        <Image
-          src={splashscreenMobile}
-          alt="splash image"
-          className="h-full w-full block object-cover"
-          layout="fill"
-        />
+      
     
     </div>
   );

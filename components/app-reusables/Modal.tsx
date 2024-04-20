@@ -32,10 +32,10 @@ const Modal = ({
 
   return (
     <div className="fixed top-0 left-0 w-full h-full ">
-      <div className="flex justify-center pt-[20px] pb-[10px] md:pb-[4px] md:pt-[16px]">
+      <div className="flex justify-center pt-[8px] lg:pt-[20px] pb-[10px] md:pb-[4px] md:pt-[16px]">
         <ChevronDown color="#EFD378" className="text-tertiary"  size={30}/>
       </div>
-      <div className="modal-content bg-white w-max md:px-20 rounded-[20px] mx-auto z-50 px-[24px] py-4">
+      <div className="modal-content bg-white w-4/5 lg:w-max md:px-20 rounded-[20px] mx-auto z-50 px-[24px] py-4">
         <h2 className="text-[#080808] text-sm font-[400] text-center mb-[24px]">
           {question}
         </h2>
