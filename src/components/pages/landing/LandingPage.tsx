@@ -70,7 +70,7 @@ const Landingpage = () => {
   }
 
   return (
-    <main className="h-screen w-full max-w-[1728px]">
+    <main className="h-screen w-full">
       <section className="sm:grid lg:flex items-center content-cente w-full h-[85vh] lg:h-[85vh] bg-background">
         <section className="w-full flex flex-col lg:flex-row items-center justify-center gap-4 pt-16 lg:pt-0 lg:gap-32">
           <div className="text-center content-center w-full lg:w-auto">
@@ -79,11 +79,11 @@ const Landingpage = () => {
               alt="logo"
               width={400}
               height={400}
-              className="block w-40 lg:w-80 mx-auto"
+              className="block w-40 lg:w-80 2xl:w-96 mx-auto"
             />
           </div>
 
-          <div className="mx-4 lg:w-1/2 lg:h-[50%] h-full justify-center flex flex-col gap-6 mt-4 sm:mt-0 ">
+          <div className="mx-4 lg:w-1/2  2xl:w-[35%] lg:h-[50%] h-full justify-center flex flex-col gap-6 mt-4 sm:mt-0">
             <div className="grid gap-y-4 lg:gap-y-2">
               <h1 className="text-[34px] font-[500] leading-[40px] text-white md:text-[48px] 2xl:text-[52px] md:leading-[81px]">
                 {landingPage[text].heading}
@@ -97,7 +97,7 @@ const Landingpage = () => {
                   text === 1
                     ? "bg-base2 text-white"
                     : "bg-white text-text border border-white"
-                } md:px-[48px] px-[40px] py-[14px] md:py-[20px] rounded-[40px] text-xs h-10`}
+                } md:px-[48px] px-[40px] py-[14px] md:py-[20px] rounded-[40px] text-xs h-10 2xl:h-12`}
               >
                 <p
                   className="cursor-pointer py-5"
@@ -109,7 +109,7 @@ const Landingpage = () => {
               <Button
                 asChild
                 variant="secondary"
-                className="md:px-[48px] px-[40px] py-[14px] md:py-[20px] b rounded-[40px] border border-white text-white h-10 text-xs"
+                className="md:px-[48px] px-[40px] py-[14px] md:py-[20px] b rounded-[40px] border border-white text-white h-10 2xl:h-12 text-xs"
               >
                 <Link href="/log-in" className="text-white py-5">
                   Log in
