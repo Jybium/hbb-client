@@ -24,7 +24,8 @@ import { onSubmitError } from "@/src/lib/utils";
 import { useRouter } from "next/navigation";
 import { signUpSchema } from "@/src/schema/auth/signup";
 
-const SignupForm = () => {
+const 
+SignupForm = () => {
   const [isPending, startTransition] = React.useTransition();
   const router = useRouter();
   const form = useForm({
