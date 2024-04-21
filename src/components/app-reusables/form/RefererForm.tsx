@@ -53,7 +53,7 @@ const RefererForm
   const isDisabled = values.referer_code !== "";
 
   return (
-    <div className="w-full md:w-2/3 px-4 lg:px-0 lg:my-3 ml-auto">
+    <div className="md:w-2/3 lg:w-[70%] w-full grid mx-auto lg:mx-0 lg:justify-end lg:ml-auto px-4 lg:px-0 lg:my-3">
       <div className="w-full ">
         <div className="bg-white rounded-[32px] w-full lg:px-[2rem] md:px-[4%] px-[1rem] pt-4 pb-2">
           <div className="grid grid-cols-3 border-b-[1px] border-tertiary items-center pb-4">
@@ -73,7 +73,7 @@ const RefererForm
             </div>
           </div>
           <div className="md:text-center md:mb-14 mb-5">
-            <h4 className="text-[16px] 2xl:text-[1.13em] font-[400] leading-[22px] mt-[30px] md:mt-[1.31em] text-text mx-auto text-center w-4/5 mb-[1.31em]">
+            <h4 className="text-[16px] 2xl:text-[1.13em] font-[400] leading-[22px] mt-[30px] md:mt-[1.31em] text-text mx-auto mb-[1.31em]">
               Referer Code
             </h4>
             <p className="text-text">

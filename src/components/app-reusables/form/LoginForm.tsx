@@ -44,7 +44,7 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="w-full gri px-4 lg:px-0 lg:my-3">
+    <div className="w-full md:w-4/5 md:mx-auto lg:mx-0 lg:ml-auto px-4 lg:px-0 lg:my-3">
       <div className="w-full ">
         <div className="bg-white rounded-t-[32px] w-full lg:px-[2rem] md:px-[4%] px-[1rem] pt-4 pb-2">
           <div className="grid grid-cols-3 border-b-[1px] border-[#EFD378] items-center pb-4">

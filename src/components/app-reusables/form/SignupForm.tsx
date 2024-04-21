@@ -58,7 +58,7 @@ const SignupForm = () => {
     values.email !== "" && values.password !== "" && values.phoneNumber !== "";
 
   return (
-    <div className="md:w-2/3 grid justify-end ml-auto px-4 lg:px-0 lg:my-3">
+    <div className="md:w-2/3 lg:w-[70%] w-full grid mx-auto lg:mx-0 lg:justify-end lg:ml-auto px-4 lg:px-0 lg:my-3">
       <div className="w-full">
         <div className="bg-white rounded-[32px] w-full lg:px-[2rem] md:px-[4%] px-[1rem] pt-4 pb-2">
           <div className="grid grid-cols-3 border-b-[1px] border-[#EFD378] items-center pb-4">
