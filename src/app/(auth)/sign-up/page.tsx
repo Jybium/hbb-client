@@ -1,8 +1,6 @@
 "use client";
 
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import * as z from "zod";
+
 import Modal from "@/src/components/app-reusables/Modal";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
@@ -11,10 +9,9 @@ import Logo from "@/public/assests/logo.svg";
 import Model from "@/public/assests/model.png";
 import Explorer from "@/public/assests/explorer.png";
 import Image from "next/image";
-import { Password, Text } from "@/src/components/app-reusables/InputField";
+
 import { ChevronLeft, X } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { signUpSchema } from "@/src/schema/auth/signup";
 import { Button } from "@/src/components/ui/button";
 
 const Page = () => {

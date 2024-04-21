@@ -1,7 +1,48 @@
 import React from "react";
+import { onSubmitError } from "@/src/lib/utils";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/src/components/ui/form";
+import { Input } from "@/src/components/ui/input";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Button } from "@/src/components/ui/button";
+import { toast } from "sonner";
+import contactUsSchema from "@/src/schema/contactUs";
+
 
 
 const Screen = () => {
+    const [isPending, startTransition] = React.useTransition();
+
+    const form = useForm({
+      resolver: zodResolver(contactUsSchema),
+      defaultValues: {
+        email: "",
+      name:"",
+      message:"",
+      subject: ""
+      },
+    });
+
+    const onHandleSubmit = async (data: any) => {
+      startTransition(async () => {
+        try {
+          //   code to hit backend
+        } catch (error: any) {
+          console.error("Error logging in:", error.message);
+          // Handle any errors here, such as displaying an error message to the user
+          toast.error("Error logging in. Please try again later.");
+        }
+      });
+    };
+
+
   return (
     <div className="  xl:block flex items-center lg:w-2/3 mr-auto px-[4%] md:px-[20%] lg:px-[4%]  2xl:px-[6%]  lg:py-[30px] my-[0px]">
       <div className="w-full">
@@ -13,54 +54,88 @@ const Screen = () => {
           get in touch with us.
         </h4>
         <form className="mt-[20px] md:mt-[10px]">
-          <div className="grid grid-cols-1 gap-[12px] md:grid-cols-2 md:gap-[20px]">
-            <div>
-              <h4 className="text-[#F3F3F3] font-[500] text-[12px] mb-[8px] ">
-                Name
-              </h4>
-              <input
-                className="w-full rounded-[8px] px-[12px] py-[10px] md:px-[20px] md:py-[10px]  placeholder:text-[#F3F3F3] placeholder:text-[14px] placeholder:font-[400] text-[14px] bg-rgba-6ab5d2-16 border border-transparent focus:border-primary2 outline-none"
-                placeholder="Enter your name"
-                type="text"
+          <Form {...form}>
+            <form
+              onSubmit={form.handleSubmit(onHandleSubmit, (errors) => {
+                onSubmitError(errors);
+              })}
+              className="grid gap-2"
+            >
+              <FormField
+                control={form.control}
+                name="name"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Name</FormLabel>
+                    <FormControl>
+                      <Input placeholder="Enter a Valid Email" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
               />
-            </div>
-
-            <div className="">
-              <h4 className="text-[#F3F3F3] font-[500] text-[12px] mb-[8px] ">
-                Email address
-              </h4>
-              <input
-                className="w-full rounded-[8px] px-[12px] py-[10px] md:px-[20px] md:py-[10px]  placeholder:text-[#F3F3F3] placeholder:text-[14px] placeholder:font-[400] text-[14px] bg-rgba-6ab5d2-16 border border-transparent focus:border-primary2 outline-none"
-                placeholder="Enter your email address"
-                type="email"
+              <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Email Address</FormLabel>
+                    <FormControl>
+                      <Input
+                        type="password"
+                        placeholder="Enter your Password"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
               />
-            </div>
-          </div>
-
-          <div className="mt-[12px] md:mt-[20px]">
-            <h4 className="text-[#F3F3F3] font-[500] text-[12px] mb-[8px] ">
-              Subject of your message
-            </h4>
-            <input
-              className="w-full rounded-[8px] px-[12px] py-[10px] md:px-[20px] md:py-[10px]  placeholder:text-[#F3F3F3] placeholder:text-[14px] placeholder:font-[400] text-[14px] bg-rgba-6ab5d2-16 border border-transparent focus:border-primary2 outline-none"
-              placeholder="Enter the subject of your message"
-              type="text"
-            />
-          </div>
-
-          <div className="mt-[12px] md:mt-[20px]">
-            <h4 className="text-[#F3F3F3] font-[500] text-[12px] mb-[8px] ">
-              Message
-            </h4>
-            <textarea
-              className="w-full rounded-[8px] px-[12px] py-[10px] md:px-[20px] md:py-[10px]  placeholder:text-[#F3F3F3] placeholder:text-[14px] placeholder:font-[400] text-[14px] bg-rgba-6ab5d2-16 border border-transparent focus:border-primary2 outline-none"
-              placeholder="Enter your message here"
-              rows={2}
-            ></textarea>
-          </div>
-          <button className="bg-white w-full px-[20px] py-[12px] rounded-[32px] mt-[20px] md:mt-[20px] text-black text-[16px] md:text-[18px] font-[400] hover:bg-gray-300">
-            Submit
-          </button>
+              <FormField
+                control={form.control}
+                name="subject"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Subject of your message</FormLabel>
+                    <FormControl>
+                      <Input
+                        type="password"
+                        placeholder="Enter your Password"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="message"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Message</FormLabel>
+                    <FormControl>
+                      <Input
+                        type="password"
+                        placeholder="Enter your Password"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+             
+              <Button
+                className="h-8 text-xs"
+                loading={isPending}
+                variant="ghost"
+                type="submit"
+              >
+               Submit
+              </Button>
+            </form>
+          </Form>
         </form>
       </div>
     </div>

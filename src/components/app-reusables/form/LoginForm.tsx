@@ -1,4 +1,6 @@
 "use client";
+
+
 import React from "react";
 import logo from "@/public/icons/logo.svg";
 import Link from "next/link";
