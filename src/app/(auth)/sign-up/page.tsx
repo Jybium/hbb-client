@@ -183,12 +183,12 @@ const Page = () => {
                 </label>
               </div>
             </div>
-            <p className="mt-[31px] text-black text-center md:text-[1.13rem] text-[1rem] ">
+            <p className="md:mt-[31px] mt-[35px] text-black text-center md:text-[1.13rem] text-[1rem] ">
               Or would you prefer an{" "}
               <span className="text-base2">agency account?</span>
             </p>
             <Button
-              className={`w-full px-5 py-3 rounded-full mt-8 text-black font-normal text-sm h-8 ${
+              className={`w-full px-5 py-3 rounded-full md:mt-8 mt-5 text-black font-normal text-sm h-8 ${
                 !isDisabled
                   ? "bg-lightgray cursor-not-allowed text-gray"
                   : "bg-tertiary hover:bg-tertiaryHover"
