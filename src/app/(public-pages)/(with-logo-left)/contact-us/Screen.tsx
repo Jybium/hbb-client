@@ -4,7 +4,7 @@ import React from "react";
 const Screen = () => {
   return (
       <div className=" lg:grid grid-cols-2 items-center px-[4%] md:px-[20%] lg:px-[4%]  2xl:px-[6%] md:py-[5px] py-[10px]">
-        <div className="w-full xl:w-[493px] ">
+        <div className="w-full">
           <h4 className="text-[32px] font-[500] text-white md:mt-[5px] mt-[10px] md:text-[54px]">
             Contact us
           </h4>

@@ -56,8 +56,8 @@ const Screen = () => {
 
   return (
     <main className="md:h-screen w-full ">
-      <section className="px-[4%] md:px-[20%] lg:px-[4%]  2xl:px-[6%]  py-[20px] bg-base">
-        <div className="md:pb-[20px] pb-[20px] bg-base">
+      <section className="px-[4%] md:px-[20%] lg:px-[4%]  2xl:px-[6%] h-[85vh] py-[20px] bg-base">
+        <div className="md:pb-[0px] pb-[20px] bg-base w-[90%] m-auto">
           <Image
             className="md:w-[86px] w-[196px] mx-auto md:mx-[0px]"
             width={63}
@@ -66,11 +66,11 @@ const Screen = () => {
             alt="logo"
           />
         </div>
-        <section className="flex justify-center content-center w-full h-[82%] bg-background">
+        <section className="flex justify-center content-center w-full overflow-x-auto lg:h-[80%] lg:w-[90%] m-auto bg-background">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-[25px] min-h-[704px] ">
             <div className="lg:pr-[80px]">
               <div className="pb-[20px] md:pb-[40px] mb-[24px] md:mb-[30px] border-b-[1px] border-white">
-                <h4 className="text-[32px] md:text-[64px] md:leading-[71px] font-[500] text-white">
+                <h4 className="text-[32px] md:text-[44px] md:leading-[71px] font-[500] text-white">
                   policy of service
                 </h4>
                 <h4 className="text-[15px] font-[400] leaing-[22.5px] text-white mt-[16px] md:mt-[32px] md:text-[18px]">
@@ -185,7 +185,7 @@ const Screen = () => {
           </div>
         </section>
       </section>
-      <div className="md:h-1/6 h-fit">
+      <div className="h-[15vh]">
         <Footer />
       </div>
     </main>

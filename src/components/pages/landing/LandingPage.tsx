@@ -85,7 +85,7 @@ const Landingpage = () => {
 
           <div className="mx-4 lg:w-1/2  2xl:w-[35%] lg:h-[50%] h-full justify-center flex flex-col gap-6 mt-4 sm:mt-0">
             <div className="grid gap-y-4 lg:gap-y-2">
-              <h1 className="text-[34px] font-[500] leading-[40px] text-white md:text-[48px] 2xl:text-[52px] md:leading-[81px]">
+              <h1 className="text-[34px] font-[500] leading-[40px] text-white md:text-[48px] 2xl:text-[52px] md:leading-[81px] lg:text-nowrap">
                 {landingPage[text].heading}
               </h1>
               <p className="text-sm lg:w-4/5 font-thin">{landingPage[text].text}</p>

@@ -1,12 +1,12 @@
 "use client";
+
+import Image from "next/image";
 import React from "react";
 import logo from "@/public/icons/logo.svg";
 import Link from "next/link";
-import Image from "next/image";
 import { toast } from "sonner";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { loginSchema } from "@/src/schema/auth/login";
 import {
   Form,
   FormControl,
@@ -19,19 +19,27 @@ import { Button } from "@/src/components/ui/button";
 import { CancelIcon } from "@/src/components/svgs";
 import { Input } from "@/src/components/ui/input";
 import { onSubmitError } from "@/src/lib/utils";
+import { useRouter } from "next/navigation";
+import { refererSchema } from "@/src/schema/auth/referer";
 
-const LoginForm = () => {
+const RefererForm
+ = () => {
   const [isPending, startTransition] = React.useTransition();
-
+  const router = useRouter();
   const form = useForm({
-    resolver: zodResolver(loginSchema),
+    resolver: zodResolver(refererSchema),
     defaultValues: {
-      email: "",
-      password: "",
+      referer_code: "",
     },
   });
 
+  const values = form.getValues();
+
   const onHandleSubmit = async (data: any) => {
+    toast.success("Registeration successful");
+    console.log("Registeration successful");
+    router.push("/log-in");
+
     startTransition(async () => {
       try {
         //   code to hit backend
@@ -42,12 +50,13 @@ const LoginForm = () => {
       }
     });
   };
+  const isDisabled = values.referer_code !== "";
 
   return (
-    <div className="w-full gri px-4 lg:px-0 lg:my-3">
+    <div className="w-full md:w-2/3 px-4 lg:px-0 lg:my-3 ml-auto">
       <div className="w-full ">
-        <div className="bg-white rounded-t-[32px] w-full lg:px-[2rem] md:px-[4%] px-[1rem] pt-4 pb-2">
-          <div className="grid grid-cols-3 border-b-[1px] border-[#EFD378] items-center pb-4">
+        <div className="bg-white rounded-[32px] w-full lg:px-[2rem] md:px-[4%] px-[1rem] pt-4 pb-2">
+          <div className="grid grid-cols-3 border-b-[1px] border-tertiary items-center pb-4">
             <div></div>
             <div className="flex justify-center">
               <Image className="w-[63px] " src={logo} alt="logo" />
@@ -63,9 +72,16 @@ const LoginForm = () => {
               </Link>
             </div>
           </div>
-          <h4 className="text-[16px] 2xl:text-[1.13em] font-[400] leading-[22px] mt-[30px] md:mt-[1.31em] text-[#44464A] mx-auto text-center w-4/5 mb-[1.31em]">
-            Log in to to see your favorite content creator
-          </h4>
+          <div className="md:text-center md:mb-14 mb-5">
+            <h4 className="text-[16px] 2xl:text-[1.13em] font-[400] leading-[22px] mt-[30px] md:mt-[1.31em] text-text mx-auto text-center w-4/5 mb-[1.31em]">
+              Referer Code
+            </h4>
+            <p className="text-text">
+              Lorem ipsum dolor sit amet consectetur. Non interdum senectus
+              habitant commodo morbi. Sed quisque enim arcu habitant eu nibh
+              risus neque proin. Dui nunc vulputate .
+            </p>
+          </div>
 
           <Form {...form}>
             <form
@@ -76,27 +92,13 @@ const LoginForm = () => {
             >
               <FormField
                 control={form.control}
-                name="email"
+                name="referer_code"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Email Address</FormLabel>
-                    <FormControl>
-                      <Input placeholder="Enter a Valid Email" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="password"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Password</FormLabel>
+                    <FormLabel>Refere code</FormLabel>
                     <FormControl>
                       <Input
-                        type="password"
-                        placeholder="Enter your Password"
+                        placeholder="Enter a Valid referer code"
                         {...field}
                       />
                     </FormControl>
@@ -104,45 +106,27 @@ const LoginForm = () => {
                   </FormItem>
                 )}
               />
-              <div className="flex justify-end -mt-2 lg:mb-8">
-                <Link href="/forgot-password">
-                  <button className="text-[10px] 2xl:text-xs font-[500] text-[#E688A3]">
-                    Forgot password?
-                  </button>
-                </Link>
-              </div>
+
               <Button
-                className="h-8 text-xs"
+                className={`w-full px-5 py-3 rounded-full mt-8 mb-10 md:mt-20 lg:mb-10 text-black font-normal text-sm h-8 ${
+                  !isDisabled
+                    ? "bg-lightgray cursor-not-allowed text-gray"
+                    : "bg-tertiary hover:bg-tertiaryHover"
+                }`}
+                disabled={!isDisabled}
                 loading={isPending}
                 variant="yellow"
                 type="submit"
               >
-                Log in
+                Next
               </Button>
             </form>
           </Form>
-
-          <div className="flex justify-center w-full">
-            <Button
-              variant="ghost"
-              className="text-xs font-[400] h-10 text-custom-yellow2 mx-auto hover:text-custom-yellow2"
-            >
-              Sign up as a creator
-            </Button>
-          </div>
-        </div>
-
-        <div className="p-[4%] text-[1.50rem] md:p-[1.25rem] bg-white rounded-b-[24px] mt-[4px] h-[58px] md:h-[1.94em] flex items-center justify-center">
-          <h4 className="text-[#6C6D71] font-[500] text-xs ">
-            Don’t have an account?
-            <Link href="/sign-up">
-              <span className="text-custom-yellow2"> Sign up</span>{" "}
-            </Link>
-          </h4>
         </div>
       </div>
     </div>
   );
 };
 
-export default LoginForm;
+export default RefererForm
+;

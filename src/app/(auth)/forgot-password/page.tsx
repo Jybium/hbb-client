@@ -65,9 +65,9 @@ const Page = () => {
     navigate.back();
   };
   return (
-    <div className=" xl:grid grid-cols-2 flex items-center px-[5%] md:px-[4%] lg:px-[4%]  2xl:px-[6%] py-[50px] md:py-[30px] h-full">
-      <div className="w-full md:w-[565px] mx-auto h-full">
-        <div className="bg-white md:rounded-t-[32px] rounded-t-[24px]  p-[4%] md:p-[26px] shadow-xl h-full flex flex-col">
+    <div className="flex items-center  px-[5%] md:px-[4%] lg:pl-[4%] lg:p-0 2xl:px-[6%] py-[50px] md:py-[0px] h-full w-full md:w-2/3 px- lg:px-0 lg:my-3 ml-auto">
+      <div className="w-full h-full justify-center content-center">
+        <div className="bg-white md:rounded-t-[32px] rounded-t-[24px] rounded-b-[24px] md:rounded-b-[0px]  p-[4%] md:p-[26px] shadow-xl h-full flex flex-col">
           <div className="grid grid-cols-3 border-b-[1px] border-[#EFD378]  pb-[20px] items-center">
             <div className="flex justify-start">
               <button
@@ -98,13 +98,15 @@ const Page = () => {
               </Link>
             </div>
           </div>
-          <h4 className="text-[18px] md:text-[24px] font-[500] leading-[22px] mt-[30px] text-[#44464A] md:leading-[30px] text-center md:text-start">
+
+          <h4 className="text-[18px] md:text-[24px] font-[500] leading-[22px] mt-[30px] text-[#44464A] md:leading-[30px] text-center">
             Forgot password?
           </h4>
-          <h4 className="text-[14px] md:text-[16px] font-[400] text-[#44464A] mt-[12px] text-center md:text-start">
+          <h4 className="text-[14px] md:text-[16px] font-[400] text-[#44464A] mt-[12px] text-center">
             Enter email address to reset your password.
           </h4>
-          <form className="mt-[40px] md:mt-[50px]   ">
+
+          <form className="mt-[40px] md:mt-[2.63rem]   ">
             <div>
               <label className="text-[#535353]  font-[500] text-[12px] mb-[8px] ">
                 Email address
@@ -118,13 +120,16 @@ const Page = () => {
               />
             </div>
           </form>
-          <div className="mt-auto">
-            <button className="bg-tertiary w-full px-[20px] py-[12px] rounded-[32px] mt-[70px] md:mt-[50px] text-black text-[16px] md:text-[18px] font-[400] hover:bg-tertiaryHover" onClick={()=> setShowModal(true)}>
+          <div className="mt-auto flex justify-end">
+            <button
+              className="bg-tertiary w-full px-[20px] py-[12px] rounded-[32px] mt-[70px] md:mt-[50px] text-black text-[16px] md:text-[18px] font-[400] hover:bg-tertiaryHover"
+              onClick={() => setShowModal(true)}
+            >
               Send
             </button>
           </div>
         </div>
-        <div className="p-[4%] md:p-[32px] bg-white rounded-b-[24px] mt-[4px] h-[58px] md:h-[60px] flex items-center justify-center">
+        <div className="p-[4%] text-[1.50rem] md:p-[1.25rem] bg-white rounded-b-[24px] mt-[4px] hidden h-[58px] md:h-[1.94em] md:flex items-center justify-center">
           <h4 className="text-[#6C6D71] font-[500] text-[14px] md:text-[18px]">
             Don’t have an account?
             <Link href="/sign-up">
@@ -141,7 +146,7 @@ const Page = () => {
         <Modal
           isOpen={showModal}
           onClose={() => setShowModal(false)}
-          onYesClick={()=>setShowModal(false)}
+          onYesClick={() => setShowModal(false)}
           question="Reset mail sent"
           button1Text="Got it!"
           button2Text="send again"

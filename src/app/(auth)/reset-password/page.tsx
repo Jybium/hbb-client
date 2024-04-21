@@ -20,10 +20,10 @@ const Page= () => {
   const isSubmitDisabled = password === "" || confirmPassword === "";
 
   return (
-    <div className=" xl:grid grid-cols-2 flex items-center px-[4%] lg:px-[4%] md:px-[32px]  2xl:px-[6%]  py-[50px] md:py-[50px] h-full">
-      <div className="w-full md:w-[565px] mx-auto h-full">
-        <div className="bg-white md:rounded-[32px] rounded-[24px]  p-[4%] md:p-[32px] md:pt-[20px] shadow-xl h-full flex flex-col">
-          <div className="grid grid-cols-3 border-b-[1px] border-[#EFD378]  pb-[25px]  items-center">
+    <div className="flex items-center lg:justify-end px-[4%] lg:px-0 md:px-[32px] lg:p-0 w-full py-[50px] md:py-[30px] h-full  md:w-2/3 px- lg:my-3 ml-auto">
+      <div className="w-full  h-full">
+        <div className="bg-white md:rounded-[32px] rounded-[24px] p-[1rem] md:p-[2.25rem] md:pt-[20px] lg:p-[2em]  shadow-xl h-full flex flex-col w-full">
+          <div className="grid grid-cols-3 border-b-[1px] border-[#EFD378]  pb-[24.61px]  items-center">
             <div></div>
             <div className="flex justify-center">
               <Image
@@ -76,7 +76,7 @@ const Page= () => {
           </form>
           <div className="mt-auto">
             <button
-              className={`w-full px-[20px] py-[12px] rounded-[32px] md:mb-20 mb-5 mt-[30px] md:mt-[80px] text-black text-[16px] md:text-[18px] font-[400] ${
+              className={`w-full px-[20px] py-[12px] rounded-[32px] md:mb-14 mb-5 mt-[30px] md:mt-[80px] text-black text-[16px] md:text-[18px] font-[400] ${
                 isSubmitDisabled
                   ? "bg-[#ECECEC] cursor-not-allowed text-[#9E9E9E]"
                   : "bg-tertiary hover:bg-tertiaryHover"

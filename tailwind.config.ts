@@ -26,6 +26,8 @@ const config = {
         base: "#6AB5D2",
         base2: "#E688A3",
         base3: "#a5b4fc",
+        gray: "#9E9E9E",
+        lightgray: "#ECECEC",
         tertiary: "#EFD378",
         tertiaryHover: "#E1C35E",
         text: "#6C6D71",
@@ -68,7 +70,6 @@ const config = {
         "custom-yellow": "hsl(46, 79%, 70%)",
         "custom-yellow2": "hsl(46, 63%, 47%)",
         "custom-red": "hsl(0, 79%, 63%)",
-
       },
       borderRadius: {
         lg: "var(--radius)",

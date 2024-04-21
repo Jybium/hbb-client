@@ -65,9 +65,9 @@ const Page = () => {
   const isSubmitDisabled = inputs.join("").length !== 4;
 
   return (
-    <div className=" xl:grid grid-cols-2 flex items-center px-[4%] m:px-[20%] lg:px-[4%] 2xl:px-[6%] md:py-[30px] py-[50px] h-full md:h-[750px] xl:h-[757px]">
-      <div className="w-full md:w-[565px] mx-auto h-full">
-        <div className="bg-white md:rounded-[32px] rounded-[24px]  p-[4%] md:p-[22px] shadow-xl h-full flex flex-col">
+    <div className=" xl:gri grid-cols-2 flex items-center lg:justify-end px-[4%] m:px-[20%] lg:pl-[4%] 2xl:px-[6%] md:py-[30px] py-[50px] h-full w-full ml-auto lg:w-[35.31rem">
+      <div className="w-full h-full">
+        <div className="bg-white md:rounded-[32px] rounded-[24px]  p-[1rem] md:p-[2.25rem] shadow-xl h-full flex flex-col">
           <div className="grid grid-cols-3 border-b-[1px] border-[#EFD378]  pb-[20px] items-center">
             <div className="flex justify-start">
               <button
@@ -120,7 +120,9 @@ const Page = () => {
                     className="w-[40px] h-[40px]  text-center border-b-[1px] border-[#BFBEB9]  focus:outline-none  font-[500] focus:border-primary2 text-[#44464A] text-[20px] md:text-[24px] placeholder:font-[500] placeholder:text-gray-300"
                     maxLength={1}
                     value={value}
-                    onChange={(e) => handleInputChange(e, index)}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                      handleInputChange(e, index)
+                    }
                     onPaste={handlePaste}
                   />
                 ))}
@@ -140,7 +142,7 @@ const Page = () => {
               Confirm
             </button>
           </div>
-          <div className="mt-[20px]  md:mb-[20px] mb-[30px] flex justify-center gap-[12px]">
+          <div className="mt-[20px] md:mb-[2em] mb-[1em] flex justify-center gap-[12px]">
             <div className="w-[10px] h-[10px] border-[1px] border-base rounded-full bg-base"></div>
             <div className="w-[10px] h-[10px] border-[1px] border-base rounded-full bg-base"></div>
           </div>
