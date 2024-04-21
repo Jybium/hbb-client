@@ -21,6 +21,7 @@ const config = {
       backgroundImage: {
         desktop: "url('./public/assests/splash-desktop.svg)",
         mobile: "url('./public/assests/splash-mobile.svg)",
+        background: "url('./public/assests/dashboard/dashboardImage.svg)",
       },
       colors: {
         base: "#6AB5D2",
