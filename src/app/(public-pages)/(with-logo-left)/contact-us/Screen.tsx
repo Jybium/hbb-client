@@ -48,7 +48,7 @@ const Screen = () => {
   return (
     <div className="xl:block flex items-center lg:w-2/3 mr-auto px-[4%] md:px-[20%] lg:px-[4%] 2xl:px-[6%] lg:py-[20px] my-[0px]">
       <div className="w-full">
-        <h4 className="text-[32px] font-[500] text-white md:mt-[5px] mt-[10px] md:text-[44px]">
+        <h4 className="text-[32px] font-[500] text-white md:mt-[5px] mt-[5px] md:text-[44px]">
           Contact us
         </h4>
         <h4 className="text-[15px] font-[400] text-white mt-[16px] md:mt-0 md:text-[18px] md:leading-[27px]">
