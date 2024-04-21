@@ -28,6 +28,8 @@ const config = {
         base2: "#E688A3",
         base3: "#a5b4fc",
         gray: "#9E9E9E",
+        placeholderText: "#F3F3F3",
+        crispy: "#6ab5d229",
         lightgray: "#ECECEC",
         tertiary: "#EFD378",
         tertiaryHover: "#E1C35E",

@@ -1,8 +1,6 @@
 "use client";
 
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import * as z from "zod";
+
 import Modal from "@/src/components/app-reusables/Modal";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";

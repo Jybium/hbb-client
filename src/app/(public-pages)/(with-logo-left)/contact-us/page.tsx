@@ -3,9 +3,8 @@ import Screen from './Screen'
 
 const page = () => {
   return (
-    <main>
+  
         <Screen/>
-    </main>
   )
 }
 
