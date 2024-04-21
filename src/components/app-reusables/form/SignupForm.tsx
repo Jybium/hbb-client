@@ -138,7 +138,7 @@ const SignupForm = () => {
                     </FormItem>
                   )}
                 />
-                <div className="flex justify-end -mt-2 lg:mb-8">
+                <div className="flex justify-end lg:mb-8">
                   <Link href="/forgot-password">
                     <button className="text-[10px] 2xl:text-xs font-[500] text-[#E688A3]">
                       Forgot password?
