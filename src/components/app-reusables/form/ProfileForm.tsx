@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { onSubmitError } from "@/src/lib/utils";
 import {
   Form,
@@ -58,31 +58,33 @@ const ProfileForm = () => {
 
 
   // Event handler for dragenter and dragover
-  const handleDragOver = (e: any) => {
+  function handleDragOver (e: any) {
     e.preventDefault();
     setIsDragging(true);
   };
 
   // Event handler for dragleave
-  const handleDragLeave = () => {
+  function handleDragLeave (){
     setIsDragging(false);
   };
 
-  // Event handler for drop
-  const handleDrop = (e: any) => {
-    e.preventDefault();
-    setIsDragging(false);
+  // // Event handler for drop
+  // function handleDrop (e: any): any{
+  //   e.preventDefault();
+  //   setIsDragging(false);
 
-    // Get the dropped files
-    const files = e.dataTransfer.files;
+  //   // Get the dropped files
+  //   const files = e.dataTransfer.files;
 
-    if (files && files.length > 0 && files[0].type.startsWith("video/")) {
-      // Call the form onChange function with the video file
-      if (onchange) {
-        onchange(files[0]);
-      }
-    }
-  };
+  //   if (files && files.length > 0 && files[0].type.startsWith("video/")) {
+  //     // Call the form onChange function with the video file
+  //     if (onchange): (file: File) => void {
+  //       onchange(file[0]: any);
+  //     }
+  //   }
+  // };
+
+
 
   // Dynamic styling for the component
   const dropAreaStyle = isDragging
@@ -161,9 +163,9 @@ const ProfileForm = () => {
                     className={`md:w-1/2 w-full px-4 h-[5rem] flex items-center justify-center text-center ${dropAreaStyle}`}
                     onDragOver={handleDragOver}
                     onDragLeave={handleDragLeave}
-                    onDrop={
-                      handleDrop
-                    }
+                    // onDrop={
+                    //   handleDrop
+                    // }
                     id="video-upload"
                   >
                     {isDragging ? (
