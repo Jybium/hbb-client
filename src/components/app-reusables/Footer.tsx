@@ -1,7 +1,5 @@
 import React from "react";
 import  Link  from "next/link";
-import Image from "next/image";
-import Icon from "./Icons";
 import { Copyright } from "lucide-react";
 
 const Footer = () => {

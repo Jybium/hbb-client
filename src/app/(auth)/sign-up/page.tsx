@@ -76,10 +76,10 @@ const Page = () => {
   };
 
   return (
-    <div className="w-[100%] content-center grid lg:justify-end">
-      <div className="w-full h-full px-[1rem] md:px-[2.25rem] lg:px-0 lg:w-[455px]">
-        <div className="bg-white md:rounded-[32px] rounded-[24px] px-[4%] py-[25px] lg:p-[32px] shadow-xl w-full">
-          <div className="grid grid-cols-3 border-b-[1px] border-[#EFD378]  pb-[10px] md:pb-[7px] items-center w-full">
+    <div className="w-[100%] md:w-4/5 md:m-auto lg:w-full lg:m-0  content-center grid lg:justify-end">
+      <div className="w-full h-full px-[1rem] md:px-[10%]  lg:px-0 ">
+        <div className="bg-white md:rounded-[1.50rem] rounded-[1.50rem] px-[4%]  py-[25px] lg:pb-[20px] lg:py-[15px] lg:px-[32px] shadow-xl w-full">
+          <div className="grid grid-cols-3 border-b-[1px] border-[#EFD378]  pb-[10px] md:pb-[5px] items-center w-full">
             <div className="flex justify-start"></div>
             <div className="flex justify-center">
               <Image
@@ -93,16 +93,16 @@ const Page = () => {
             <div className="flex justify-end">
               <Link href="/">
                 <button className="bg-[#F7F6F3] hover:bg-gray-200 rounded-[9px] w-[45px] h-[45px] flex justify-center items-center">
-                  <X className="h-[16px] w-[16px]" color="black" size={30} />
+                  <X className="h-[14px] w-[14px]" color="black" size={25} />
                 </button>
               </Link>
             </div>
           </div>
           <div className="md:px- lg:px-">
-            <h4 className="text-[18px] md:text-[24px] font-[500] leading-[22px] md:mt-[30px] mt-[30px] text-[#44464A] md:leading-[30px] text-center ">
+            <h4 className="text-[18px] lg:text-[1.20rem] font-[500] leading-[22px] lg:mt-[10px] mt-[30px] text-[#44464A] md:leading-[30px] text-center ">
               Are you model or explorer?
             </h4>
-            <div className="mt-[40px] md:mt-[1rem] grid grid-cols-2 gap-[16px] md:gap-[2rem] xl:mx-[15px]">
+            <div className="mt-[30px] md:mt-[1rem] grid grid-cols-2 gap-[16px] md:gap-[2rem] xl:mx-[15px]">
               <div
                 onClick={handleModelClick}
                 className="radio-container w-full h-full"
@@ -121,21 +121,21 @@ const Page = () => {
                   <div
                     className={`h-full border ${
                       account === "model" ? "border-[0px]" : "border-text"
-                    } rounded-[20px] md:rounded-[28px] md:px-`}
+                    } rounded-[1.75rem] md:rounded-[1.75rem]`}
                   >
-                    <div className="py-[1.75rem] flex flex-col items-center justify-between h-full">
+                    <div className="py-[1.55rem] lg:py-[1.20rem] flex flex-col items-center justify-between h-full">
                       <div className="">
                         <Image
-                          className="md:w-[150px] w-[90px] md:h-[150px] h-[90px] rounded-full"
+                          className="lg:w-[90px] md:w-[120px] w-[90px] lg:h-[90px] md:h-[120px] h-[90px] rounded-full"
                           src={Model.src}
                           alt="model image"
-                          height={160}
-                          width={160}
+                          height={100}
+                          width={100}
                         />
                       </div>
-                      <h4 className="custom-text text-black text-[16px] font-[500] md:text-[24px] p-0 mt-[22px]">
+                      <p className="custom-text text-black text-[16px] font-[500] md:text-[1.20rem] p-0 mt-[22px] lg:mt-[15px]">
                         Model
-                      </h4>
+                      </p>
                     </div>
                   </div>
                 </label>
@@ -159,19 +159,19 @@ const Page = () => {
                   <div
                     className={`h-full border ${
                       account === "explorer" ? "border-[0px]" : "border-text"
-                    } rounded-[20px] md:rounded-[28px] md:px-`}
+                    } rounded-[1.75rem] md:rounded-[1.75rem] md:px-`}
                   >
-                    <div className="py-[28px] flex  flex-col items-center justify-between h-full">
+                    <div className="py-[1.55rem] lg:py-[1.20rem] flex  flex-col items-center justify-between h-full">
                       <div>
                         <Image
-                          className="md:w-[150px] w-[90px] md:h-[150px] h-[90px] rounded-full"
+                          className="lg:w-[90px] md:w-[120px] w-[90px] lg:h-[90px] md:h-[120px] h-[90px] rounded-full"
                           src={Explorer}
                           alt="explorer image"
-                          height={160}
-                          width={160}
+                          height={100}
+                          width={100}
                         />
                       </div>
-                      <h4 className="custom-text  text-black text-[16px] font-[500] md:text-[24px] p-0 mt-[22px]">
+                      <h4 className="custom-text  text-black text-[16px] font-[500] md:text-[1.20rem] p-0 mt-[22px] lg:mt-[15px]">
                         Explorer
                       </h4>
                     </div>
@@ -179,24 +179,23 @@ const Page = () => {
                 </label>
               </div>
             </div>
-            <p className="md:mt-[31px] mt-[35px] text-black text-center md:text-[1.13rem] text-[1rem] ">
+            <p className="md:mt-[2rem] mt-[1.94rem] text-black text-center md:text-[1rem] text-[1rem] ">
               Or would you prefer an{" "}
               <span className="text-base2">agency account?</span>
             </p>
             <Button
-              className={`w-full px-5 py-3 rounded-full md:mt-8 mt-5 text-black font-normal text-sm h-8 ${
+              className={`w-full px-5 py-3 md:p-0 rounded-full md:mt-[0.50rem] mt-[1rem] lg:mb-0 md:mb-5  text-black font-normal text-sm h-8 ${
                 !isDisabled
                   ? "bg-lightgray cursor-not-allowed text-gray"
                   : "bg-tertiary hover:bg-tertiaryHover"
               }`}
               disabled={!isDisabled}
               onClick={handleNext}
-              // variant="yellow"
               type="submit"
             >
               Next
             </Button>
-            <div className="mt-[20px] mb-2 md:mt-[20px]  md:mb-[10px] flex justify-center gap-[12px]">
+            <div className="mt-[20px] mb-2 md:mt-[20px]  md:mb-[10px] hidden justify-center gap-[12px]">
               <div className="w-[10px] h-[10px] border-[1px] border-base rounded-full bg-white "></div>
               <div className="w-[10px] h-[10px] border-[1px] border-base rounded-full bg-white "></div>
             </div>
