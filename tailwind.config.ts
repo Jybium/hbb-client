@@ -21,12 +21,14 @@ const config = {
       backgroundImage: {
         desktop: "url('./public/assests/splash-desktop.svg)",
         mobile: "url('./public/assests/splash-mobile.svg)",
-        background: "url('./public/assests/dashboard/dashboardImage.svg)",
+        backLay: "url('public/assests/dashboard/dashboardImage.svg)",
       },
       colors: {
+        profile:"#F0B8C8",
         base: "#6AB5D2",
         base2: "#E688A3",
         base3: "#a5b4fc",
+        overlay:"#000000B3",
         gray: "#9E9E9E",
         placeholderText: "#F3F3F3",
         crispy: "#6ab5d229",
