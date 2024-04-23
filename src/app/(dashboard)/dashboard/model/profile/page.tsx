@@ -22,7 +22,7 @@ import { ScrollArea, ScrollBar } from "@/src/components/ui/scroll-area";
 import { onSubmitError } from "@/src/lib/utils";
 import React, { useState } from 'react'
 import { Camera } from 'lucide-react';
-import { CameraIcon, EditIcon, PlayIcon } from '@/src/components/svgs';
+import {  EditIcon, PlayIcon } from '@/src/components/svgs';
 import { Button } from '@/src/components/ui/button';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -34,8 +34,12 @@ import { Textarea } from '@/src/components/ui/textarea';
 
 import video from "@/public/assests/dashboard/video.svg"
 import EditModal from '@/src/components/app-reusables/EditModal';
+import data from '@/src/constants/appointment';
+import AppointmentCard from '@/src/components/app-reusables/AppointmentCard';
+import LineCharts from '@/src/components/app-reusables/visualizations/LineChart';
+import datas from '@/src/constants/lineChart';
 
-const page = () => {
+const Page = () => {
     const [showModal, setShowModal] = useState<boolean>(false)
     const [isPending, startTransition] = React.useTransition();
 
@@ -63,12 +67,12 @@ const page = () => {
     };
 
 
-    const hideModal= ()=>{
+    const hideModal = () => {
         setShowModal((prev) => !prev)
     }
 
     return (
-        <main className='md:max-h-screen'>
+        <main className='lg:max-h-screen'>
             <div className='flex items-center justify-between text-[1.50rem]'>
                 <p>Profile</p>
                 <div className='flex gap-[1.50rem]'>
@@ -77,17 +81,17 @@ const page = () => {
             </div>
 
             {/* Scrollable */}
-            <div className='bg-base2 mt-3 w-full max-h-screen flex flex-1 gap-x-3 px-[1.5rem] py-[1rem] rounded-lg md:h-[80vh] overflow-y-auto scrollbar'>
+            <div className='bg-base2 mt-3 w-full max-h-screen lg:flex justify-between lg:flex-1 gap-x-3 gap-y-3 md:gap-y-0 md:px-[1.5rem] px-[1rem] md:py-[1rem] rounded-lg md:h-[80vh] overflow-y-auto '>
 
                 {/* Model Info */}
-                <div className='w-1/3 bg-profile p-[1rem] rounded-lg backdrop-blur-sm overflow-y-auto'>
+                <div className='lg:w-[36%] bg-profile p-[1rem] rounded-lg backdrop-blur-sm overflow-y-auto'>
                     <div className='flex items-center justify-between '>
                         <div className='relative'>
                             {/* <Image src={Logo} alt='image' className='w-[6rem] h-[6rem] rounded-full object-cover' /> */}
                             <div className='w-[5rem] h-[5rem] rounded-full object-cover bg-black relative'></div>
                             <Camera className='p-2 bg-white absolute -left-0 bottom-0 text-base2 rounded-full' color='#E688A3' size={35} />
                         </div>
-                        <Button className='text-base2 h-[2rem] bg-white text-sm py-1 px-3 w-2/5 rounded-md'>
+                        <Button className='text-base2 h-[2rem] bg-white text-sm py-1 px-3 w-2/5 rounded-lg'>
                             Likes 200k
                         </Button>
                     </div>
@@ -100,7 +104,7 @@ const page = () => {
                     <div>
                         <div className='flex justify-between items-center'>
                             <p>Info</p>
-                            <Button className='flex gap-1 border h-[2rem] border-white rounded-md py-1 md:py-[2px] px-3 bg-transparent' onClick={hideModal}>
+                            <Button className='flex gap-1 border h-[2rem] border-white rounded-lg py-1 lg:py-[2px] px-3 bg-transparent' onClick={hideModal}>
 
                                 <p className='text-xs'>Edit</p>
                                 <EditIcon className='' />
@@ -212,29 +216,29 @@ const page = () => {
 
                 {/* Model Video */}
 
-                <div className='w-1/3 bg-profile rounded-lg backdrop-blur-sm'>
+                <div className='lg:w-[36%] bg-profile rounded-lg backdrop-blur-sm relative'>
                     <div className='relative h-3/5'>
-                        <Button className='flex justify-end gap-1 border h-[2rem] border-white rounded-md py-1 md:py-[2px] px-3 bg-transparent absolute top-2 right-2 z-30' >
+                        <Button className='flex justify-end gap-1 border h-[2rem] border-white rounded-lg py-1 lg:py-[2px] px-3 bg-transparent absolute top-2 right-2 z-30' >
 
                             <p className='text-xs'>Edit</p>
                             <EditIcon className='' />
 
                         </Button>
-                        <Image alt='' src={video} className='relative' />
-                        <div className='absolute top-1/3 left-[40%]'>
+                        <Image alt='' src={video} className='' />
+                        <div className='absolute top-[36%] left-[38%]'>
 
                             <PlayIcon />
                         </div>
                     </div>
-                    <div className='bg-base mt-2'>
-                        <div className="flex justify-between">
+                    <div className='bg-base mt-2 relative p-1'>
+                        <div className="flex justify-between items-center mt-3">
                             <p>my profile views <span>32</span></p>
                             <Form {...form}>
                                 <form
                                     onSubmit={form.handleSubmit(onHandleSubmit, (errors) => {
                                         onSubmitError(errors);
                                     })}
-                                    className="mt-[2rem] md:mt-[10px]  grid gap-1 text-white"
+                                    className="mt-[2rem] lg:mt-[10px]  grid gap-1 text-white"
                                 >
                                     <FormField
                                         control={form.control}
@@ -250,20 +254,20 @@ const page = () => {
                                             };
 
                                             return (
-                                                <FormItem className="relative">
+                                                <FormItem className="relative w-full">
                                                     <div className="flex w-full relative">
-                                                        <FormControl className="">
+                                                        <FormControl className="text-xs">
 
                                                             <Select onValueChange={handleCountrySelect} defaultValue={`${field.value} | `}>
-                                                                <SelectTrigger className="w-2/4 bg-transparent rounded-r-none  backdrop-blur-sm px-2 placeholder:text-profile border border-profile text-white focus:border-white outline-none relative">
-                                                                    <SelectValue placeholder="Select a country" className="text-sm" />
+                                                                <SelectTrigger className="w-full bg-white rounded-r-none text-xs  backdrop-blur-sm placeholder:text-profile border border-profile text-base focus:border-white outline-none relative">
+                                                                    <SelectValue placeholder="Last 7 days" className="text-xs w-fit text-base" />
                                                                 </SelectTrigger>
-                                                                <SelectContent className="w-full bg-base absolute top-0 max-h-20 overflow-y-auto">
+                                                                <SelectContent className="w-fit bg-base top-0 max-h-20 overflow-y-auto drop-shadow-md" >
                                                                     <ScrollArea className="absolute max-h-20 overflow-y-auto scroll">
-                                                                        <SelectItem value="US|🇺🇸" className="w-full">🇺🇸 +1dsdjhsjhjshjh</SelectItem>
-                                                                        <SelectItem value="GB|🇬🇧">🇬🇧 +44sjkjkkkkkkkkkkerrrrrrr</SelectItem>
-                                                                        <SelectItem value="CA|🇨🇦">🇨🇦 +1 hsdjjjjjsdddsderrrrrere</SelectItem>
-                                                                        <SelectItem value="CA|🇨🇦">🇨🇦 +1 dssssdsdsddsdseerreeree</SelectItem>
+                                                                        <SelectItem value="US|🇺🇸" className="w-full">Last 7 days</SelectItem>
+                                                                        <SelectItem value="GB|🇬🇧">This Month</SelectItem>
+                                                                        <SelectItem value="CA|🇨🇦">This year</SelectItem>
+                                                                        <SelectItem value="CA|🇨🇦">All</SelectItem>
                                                                         <ScrollBar orientation="vertical" className="bg-placeholderText scroll" />
                                                                     </ScrollArea>
 
@@ -282,21 +286,27 @@ const page = () => {
                                 </form>
                             </Form>
                         </div>
+                        <div>
+
+                        <LineCharts data={datas}/>
+                        </div>
                     </div>
                 </div>
 
 
                 {/* Model Appointment */}
-                <div className='w-1/3 bg-profile p-[1rem] rounded-lg backdrop-blur-sm'>
-                    <div className='h-3/5'>
+                <div className='lg:w-[36%] rounded-lg backdrop-blur-sm'>
+                    <div className='lg:h-3/5 px-[0.5rem] pt-[0.8rem]  bg-profile rounded-lg'>
 
                         <p>My appointment <span>12</span></p>
-                        <div className='h-[55%]'>
-
+                        <div className='md:h-5/6 overflow-y-auto'>
+                            <div className='my-1'>
+                                <AppointmentCard item={data} />
+                            </div>
                         </div>
                     </div>
-                    <div>
-                        <div>
+                    <div className='overflow-y-auto'>
+                        <div className='bg-profile px-[1rem] py-[0.4rem] rounded-lg shadow-md my-1'>
                             <div className='flex justify-between'>
                                 <p>Earning from live calls</p>
                                 <Form {...form}>
@@ -354,8 +364,8 @@ const page = () => {
                             </div>
                             <p>$1,234</p>
                         </div>
-                        <div>
-                            <div className='flex justify-between'>
+                        <div className='bg-profile px-[1rem] py-[0.4rem] rounded-lg shadow-md my-1'>
+                            <div className='flex justify-between '>
                                 <p>Earning from gifts</p>
                                 <Form {...form}>
                                     <form
@@ -422,10 +432,10 @@ const page = () => {
             {/* Edit Modal */}
 
             <div>
-                {showModal && <EditModal hideModal={hideModal}/>}
+                {showModal && <EditModal hideModal={hideModal} />}
             </div>
         </main>
     )
 }
 
-export default page
+export default Page

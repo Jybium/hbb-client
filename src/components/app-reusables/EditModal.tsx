@@ -51,23 +51,19 @@ const EditModal = ({ hideModal }: { hideModal: () => void }) => {
 
 
   return (
-    <div className='w-full h-screen backdrop-blur-md'>
-      <section className='h-[85vh] bg-base grid justify-center'>
+    <div className='w-full h-screen backdrop-blur-sm absolute top-0 left-0 right-0 grid justify-center content-center'>
+      <section className='h-[85vh] md:w-4/5 m-auto grid justify-center'>
 
-        <div className=' px-[2rem] py-[2.50rem] w-4/5 mx-auto'>
-          <div className='flex justify-between'>
+        <div className=' md:px-[2rem] px-[1rem] md:py-[2rem] py-[1rem] md:w-4/5 w-[90%] mx-auto bg-base rounded-lg'>
+          <div className='flex justify-between items-center'>
             <p>Edit Profile</p>
-            <Button onClick={hideModal}>
+            <Button onClick={hideModal} className='bg-placeholderText rounded-lg px-3 py-1' variant="link">
 
-            <CancelIcon />
+            <CancelIcon className='w-4/5 p-0'/>
             </Button>
           </div>
-          <section className=''>
-            <div className='w-1/2 bg-profile p-[1rem] rounded-lg backdrop-blur-sm overflow-y-auto'>
-              <div className='bg-black w-full h-[2rem] my-[1rem] rounded-lg'>
-
-              </div>
-
+          <section className='md:flex justify-between'>
+            <div className='md:w-[45%] p-[1rem] rounded-lg backdrop-blur-sm overflow-y-auto'>
               <div>
                 <div className='flex justify-between items-center'>
                   <p>Info</p>
@@ -172,17 +168,21 @@ const EditModal = ({ hideModal }: { hideModal: () => void }) => {
                 </div>
               </div>
             </div>
-            <div>
+            <div className='md:w-[45%]  rounded-lg'>
               <p>Interest (maximum 3 interests)</p>
 
-              <div className='flex flex-wrap gap-2 py-[0.75rem]'>
+              <div className='flex flex-wrap gap-2 py-[0.75rem] p-[0.75rem] bg-white rounded-lg mt-2' >
                 {data.map((item) => (
-                  <p key={item.id} className='px-3 py-1 h-[2rem] text-center w-fit content-center grid bg-profile rounded-full text-xs'>{item.name}</p>
+                  <p key={item.id} className='px-3 py-1 h-[2rem] text-center w-fit content-center grid bg-profile rounded-xl text-xs'>{item.name}</p>
                 ))}
 
               </div>
             </div>
           </section>
+        <Button variant="yellow" className='md:w-1/2 mx-auto  grid justify-center h-8 mt-[1.78rem]' onClick={hideModal}>
+
+          Save updates
+        </Button>
         </div>
       </section>
     </div> 
