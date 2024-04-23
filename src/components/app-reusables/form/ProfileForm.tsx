@@ -26,6 +26,7 @@ import { modelProfileSchema } from "@/src/schema/profile";
 import { CameraIcon } from "../../svgs";
 import DragAndDrop from "../DragnDrop";
 import { SearchX } from "lucide-react";
+import { ScrollArea, ScrollBar } from "../../ui/scroll-area";
 
 const ProfileForm = () => {
   const [isPending, startTransition] = React.useTransition();
@@ -41,7 +42,7 @@ const ProfileForm = () => {
       sex: "",
       dateOfBirth: "",
       video: "",
-      phoneNumber:""
+      phoneNumber: ""
     },
   });
 
@@ -54,35 +55,21 @@ const ProfileForm = () => {
     values.firstName !== "" &&
     values.video !== "" &&
     values.sex !== "" &&
-    values.dateOfBirth !== "" 
+    values.dateOfBirth !== ""
 
 
   // Event handler for dragenter and dragover
-  function handleDragOver (e: any) {
+  function handleDragOver(e: any) {
     e.preventDefault();
     setIsDragging(true);
   };
 
   // Event handler for dragleave
-  function handleDragLeave (){
+  function handleDragLeave() {
     setIsDragging(false);
   };
 
-  // // Event handler for drop
-  // function handleDrop (e: any): any{
-  //   e.preventDefault();
-  //   setIsDragging(false);
 
-  //   // Get the dropped files
-  //   const files = e.dataTransfer.files;
-
-  //   if (files && files.length > 0 && files[0].type.startsWith("video/")) {
-  //     // Call the form onChange function with the video file
-  //     if (onchange): (file: File) => void {
-  //       onchange(file[0]: any);
-  //     }
-  //   }
-  // };
 
 
 
@@ -163,9 +150,6 @@ const ProfileForm = () => {
                     className={`md:w-1/2 w-full px-4 h-[5rem] flex items-center justify-center text-center ${dropAreaStyle}`}
                     onDragOver={handleDragOver}
                     onDragLeave={handleDragLeave}
-                    // onDrop={
-                    //   handleDrop
-                    // }
                     id="video-upload"
                   >
                     {isDragging ? (
@@ -195,12 +179,12 @@ const ProfileForm = () => {
                             className="bg-white hidden"
                           />
                         </FormControl>
-                          <FormLabel
-                            htmlFor="video-upload"
-                            className="bg-transparent border border-placeholderText text-placeholderText py-1 px-3 w-3/5 mx-auto md:mx-0 rounded-md h-[1.8rem]"
-                          >
-                            Promotional video
-                          </FormLabel>
+                        <FormLabel
+                          htmlFor="video-upload"
+                          className="bg-transparent border border-placeholderText text-placeholderText py-1 px-3 w-3/5 mx-auto md:mx-0 rounded-md h-[1.8rem]"
+                        >
+                          Promotional video
+                        </FormLabel>
                         <FormMessage />
                       </FormItem>
                     )}
@@ -236,7 +220,7 @@ const ProfileForm = () => {
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel className="text-white">
-                       Last name
+                        Last name
                       </FormLabel>
                       <FormControl>
                         <Input
@@ -277,8 +261,8 @@ const ProfileForm = () => {
                       <FormLabel className="text-white">Date of birth</FormLabel>
                       <FormControl>
                         <Input
-                        type="date"
-                          
+                          type="date"
+
                           {...field}
                           className="bg-transparent  backdrop-blur-sm placeholder:text-profile border border-profile text-white focus:border-white outline-none w-full"
                         />
@@ -290,19 +274,19 @@ const ProfileForm = () => {
               </div>
               <div className="grid md:grid-cols-2 gap-[12px] md:gap-[0.94rem] gap-y-2">
                 <div className="">
-              
+
 
                   <FormField
                     control={form.control}
                     name="phoneNumber"
                     render={({ field }) => {
-                     
+
                       const handleCountrySelect = (value: any) => {
-                       
+
                         const [countryCode, flag] = value.split('|');
-                        
-                        form.setValue('phoneNumber', countryCode); 
-                        field.onChange(flag); 
+
+                        form.setValue('phoneNumber', countryCode);
+                        field.onChange(flag);
                       };
 
                       return (
@@ -312,26 +296,33 @@ const ProfileForm = () => {
 
                             <Select onValueChange={handleCountrySelect} defaultValue={`${field.value} | `}>
                               <SelectTrigger className="w-1/4 bg-transparent rounded-r-none  backdrop-blur-sm px-2 placeholder:text-profile border border-profile text-white focus:border-white outline-none relative">
-                                <SelectValue placeholder="Select a country" className="text-sm"/>
+                                <SelectValue placeholder="Select a country" className="text-sm" />
                               </SelectTrigger>
-                              <SelectContent className="w-full max-h-40 overflow-y-auto" position="popper">
-                                {/* Render each option with the country flag and code */}
-                                <SelectItem value="US|🇺🇸">🇺🇸 +1</SelectItem>
-                                <SelectItem value="GB|🇬🇧">🇬🇧 +44</SelectItem>
-                                <SelectItem value="CA|🇨🇦">🇨🇦 +1</SelectItem>
-                                {/* Add more countries and their flags and codes as needed */}
+                              <SelectContent className="w-[17rem] bg-profile absolute top-0 max-h-20 overflow-y-auto">
+                                <ScrollArea className="absolute max-h-20 overflow-y-auto scroll">
+                                  <SelectItem value="US|🇺🇸" className="w-full">🇺🇸 +1dsdjhsjhjshjh</SelectItem>
+                                  <SelectItem value="GB|🇬🇧">🇬🇧 +44sjkjkkkkkkkkkkerrrrrrr</SelectItem>
+                                  <SelectItem value="CA|🇨🇦">🇨🇦 +1 hsdjjjjjsdddsderrrrrere</SelectItem>
+                                  <SelectItem value="CA|🇨🇦">🇨🇦 +1 dssssdsdsddsdseerreeree</SelectItem>
+                                  <SelectItem value="CA|🇨🇦">🇨🇦 +1 sdsdssddsddsdddsserererr</SelectItem>
+                                  <SelectItem value="CA|🇨🇦">🇨🇦 +1ddssddddddddssdddsdjereeee</SelectItem>
+                                  <SelectItem value="CA|🇨🇦">🇨🇦 +1 ejjekerkeruiuksjkjseereere</SelectItem>
+                                  <SelectItem value="CA|🇨🇦">🇨🇦 +1 djsisdjkjsdjksdiuerereere</SelectItem>
+                                  <ScrollBar orientation="vertical" className="bg-placeholderText scroll"/>
+                                </ScrollArea>
+                             
                               </SelectContent>
                             </Select>
-                          <FormControl className="flex items-center space-x-2">
-                         
-                            <Input
-                              type="tel"
-                              placeholder="Enter your phone number"
-                              value={form.getValues('phoneNumber')}
-                              onChange={(e) => form.setValue('phoneNumber', e.target.value)}
-                              className="bg-transparent backdrop-blur-sm placeholder:text-profile border rounded-l-none border-profile text-white focus:border-white outline-none w-full"
-                            />
-                          </FormControl>
+                            <FormControl className="">
+
+                              <Input
+                                type="tel"
+                                placeholder="Enter your phone number"
+                                value={form.getValues('phoneNumber')}
+                                onChange={(e) => form.setValue('phoneNumber', e.target.value)}
+                                className="bg-transparent backdrop-blur-sm placeholder:text-profile border rounded-l-none border-profile text-white focus:border-white outline-none w-full"
+                              />
+                            </FormControl>
                           </div>
 
                           <FormMessage />
@@ -341,7 +332,7 @@ const ProfileForm = () => {
                   />
 
 
-                  </div>
+                </div>
                 <FormField
                   control={form.control}
                   name="email"

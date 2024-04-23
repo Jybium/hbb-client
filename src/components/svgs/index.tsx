@@ -48,3 +48,31 @@ export const CameraIcon: React.FC<{
       </svg>
     );
   };
+
+
+export const EditIcon: React.FC<{
+    className?: string;
+  }> = ({ className = "" }) => {
+    return (
+      <svg className={className} width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8.83958 2.4008L3.36624 8.19413C3.15958 8.41413 2.95958 8.84746 2.91958 9.14746L2.67291 11.3075C2.58624 12.0875 3.14624 12.6208 3.91958 12.4875L6.06624 12.1208C6.36624 12.0675 6.78624 11.8475 6.99291 11.6208L12.4662 5.82746C13.4129 4.82746 13.8396 3.68746 12.3662 2.29413C10.8996 0.914129 9.78624 1.4008 8.83958 2.4008Z" stroke="white" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M7.92578 3.36719C8.21245 5.20719 9.70578 6.61385 11.5591 6.80052" stroke="white" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+
+    );
+  };
+
+
+
+
+export const PlayIcon: React.FC<{
+    className?: string;
+  }> = ({ className = "" }) => {
+    return (
+      <svg width="68" height="68" viewBox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="34" cy="34" r="34" fill="white" />
+        <path d="M24 34.5026V30.2048C24 24.6583 27.972 22.4223 32.8268 25.181L36.5929 27.3299L40.359 29.4788C45.2137 32.2375 45.2137 36.7677 40.359 39.5264L36.5929 41.6753L32.8268 43.8242C27.972 46.5829 24 44.3179 24 38.8004V34.5026Z" stroke="#E688A3" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+
+    );
+  };
