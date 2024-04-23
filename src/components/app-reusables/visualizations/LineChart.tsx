@@ -19,7 +19,6 @@ const LineCharts = (props: any) => {
                 className="w-full h-auto text-[10px]"
                 width={250}
                 height={100}
-                title="Project Analysis"
                 data={props.data}
                 margin={{ top: 10, right: 2, left: 0, bottom: 0 }}
             >
