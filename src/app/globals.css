@@ -234,3 +234,27 @@ input[type="checkbox"] {
 .hidden-input:checked + .custom-radio .checkmark {
   display: block;
 }
+
+.scrollbar{
+  scrollbar-width: thin;
+  scrollbar-color: #F0B8C8 #ffff;
+}
+
+.scrollbar::-webkit-scrollbar {
+  width: 3px;
+  height: 2px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  background: var(--foreground);
+  border-radius: 0px;
+}
+
+*::-webkit-scrollbar-thumb {
+ display: none;
+}
