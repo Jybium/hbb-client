@@ -1,9 +1,9 @@
-import Profile from '@/src/components/pages/dashboard/Profile'
+import GoLive from '@/src/components/app-reusables/model/GoLive'
 import React from 'react'
 
 const page = () => {
   return (
-   <Profile/>
+    <GoLive/>
   )
 }
 

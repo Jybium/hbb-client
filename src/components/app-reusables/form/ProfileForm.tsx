@@ -25,7 +25,6 @@ import { toast } from "sonner";
 import { modelProfileSchema } from "@/src/schema/profile";
 import { CameraIcon } from "../../svgs";
 import DragAndDrop from "../DragnDrop";
-import { SearchX } from "lucide-react";
 import { ScrollArea, ScrollBar } from "../../ui/scroll-area";
 import { usePathname, useRouter } from "next/navigation";
 import SubscriptionCard from "../../SubcriptionCard";
@@ -74,7 +73,7 @@ const ProfileForm = () => {
     setIsDragging(false);
   };
 
-
+// Event handler for onDrop
 
 
 
@@ -109,8 +108,8 @@ const ProfileForm = () => {
         break;
 
       default:
-        return
         break;
+        return;
     }
   }
 
@@ -125,6 +124,8 @@ const ProfileForm = () => {
 
   return (
     <main>
+
+      {/* Beginning of page for both explorer and model */}
       <div className="w-full py-4">
         <div className="grid md:gap-y-1 mb-[2rem] md:mb-0">
           <h1 className="text-white text-2xl font-medium">
@@ -146,7 +147,7 @@ const ProfileForm = () => {
               {/* BEGINNING OF FORM SECTION THAT TAKES VIDEO AND IMAGE ASSESTS */}
               <section>
                 <div className="border-b border-white py-[2rem] md:py-[1rem] md:flex">
-                  <div className="flex items-center gap-4 md:border-r pr-[1.50rem] border-placeholderText">
+                  <div className="flex items-center gap-4 pr-[1.50rem]">
                     <div className="relative h-[5rem] w-[5rem] rounded-full border-white border ">
                       <CameraIcon className="absolute top-5 left-5 h-9 w-9 m-auto" />
                     </div>
@@ -176,7 +177,7 @@ const ProfileForm = () => {
                     />
                   </div>
                   {pathname === "/model/profile" &&
-                    <div className="md:flex items-center gap-4 md:pl-[1.50rem] border-placeholderText mt-[2rem] md:mt-0">
+                    <div className="md:flex items-center gap-4 md:border-l md:pl-[1.50rem] border-placeholderText mt-[2rem] md:mt-0">
                       <div
                         className={`md:w-1/2 w-full px-4 h-[5rem] flex items-center justify-center text-center ${dropAreaStyle}`}
                         onDragOver={handleDragOver}
@@ -410,6 +411,8 @@ const ProfileForm = () => {
       </div>
 
 
+
+      {/*Beginning of Page two for explorer - choosing subscription plan */}
       <div className="w-full py-4 hidden">
         <div className="grid md:gap-y-1 mb-[2rem] md:mb-0">
           <h1 className="text-white text-2xl font-medium">
@@ -420,7 +423,7 @@ const ProfileForm = () => {
           </p>
         </div>
         {isExplorer &&
-          <div className="flex justify-between gap-2">
+          <div className="lg:flex justify-between gap-2">
             <SubscriptionCard className="bg-transparent backdrop-blur-md" type="free" click={click} />
             <SubscriptionCard className="bg-purple backdrop-blur-md" type="standard" click={click} />
             <SubscriptionCard className="bg-armyGreen backdrop-blur-md" type="premium" click={click} />
@@ -624,6 +627,9 @@ const ProfileForm = () => {
           </div>
         }
       </div>
+
+      {/*End of Page two for explorer - choosing subscription plan */}
+
     </main>
   );
 };

@@ -25,6 +25,7 @@ const config = {
       },
       colors: {
         profile:"#F0B8C8",
+        red:"#EB5656",
         base: "#6AB5D2",
         base2: "#E688A3",
         base3: "#a5b4fc",

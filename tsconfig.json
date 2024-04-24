@@ -22,6 +22,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/app-reusables/Modal.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/app-reusables/Modal.tsx", "src/components/app-reusables/NavBar.jsx"],
   "exclude": ["node_modules"]
 }

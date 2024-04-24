@@ -22,12 +22,12 @@ import { loginSchema } from '@/src/schema/auth/login';
 import { Input } from '@/src/components/ui/input';
 import { toast } from 'sonner';
 import { Textarea } from '@/src/components/ui/textarea';
-
-
-import video from "@/public/assests/dashboard/video.svg"
+import Logo from "@/public/icons/logo.svg";
 import EditModal from '@/src/components/app-reusables/EditModal';
 import data from '@/src/constants/appointment';
 import AppointmentCard from '@/src/components/app-reusables/AppointmentCard';
+import Link from "next/link";
+import Image from "next/image";
 
 const Page = () => {
     const [showModal, setShowModal] = useState<boolean>(false)
@@ -64,9 +64,20 @@ const Page = () => {
     return (
         <main className='md:max-h-screen'>
             <div className='flex items-center justify-between text-[1.50rem]'>
-                <p>Profile</p>
+                <div className='flex gap-2'>
+                    <Link href="/" className="text-center w-1/2 lg:hidden ">
+                        <Image
+                            src={Logo}
+                            alt="logo"
+                            width={400}
+                            height={400}
+                            className="block w-[4rem] lg:w-[4rem] 2xl:w-[4rem] mx-auto"
+                        />
+                    </Link>
+                    <p>Profile</p>
+                </div>
                 <div className='flex gap-[1.50rem]'>
-                    <p className='w-[3.5rem] h-[3.5rem] rounded-full bg-tertiary flex justify-center items-center'>p</p> <p className='w-[3.5rem] h-[3.5rem] rounded-full bg-tertiary flex justify-center items-center'>p</p>
+                    <p className='w-[3.5rem] h-[3.5rem] rounded-full bg-tertiary flex justify-center items-center'>p</p>
                 </div>
             </div>
 
@@ -215,7 +226,7 @@ const Page = () => {
                 </div>
             </div>
             {/* Scrollable */}
-            
+
             {/* Edit Modal */}
 
             <div>
