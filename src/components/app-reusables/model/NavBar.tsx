@@ -35,7 +35,7 @@ const NavBar = () => {
                     return (
                         <div
                             key={item.id}
-                            className={isActive ? "lg:border-r-2 border-t-2 lg:border-t-0 border-base" : ""}
+                            className={isActive ? "lg:border-r-2 border-t-4 lg:border-t-0 border-base" : ""}
                         >
                             <Link
                                 href={item.to}

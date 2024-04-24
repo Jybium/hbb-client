@@ -7,7 +7,7 @@ const layout = ({ children }: { children: React.ReactNode }) => {
             <div className="absolute inset-0 bg-overlay opacity-100"></div>
             <div className="lg:flex justify-cente items-cente h-full w-full relative z-10">
                 <NavBar />
-                <div className='w-full md:px-[2.5rem] md:py-[0.5rem] px-[1rem] py-[1.50rem] overflow-y-auto'>
+                <div className='w-full md:px-[2.5rem] md:py-[0.5rem] px-[1rem] py-[1.50rem] h-screen overflow-y-auto'>
                     {children}
 
                 </div>
