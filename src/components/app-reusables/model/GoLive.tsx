@@ -20,12 +20,11 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@/src/components/ui/button";
 import { toast } from "sonner";
 import ModelBg from "@/public/assests/dashboard/GoLiveImage.svg"
+import ModelBgMobile from "@/public/assests/dashboard/GoLiveMobile.svg"
 import CallerBg from "@/public/assests/dashboard/GoLiveCaller.svg"
-import Logo from "@/public/assests/logo.svg"
 import { Schema } from '@/src/schema/dashboard/golive';
 import { VideoIcon, MicrophoneIcon, CancelIcon, WalletIcon, MuteIcon } from '../../svgs';
 import { AspectRatio } from '../../ui/aspect-ratio';
-import Link from 'next/link';
 import { X } from 'lucide-react';
 import VideoProcessingOverlay from './VideoProcessingOverlay';
 
@@ -90,31 +89,7 @@ const GoLive = () => {
   };
   return (
     <div className="grid content-cente items-cente w-full h-full relative lg:max-h-screen ">
-      <div className='flex items-center justify-between text-[1.50rem] '>
-        <div className='flex gap-2'>
-          <Link href="/" className="text-center w-1/2 lg:hidden ">
-            <Image
-              src={Logo}
-              alt="logo"
-              width={400}
-              height={400}
-              className="block w-[4rem] lg:w-[4rem] 2xl:w-[4rem] mx-auto"
-            />
-          </Link>
-          <div>
-
-            <p>Hi Sam!</p>
-            <p className='text-xs text-nowrap'>See who is online</p>
-          </div>
-        </div>
-        <div className='flex gap-[1.50rem]'>
-          <p className='w-[3.5rem] h-[3.5rem] rounded-full bg-tertiary flex justify-center items-center'>p</p>
-        </div>
-      </div>
-
-
-
-      <div className='lg:h-6/6 relative h-full my-3 lg:mt-0 rounded-lg'>
+      <div className='lg:h-6/6 relative h-full my-2 lg:mt-0 rounded-lg'>
 
         <div className='lg:bg-profile lg:h-5/6 h-fit rounded-lg'>
           <div className='w-full lg:h-6/6 h-auto object-cover hidden lg:block'>
@@ -124,8 +99,8 @@ const GoLive = () => {
           </div>
 
           <div className='w-full lg:h-5/6 lg:hidden h-full object-cover'>
-            <AspectRatio ratio={1 / 1}>
-              <Image src={ModelBg} priority className='block w-full h-full object-cover rounded-lg' alt='' />
+            <AspectRatio ratio={ goLive ? 4 / 5 : 1/1 }>
+              <Image src={ModelBgMobile} priority className='block w-full h-full object-cover rounded-lg' alt='' />
             </AspectRatio>
           </div>
 
@@ -173,7 +148,7 @@ const GoLive = () => {
             </div>
           }
 
-          {goLive && <div className="absolute flex gap-x-7 lg:my-0 lg:bottom-8 -bottom-1 lg:left-[44.5%] left-[40%] z-20">
+          {goLive && <div className="absolute flex gap-x-7 lg:my-0 lg:bottom-8 bottom-[10%] lg:left-[44.5%] left-[35%] z-20">
             <div className={`${mute ? "bg-profile" : "bg-white"} p-1 rounded-full`} onClick={handleMute} >
               {mute ? <MuteIcon className='p-1' /> : <MicrophoneIcon />}
             </div>

@@ -12,7 +12,7 @@ const NavBar = () => {
     const path = usePathname();
 
     return (
-        <aside className="lg:w-[10rem] bg-black lg:relative fixed w-full bottom-0 left-0 z-50 md:grid flex justify-center content-center md:py-[2rem]">
+        <aside className="lg:w-[10rem] bg-black lg:relative fixed w-full bottom-0 left-0 z-50 md:grid flex justify-center content-cente md:py-[2rem]">
             <Link href="/" className="text-center w-full lg:w-auto hidden lg:block">
                 <Image
                     src={Logo}
@@ -22,9 +22,9 @@ const NavBar = () => {
                     className="block w-[4rem] lg:w-[4rem] 2xl:w-[4rem] mx-auto"
                 />
             </Link>
-            <nav className="lg:grid flex gap-1 w-full lg:py-3">
+            <nav className="lg:grid flex gap-y-3 w-full lg:py-3">
                 {explorerData.map((item) => {
-                    // Skip rendering the item with id 3 when path includes 'model'
+                    
                     if (path.includes("model") && item.id === 3) {
                         return null;
                     }
@@ -35,17 +35,17 @@ const NavBar = () => {
                     return (
                         <div
                             key={item.id}
-                            className={isActive ? "border-r border-base" : ""}
+                            className={isActive ? "lg:border-r-2 border-t-4 lg:border-t-0 border-base" : ""}
                         >
                             <Link
                                 href={item.to}
                                 passHref
-                                className="grid lg:justify-center md:justify-between text-center"
+                                className="flex flex-col lg:justify-center md:justify-between h-fit text-center"
                             >
                                 <Image
                                     alt={item.title}
                                     src={item.image}
-                                    className="block lg:w-[80%] lg:h-[80%] w-[75%] mx-auto object-cover"
+                                    className="block lg:w-1/2 lg:h-1/2 w-[75%] mx-auto object-contain"
                                 />
                                 <p className="text-sm -mt-2">{item.title}</p>
                             </Link>

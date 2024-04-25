@@ -76,25 +76,6 @@ const Page = () => {
 
     return (
         <main className='lg:max-h-screen'>
-
-            <div className='flex items-center justify-between text-[1.50rem]'>
-                <div className='flex gap-2'>
-                    <Link href="/" className="text-center w-1/2 lg:hidden ">
-                        <Image
-                            src={Logo}
-                            alt="logo"
-                            width={400}
-                            height={400}
-                            className="block w-[4rem] lg:w-[4rem] 2xl:w-[4rem] mx-auto"
-                        />
-                    </Link>
-                    <p>Profile</p>
-                </div>
-                <div className='flex gap-[1.50rem]'>
-                    <p className='w-[3.5rem] h-[3.5rem] rounded-full bg-tertiary flex justify-center items-center'>p</p> <p className='w-[3.5rem] h-[3.5rem] rounded-full bg-tertiary flex justify-center items-center'>p</p>
-                </div>
-            </div>
-
             {/* Scrollable */}
             <div className='bg-base2 mt-3 w-full max-h-screen lg:flex justify-between lg:flex-1 gap-x-3 gap-y-3 md:gap-y-0 md:px-[1.5rem] px-[1rem] md:py-[1rem] rounded-lg md:h-[80vh] overflow-y-auto '>
 
