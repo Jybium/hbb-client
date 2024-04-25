@@ -25,10 +25,13 @@ const config = {
       },
       colors: {
         profile:"#F0B8C8",
+        red:"#EB5656",
         base: "#6AB5D2",
         base2: "#E688A3",
         base3: "#a5b4fc",
         overlay:"#000000B3",
+        purple:"#6A64E3",
+        armyGreen:"#94AF59",
         gray: "#9E9E9E",
         placeholderText: "#F3F3F3",
         crispy: "#6ab5d229",

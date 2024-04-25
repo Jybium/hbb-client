@@ -22,12 +22,10 @@ import { loginSchema } from '@/src/schema/auth/login';
 import { Input } from '@/src/components/ui/input';
 import { toast } from 'sonner';
 import { Textarea } from '@/src/components/ui/textarea';
-
-
-import video from "@/public/assests/dashboard/video.svg"
 import EditModal from '@/src/components/app-reusables/EditModal';
 import data from '@/src/constants/appointment';
 import AppointmentCard from '@/src/components/app-reusables/AppointmentCard';
+
 
 const Page = () => {
     const [showModal, setShowModal] = useState<boolean>(false)
@@ -63,13 +61,6 @@ const Page = () => {
 
     return (
         <main className='md:max-h-screen'>
-            <div className='flex items-center justify-between text-[1.50rem]'>
-                <p>Profile</p>
-                <div className='flex gap-[1.50rem]'>
-                    <p className='w-[3.5rem] h-[3.5rem] rounded-full bg-tertiary flex justify-center items-center'>p</p> <p className='w-[3.5rem] h-[3.5rem] rounded-full bg-tertiary flex justify-center items-center'>p</p>
-                </div>
-            </div>
-
             {/* Scrollable */}
             <div className='bg-base2 mt-3 w-full max-h-screen lg:flex justify-between lg:flex-1 md:gap-x-3 gap-y-3 grid lg:gap-y-0 md:px-[1.5rem] px-[1rem] md:py-[1rem] rounded-lg md:h-[80vh] overflow-y-auto scrollbar'>
 
@@ -213,9 +204,11 @@ const Page = () => {
                         <AppointmentCard item={data} />
                     </div>
                 </div>
+
             </div>
-            {/* Scrollable */}
-            
+            {/*End of Scrollable */}
+
+
             {/* Edit Modal */}
 
             <div>
