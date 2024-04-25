@@ -77,7 +77,7 @@ const Page = () => {
     return (
         <main className='lg:max-h-screen'>
             {/* Scrollable */}
-            <div className='bg-base2 mt-3 w-full max-h-screen lg:flex justify-between lg:flex-1 gap-x-3 gap-y-3 md:gap-y-0 md:px-[1.5rem] px-[1rem] md:py-[1rem] rounded-lg md:h-[80vh] overflow-y-auto '>
+            <div className='bg-base2 mt-3 w-full max-h-screen lg:flex justify-between lg:flex-1 gap-x-3 gap-y-3 md:gap-y-0 md:px-[1.5rem] px-[1rem md:py-[1rem] rounded-lg md:h-[80vh] overflow-y-auto '>
 
                 {/* Model Info */}
                 <div className='lg:w-[36%] bg-profile p-[1rem] rounded-lg backdrop-blur-sm overflow-y-auto'>
