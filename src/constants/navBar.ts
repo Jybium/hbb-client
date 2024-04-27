@@ -5,7 +5,7 @@ import Settings from "@/public/assests/dashboard/setting.svg"
 import Discover from "@/public/assests/dashboard/discover.svg"
 
 
-const data = [
+export const data = [
   {
     id: 1,
     image: Live,
@@ -38,10 +38,6 @@ const data = [
   },
 ];
 
-export default data;
-
-
-
 
 export const explorerData = [
   {
@@ -58,18 +54,12 @@ export const explorerData = [
   },
   {
     id: 3,
-    image: Discover,
-    title: "Discover",
-    to: "/dashboard/explorer/discover",
-  },
-  {
-    id: 4,
     image: Inbox,
     title: "Inbox",
     to: "/dashboard/explorer/inbox",
   },
   {
-    id: 5,
+    id: 4,
     image: Settings,
     title: "Settings",
     to: "/dashboard/explorer/settings",

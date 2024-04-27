@@ -41,7 +41,7 @@ const AppointmentCard: React.FC<AppointmentCardProps> = ({ item }) => {
                                     Connect to call
                                 </Button>
                             ) : (
-                                <p className='text-red-500'>Cancelled</p>
+                                <p className='text-red'>Cancelled</p>
                             )}
                         </div>
                     </div>

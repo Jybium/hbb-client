@@ -12,7 +12,7 @@ const NavBar = () => {
     const path = usePathname();
 
     return (
-        <aside className="lg:w-[10rem] bg-black lg:relative fixed w-full bottom-0 left-0 z-50 md:grid flex justify-center content-cente md:py-[2rem]">
+        <aside className="lg:w-fit bg-black lg:relative fixed w-full bottom-0 left-0 z-50 md:grid flex justify-center content-cente md:py-[2rem]">
             <Link href="/" className="text-center w-full lg:w-auto hidden lg:block">
                 <Image
                     src={Logo}
@@ -25,10 +25,7 @@ const NavBar = () => {
             <nav className="lg:grid flex gap-y-3 w-full lg:py-3">
                 {explorerData.map((item) => {
                     
-                    if (path.includes("model") && item.id === 3) {
-                        return null;
-                    }
-
+                 
                     // Determine if the current path matches the item's path
                     const isActive = path === item.to;
 
@@ -40,7 +37,7 @@ const NavBar = () => {
                             <Link
                                 href={item.to}
                                 passHref
-                                className="flex flex-col lg:justify-center md:justify-between h-fit text-center"
+                                className="flex flex-col w-full lg:justify-center lg:items-center md:justify-between h-fit text-center"
                             >
                                 <Image
                                     alt={item.title}

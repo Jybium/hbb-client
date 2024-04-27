@@ -62,17 +62,17 @@ const GoLive = () => {
     setLive(true)
   }
 
-  useEffect(() => {
+  // useEffect(() => {
 
-    const timeoutId = setTimeout(handleLive, 5000);
+  //   const timeoutId = setTimeout(handleLive, 5000);
 
-    return () => {
-      clearTimeout(timeoutId);
-    };
-  }, [])
+  //   return () => {
+  //     clearTimeout(timeoutId);
+  //   };
+  // }, [])
 
 
-  setTimeout(handleLive, 500)
+  // setTimeout(handleLive, 500)
 
   const onHandleSubmit = async (data: any) => {
     try {

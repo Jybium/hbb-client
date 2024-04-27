@@ -2,7 +2,7 @@
 
 import React from "react";
 import Logo from "@/public/icons/logo.svg";
-import data from "@/src/constants/navBar";
+import {data} from "@/src/constants/navBar";
 import Link from "next/link";
 import { Button } from "@/src/components/ui/button";
 import Image from "next/image";
@@ -24,11 +24,7 @@ const NavBar = () => {
             </Link>
             <nav className="lg:grid flex gap-1 w-full lg:py-3">
                 {data.map((item) => {
-                    // Skip rendering the item with id 3 when path includes 'model'
-                    if (path.includes("model") && item.id === 3) {
-                        return null;
-                    }
-
+                  
                     // Determine if the current path matches the item's path
                     const isActive = path === item.to;
 

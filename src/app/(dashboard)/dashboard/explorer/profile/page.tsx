@@ -25,10 +25,11 @@ import { Textarea } from '@/src/components/ui/textarea';
 import EditModal from '@/src/components/app-reusables/EditModal';
 import data from '@/src/constants/appointment';
 import AppointmentCard from '@/src/components/app-reusables/AppointmentCard';
+import { useModal } from "@/src/state/context/modal";
 
 
 const Page = () => {
-    const [showModal, setShowModal] = useState<boolean>(false)
+    const { editModal, setEditModal } = useModal()
     const [isPending, startTransition] = React.useTransition();
 
     const form = useForm({
@@ -55,9 +56,9 @@ const Page = () => {
     };
 
 
-    const hideModal = () => {
-        setShowModal((prev) => !prev)
-    }
+    const handleToggleModal = () => {
+        setEditModal(!editModal); // Toggle the modal state
+    };
 
     return (
         <main className='md:max-h-screen'>
@@ -69,8 +70,8 @@ const Page = () => {
                     <div className='flex items-center justify-between '>
                         <div className='relative'>
                             {/* <Image src={Logo} alt='image' className='w-[6rem] h-[6rem] rounded-full object-cover' /> */}
-                            <div className='w-[5rem] h-[5rem] rounded-full object-cover bg-black relative'></div>
-                            <Camera className='p-2 bg-white absolute -left-0 bottom-0 text-base2 rounded-full' color='#E688A3' size={35} />
+                            <div className='w-[5rem] h-[5rem] rounded-full object-cover bg-black '></div>
+                            <Camera className='p-2 bg-white absolute right-0 bottom-0 text-base2 rounded-full' color='#E688A3' size={35} />
                         </div>
                         <Button className='text-base2 h-[2rem] bg-white text-sm py-1 px-3 w-2/5 rounded-md'>
                             Likes 200k
@@ -85,7 +86,7 @@ const Page = () => {
                     <div>
                         <div className='flex justify-between items-center'>
                             <p>Info</p>
-                            <Button className='flex gap-1 border h-[2rem] border-white rounded-md py-1 md:py-[2px] px-3 bg-transparent' onClick={hideModal}>
+                            <Button className='flex gap-1 border h-[2rem] border-white rounded-md py-1 md:py-[2px] px-3 bg-transparent' onClick={handleToggleModal}>
 
                                 <p className='text-xs'>Edit</p>
                                 <EditIcon className='' />
@@ -211,9 +212,7 @@ const Page = () => {
 
             {/* Edit Modal */}
 
-            <div>
-                {showModal && <EditModal hideModal={hideModal} />}
-            </div>
+           
         </main>
     )
 }

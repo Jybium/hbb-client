@@ -31,19 +31,17 @@ import { Input } from '@/src/components/ui/input';
 import { toast } from 'sonner';
 import { Textarea } from '@/src/components/ui/textarea';
 import video from "@/public/assests/dashboard/video.svg"
-import EditModal from '@/src/components/app-reusables/EditModal';
 import data from '@/src/constants/appointment';
 import AppointmentCard from '@/src/components/app-reusables/AppointmentCard';
 import LineCharts from '@/src/components/app-reusables/visualizations/LineChart';
 import datas from '@/src/constants/lineChart';
-import Link from 'next/link';
-import Logo from "@/public/icons/logo.svg";
+import { useModal } from '@/src/state/context/modal';
 
 
 
 
 const Page = () => {
-    const [showModal, setShowModal] = useState<boolean>(false)
+    const { editModal, setEditModal } = useModal()
     const [isPending, startTransition] = React.useTransition();
 
     const form = useForm({
@@ -70,9 +68,9 @@ const Page = () => {
     };
 
 
-    const hideModal = () => {
-        setShowModal((prev) => !prev)
-    }
+    const handleToggleModal = () => {
+        setEditModal(!editModal); // Toggle the modal state
+    };
 
     return (
         <main className='lg:max-h-screen'>
@@ -100,8 +98,7 @@ const Page = () => {
                     <div>
                         <div className='flex justify-between items-center'>
                             <p>Info</p>
-                            <Button className='flex gap-1 border h-[2rem] border-white rounded-lg py-1 lg:py-[2px] px-3 bg-transparent' onClick={hideModal}>
-
+                            <Button className='flex gap-1 border h-[2rem] border-white rounded-lg py-1 lg:py-[2px] px-3 bg-transparent' onClick={handleToggleModal}>
                                 <p className='text-xs'>Edit</p>
                                 <EditIcon className='' />
 
@@ -227,60 +224,62 @@ const Page = () => {
                         </div>
                     </div>
                     <div className='bg-base bottom-0 mt-2 relative pb-[0.4rem] rounded-lg overflow-hidden hidde'>
-                        <div className="flex justify-between items-center mt-1">
-                            <p>my profile views <span>32</span></p>
-                            <Form {...form}>
-                                <form
-                                    onSubmit={form.handleSubmit(onHandleSubmit, (errors) => {
-                                        onSubmitError(errors);
-                                    })}
-                                    className="mt-[2rem] lg:mt-[10px]  grid gap-1 text-white"
-                                >
-                                    <FormField
-                                        control={form.control}
-                                        name="earning"
-                                        render={({ field }) => {
+                        <div className="flex justify-between items-center mt-1 px-2 md:px-1">
+                            <p className='w-full'>my profile views <span>32</span></p>
+                            <div className='w-1/2'>
+                                <Form {...form}>
+                                    <form
+                                        onSubmit={form.handleSubmit(onHandleSubmit, (errors) => {
+                                            onSubmitError(errors);
+                                        })}
+                                        className="mt-[2rem] lg:mt-[10px] grid gap-1 text-white"
+                                    >
+                                        <FormField
+                                            control={form.control}
+                                            name="earning"
+                                            render={({ field }) => {
 
-                                            const handleCountrySelect = (value: any) => {
+                                                const handleCountrySelect = (value: any) => {
 
-                                                const [countryCode, flag] = value.split('|');
+                                                    const [countryCode, flag] = value.split('|');
 
-                                                form.setValue('earning', countryCode);
-                                                field.onChange(flag);
-                                            };
+                                                    form.setValue('earning', countryCode);
+                                                    field.onChange(flag);
+                                                };
 
-                                            return (
-                                                <FormItem className="relative w-full">
-                                                    <div className="flex w-full relative">
-                                                        <FormControl className="text-xs">
+                                                return (
+                                                    <FormItem className="relative w-full">
+                                                        <div className="flex w-full relative">
+                                                            <FormControl className="text-xs">
 
-                                                            <Select onValueChange={handleCountrySelect} defaultValue={`${field.value} | `}>
-                                                                <SelectTrigger className="w-full bg-white rounded-r-none text-xs  backdrop-blur-sm placeholder:text-profile border border-profile text-base focus:border-white outline-none relative">
-                                                                    <SelectValue placeholder="Last 7 days" className="text-xs w-fit text-base" />
-                                                                </SelectTrigger>
-                                                                <SelectContent className="w-fit bg-base top-0 max-h-20 overflow-y-auto drop-shadow-md" >
-                                                                    <ScrollArea className="absolute max-h-20 overflow-y-auto scroll">
-                                                                        <SelectItem value="US|🇺🇸" className="w-full">Last 7 days</SelectItem>
-                                                                        <SelectItem value="GB|🇬🇧">This Month</SelectItem>
-                                                                        <SelectItem value="CA|🇨🇦">This year</SelectItem>
-                                                                        <SelectItem value="CA|🇨🇦">All</SelectItem>
-                                                                        <ScrollBar orientation="vertical" className="bg-placeholderText scroll" />
-                                                                    </ScrollArea>
+                                                                <Select onValueChange={handleCountrySelect} defaultValue={`${field.value} | `}>
+                                                                    <SelectTrigger className="w-full bg-white rounded-r-none text-xs  backdrop-blur-sm placeholder:text-profile border border-profile text-base focus:border-white outline-none relative">
+                                                                        <SelectValue placeholder="Last 7 days" className="text-xs text-base" />
+                                                                    </SelectTrigger>
+                                                                    <SelectContent className="w-fit bg-base top-0 max-h-20 overflow-y-auto drop-shadow-md" >
+                                                                        <ScrollArea className="absolute max-h-20 overflow-y-auto scroll">
+                                                                            <SelectItem value="US|🇺🇸" className="w-full">Last 7 days</SelectItem>
+                                                                            <SelectItem value="GB|🇬🇧">This Month</SelectItem>
+                                                                            <SelectItem value="CA|🇨🇦">This year</SelectItem>
+                                                                            <SelectItem value="CA|🇨🇦">All</SelectItem>
+                                                                            <ScrollBar orientation="vertical" className="bg-placeholderText scroll" />
+                                                                        </ScrollArea>
 
-                                                                </SelectContent>
-                                                            </Select>
+                                                                    </SelectContent>
+                                                                </Select>
 
 
-                                                        </FormControl>
-                                                    </div>
+                                                            </FormControl>
+                                                        </div>
 
-                                                    <FormMessage />
-                                                </FormItem>
-                                            );
-                                        }}
-                                    />
-                                </form>
-                            </Form>
+                                                        <FormMessage />
+                                                    </FormItem>
+                                                );
+                                            }}
+                                        />
+                                    </form>
+                                </Form>
+                            </div>
                         </div>
                         <div>
 
@@ -425,11 +424,6 @@ const Page = () => {
             {/* Scrollable */}
 
 
-            {/* Edit Modal */}
-
-            <div>
-                {showModal && <EditModal hideModal={hideModal} />}
-            </div>
         </main>
     )
 }
