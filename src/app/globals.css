@@ -251,10 +251,20 @@ input[type="checkbox"] {
 }
 
 .scrollbar::-webkit-scrollbar-track {
-  background: var(--foreground);
-  border-radius: 0px;
+  background: #ffff;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+
+*::-webkit-scrollbar {
+    display: none;
 }
 
 *::-webkit-scrollbar-thumb {
  display: none;
+ width: 0px;
+ height: 0px;
 }

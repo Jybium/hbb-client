@@ -35,7 +35,12 @@ const GoLiveModal = () => {
     const { goModal, setGoModal } = useModal()
     const [goLive, setGoLive] = useState(false)
     const [offer, setOffer] = useState(25.00)
-    const form = useForm()
+    const form = useForm(
+        {defaultValues:{
+            offer: 0
+        }
+    }
+    )
 
    const readOffer = form.watch("offer")
 
@@ -149,11 +154,11 @@ const GoLiveModal = () => {
                                     </div>
                                 </div>
 
-                                <Button variant="ghost" className='w-full mx-auto bg-placeholderText text-black flex items-center h-8 mt-[1.78rem] md:mt-[1rem] shadow-custom-shadow'>
+                                <Button variant="ghost" className='w-full mx-auto bg-placeholderText text-black flex items-center h-8 mt-[1.78rem] md:mt-[1rem] shadow-custom-shadow' onClick={() => setGoLive(true)}>
 
                                  
 
-                                    {readOffer === "" ? (
+                                    {readOffer !== 0 ? (
                                         goLive ? "Enter your offer to go live" : "Join Live"
                                     ) : (
                                         goLive && readOffer < offer ? "Not enough to go live" : "Joining in 10 ....."

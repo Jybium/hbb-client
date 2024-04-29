@@ -12,7 +12,7 @@ const GoLiveCard = ({data, hideModal}:any) => {
     };
     return (
         
-        <div className="relative md:h-[12rem] h-[14rem] md:w-[14rem] w-full rounded-lg" onClick={handleToggleModal}>
+        <div className="relative md:h-[12rem] h-[14rem] md:w-[15rem] mx-auto w-full rounded-lg" onClick={handleToggleModal}>
             {/* Background  tag */}
             <p className='bg-base absolute top-0 left-0 h-full w-full rounded-lg'></p>
 

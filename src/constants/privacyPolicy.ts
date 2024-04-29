@@ -115,7 +115,7 @@ const policy = [
           {
             title: "Account Data - Explorers",
             number: "6",
-            texts: ["Profile name, password, liked, subscription"],
+            texts: ["Profile name, password, likes, subscription"],
           },
         ],
       },

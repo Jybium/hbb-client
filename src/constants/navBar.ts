@@ -20,18 +20,12 @@ export const data = [
   },
   {
     id: 3,
-    image: Discover,
-    title: "Discover",
-    to: "/dashboard/model/discover",
-  },
-  {
-    id: 4,
     image: Inbox,
     title: "Inbox",
     to: "/dashboard/model/inbox",
   },
   {
-    id: 5,
+    id: 4,
     image: Settings,
     title: "Settings",
     to: "/dashboard/model/settings",
@@ -54,12 +48,18 @@ export const explorerData = [
   },
   {
     id: 3,
+    image: Discover,
+    title: "Discover",
+    to: "/dashboard/explorer/discover",
+  },
+  {
+    id: 4,
     image: Inbox,
     title: "Inbox",
     to: "/dashboard/explorer/inbox",
   },
   {
-    id: 4,
+    id: 5,
     image: Settings,
     title: "Settings",
     to: "/dashboard/explorer/settings",
