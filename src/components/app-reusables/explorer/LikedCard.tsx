@@ -21,9 +21,9 @@ const LikedCard = ({ data, hideModal }: any) => {
             <div className="absolute flex flex-col justify-between h-full w-full px-3 pt-[1rem] text-sm">
 
                 {/* Top section */}
-                <div className="flex justify-between items-start">
+                <div className="grid grid-flow-col justify-between items-start w-full">
 
-                    {/* <div className='hidden md:block'></div> */}
+                    <div className='hidden md:block'></div>
                     <div className='md:grid flex items-center gap-2 lg:gap-1 md:text-center mx-auto w-fit'>
                         {/* Image */}
                         <p className='bg-profile border-4 border-white h-[4rem] w-[4rem] mx-auto rounded-full'></p>
@@ -35,7 +35,7 @@ const LikedCard = ({ data, hideModal }: any) => {
                         </div>
                     </div>
 
-                    <div className='bg-green-400'>
+                    <div className='w-fit'>
                         <Button onClick={handleToggleModal} className='h-7 w-6 p-0 rounded-sm bg-placeholderText flex items-center' variant="ghost">
                             <CancelIcon className='w-4/5 p-0 text-profile' />
                         </Button>
