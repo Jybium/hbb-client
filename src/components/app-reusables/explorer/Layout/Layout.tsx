@@ -8,6 +8,8 @@ import { ModalProvider } from '@/src/state/context/modal';
 import NavBar from '@/src/components/app-reusables/explorer/NavBar';
 import GoLiveModal from '../GoLiveModal';
 import EditModal from '../../EditModal';
+import LikedModal from '@/src/components/app-reusables/explorer/LikedModal';
+import ReportModal from '../ReportModal';
 
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
@@ -53,6 +55,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             {/* Modals */}
             <EditModal />
             <GoLiveModal />
+            <LikedModal/>
+            <ReportModal/>
             {/* Modals */}
 
         </ModalProvider>

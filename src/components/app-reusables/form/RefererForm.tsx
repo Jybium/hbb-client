@@ -76,7 +76,7 @@ const RefererForm
             <h4 className="text-[16px] 2xl:text-[1.13em] font-[400] leading-[22px] mt-[30px] md:mt-[1.31em] text-text mx-auto mb-[1.31em]">
               Referer Code
             </h4>
-            <p className="text-text">
+            <p className="text-text text-sm">
               Lorem ipsum dolor sit amet consectetur. Non interdum senectus
               habitant commodo morbi. Sed quisque enim arcu habitant eu nibh
               risus neque proin. Dui nunc vulputate .
@@ -108,7 +108,7 @@ const RefererForm
               />
 
               <Button
-                className={`w-full px-5 py-3 rounded-full mt-8 mb-10 md:mt-20 lg:mb-10 text-black font-normal text-sm h-8 ${
+                className={`w-full px-5 py-3 rounded-full mt-8 mb-10 md:mt-15 lg:mb-10 text-black font-normal text-sm h-8 ${
                   !isDisabled
                     ? "bg-lightgray cursor-not-allowed text-gray"
                     : "bg-tertiary hover:bg-tertiaryHover"

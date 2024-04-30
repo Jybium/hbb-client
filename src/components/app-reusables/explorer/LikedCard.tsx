@@ -6,10 +6,10 @@ import { Separator } from "@/src/components/ui/separator";
 
 const LikedCard = ({ data, hideModal }: any) => {
 
-    const { setGoModal, goModal } = useModal()
+    const { setLikeModal, likeModal } = useModal()
 
     const handleToggleModal = () => {
-        setGoModal(!goModal); // Toggle the modal state
+        setLikeModal(!likeModal); // Toggle the modal state
     };
     return (
 

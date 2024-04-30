@@ -36,6 +36,7 @@ const config = {
         base3: "#a5b4fc",
         overlay: "#000000B3",
         purple: "#6A64E3",
+        darkPurple: "#806996",
         armyGreen: "#94AF59",
         gray: "#9E9E9E",
         placeholderText: "#F3F3F3",
