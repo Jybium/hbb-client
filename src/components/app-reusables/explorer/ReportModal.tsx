@@ -78,12 +78,12 @@ const ReportModal = () => {
                         <p className=''>Report</p>
                         <Separator className='w-full h-[0.04rem] bg-placeholderText my-2' orientation='horizontal' />
                         {/* rest of the page */}
-                        <section className='w-full h-3/4 mt-[2rem] relative'>
+                        <section className='w-full md:h-3/4 h-full mt-[2rem] relative'>
                             <Form {...form}>
-                                <form onSubmit={form.handleSubmit(onHandleSubmit)} className="w-full flex flex-col justify-between gap-5 ">
+                                <form onSubmit={form.handleSubmit(onHandleSubmit)} className="w-full md:flex flex-col justify-between gap-5 ">
 
-                                    <div className=' flex justify-between items-center gap-[1rem] w-full'>
-                                        <div className='w-full'>
+                                    <div className=' md:flex justify-betwee items-center gap-[1rem] w-full'>
+                                        <div className='md:w-[45%]'>
                                             <FormField
                                                 control={form.control}
                                                 name="type"
@@ -144,15 +144,15 @@ const ReportModal = () => {
                                             />
 
                                         </div>
-                                        <div className='w-full h-full rounded-lg'>
+                                        <div className='w-full h-full rounded-lg mt-7 md:mt-0'>
                                             <FormField
                                                 control={form.control}
                                                 name="message"
                                                 render={({ field }) => (
                                                     <FormItem className='w-full h-full'>
-                                                        <FormLabel className='text-sm text-white mb-2 '>Write description (optional)</FormLabel>
+                                                        <FormLabel className='text-sm text-white mb-2'>Write description (optional)</FormLabel>
                                                         <FormControl>
-                                                            <Textarea rows={10} placeholder="Write something here" {...field} className='w-full h-full backdrop-blur-xl' />
+                                                            <Textarea rows={10} placeholder="Write something here" {...field} className='w-full h-full border-0 mt-1 backdrop-blur-xl bg-white/20' />
                                                         </FormControl>
                                                         <FormMessage />
                                                     </FormItem>
@@ -162,7 +162,7 @@ const ReportModal = () => {
                                     </div>
 
                                     {/* Bottom section */}
-                                    <div className='absolute bottom-0 left-1/2 -translate-x-1/2 text-center grid gap-3 w-full'>
+                                    <div className='md:absolute bottom-0 md:left-1/2 md:-translate-x-1/2 text-center grid gap-3 w-full mt-5 md:mt-0'>
 
                                         <Button variant="ghost" className="bg-tertiary shadow-custom-shadow w-2/4 mx-auto flex items-center lg:gap-2 h-8 border border-white text-black text-sm">
                                             Send Report

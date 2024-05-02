@@ -12,6 +12,8 @@ interface ModalContextType {
   setLikeModal: (value: boolean) => void;
   reportModal: boolean;
   setReportModal: (value: boolean) => void;
+  giftModal: boolean;
+  setGiftModal: (value: boolean) => void;
 }
 
 // Create the context with an initial value of the defined interface
@@ -20,6 +22,7 @@ const ModalContext = createContext<ModalContextType | undefined>(undefined);
 // Define the ModalProvider component
 export const ModalProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [goModal, setGoModal] = useState(false);
+  const [giftModal, setGiftModal] = useState(false);
   const [editModal, setEditModal] = useState(false);
   const [likeModal, setLikeModal] = useState(false);
   const [reportModal, setReportModal] = useState(false);
@@ -33,7 +36,9 @@ export const ModalProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       reportModal,
       setReportModal,
       likeModal, 
-      setLikeModal
+      setLikeModal,
+      giftModal,
+      setGiftModal
   };
 
   return (

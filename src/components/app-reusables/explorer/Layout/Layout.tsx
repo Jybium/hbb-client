@@ -10,6 +10,7 @@ import GoLiveModal from '../GoLiveModal';
 import EditModal from '../../EditModal';
 import LikedModal from '@/src/components/app-reusables/explorer/LikedModal';
 import ReportModal from '../ReportModal';
+import GiftModal from '../GiftModal';
 
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
@@ -46,7 +47,6 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                         <div className='md:mt-3 mt-5 h-[calc(100%-160px)] lg:h-auto overflow-y-hidden'>
                             {children}
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -57,6 +57,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             <GoLiveModal />
             <LikedModal/>
             <ReportModal/>
+            <GiftModal/>
             {/* Modals */}
 
         </ModalProvider>

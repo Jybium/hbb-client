@@ -123,10 +123,9 @@ const ProfileForm = () => {
 
 
   return (
-    <main>
-
+    <main className="w-full h-full ">
       {/* Beginning of page for both explorer and model */}
-      <div className="w-full py-4">
+      <div className="w-full h-full py-4 grid content-center">
         <div className="grid md:gap-y-1 mb-[2rem] md:mb-0">
           <h1 className="text-white text-2xl font-medium">
             Provide you personal information
@@ -142,11 +141,11 @@ const ProfileForm = () => {
               onSubmit={form.handleSubmit(onHandleSubmit, (errors) => {
                 onSubmitError(errors);
               })}
-              className="mt-[2rem] md:mt-[10px]  grid gap-1 text-white"
+              className="mt-[2rem] md:mt-[10px] w-full grid gap-1 text-white"
             >
               {/* BEGINNING OF FORM SECTION THAT TAKES VIDEO AND IMAGE ASSESTS */}
               <section>
-                <div className="border-b border-white py-[2rem] md:py-[1rem] md:flex">
+                <div className="border-b border-white py-[2rem] md:py-[1rem] md:flex w-full">
                   <div className="flex items-center gap-4 pr-[1.50rem]">
                     <div className="relative h-[5rem] w-[5rem] rounded-full border-white border ">
                       <CameraIcon className="absolute top-5 left-5 h-9 w-9 m-auto" />
@@ -228,7 +227,7 @@ const ProfileForm = () => {
 
               {/*BEGINNING OF FORM SECTION THAT TAKES THE USER"S DATA */}
 
-              <section className="grid md:gap-y-1 gap-y-2 mt-[1rem] md:mt-0">
+              <section className="grid md:gap-y-1 gap-y-2 mt-[1rem] md:mt-0 w-full">
                 <div className="grid md:grid-cols-2 gap-[12px] md:gap-[0.94rem] gap-y-2">
                   <FormField
                     control={form.control}
@@ -391,7 +390,7 @@ const ProfileForm = () => {
               <Button
                 onClick={handleRoute}
                 //   className="h-8 text-xs bg-white text-black w-1/2 mx-auto mt-[2rem] shadow-[8px_8px_0px_-5px_rgba(0,0,0,0.75)]"
-                className={`px-5 py-3 rounded-full mt-[2rem] text-black font-normal mx-auto text-sm h-8 lg:w-1/2 w-full shadow-[8px_8px_0px_-5px_rgba(0,0,0,0.75)] ${!isDisabled
+                className={`px-5 pt-3 rounded-full mt-[4rem] text-black font-normal mx-auto text-sm h-8 lg:w-1/2 w-full shadow-[8px_8px_0px_-5px_rgba(0,0,0,0.75)] ${!isDisabled
                   ? "bg-lightgray cursor-not-allowed text-gray"
                   : "bg-tertiary hover:bg-tertiaryHover"
                   }`}

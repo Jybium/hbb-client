@@ -32,7 +32,7 @@ const formSchema = z.object({
 
 
 const LikedModal = () => {
-    const { likeModal, setLikeModal, reportModal, setReportModal } = useModal()
+    const { likeModal, setLikeModal, reportModal, setReportModal, giftModal, setGiftModal } = useModal()
     const [goLive, setGoLive] = useState(false)
     const [offer, setOffer] = useState(25.00)
     const form = useForm(
@@ -63,6 +63,13 @@ const LikedModal = () => {
     const handleToggleModal = () => {
         setLikeModal(!likeModal); // Toggle the modal state
         setReportModal(!reportModal); // Toggle the modal state
+        setGiftModal(!giftModal); // Toggle the modal state
+    };
+
+
+    const handleGiftModal = () => {
+       
+        setGiftModal(!giftModal); // Toggle the modal state
     };
 
 
@@ -88,8 +95,7 @@ const LikedModal = () => {
                             <div className='md:w-[45] w-full rounded-lg flex flex-col justify-between'>
                                 <div className='flex justify-end'>
 
-                                    <Button onClick={handleToggleModal} className='h-8 w-8 p-0 hidden block bg-placeholderText flex items-center rounded-md' variant="ghost">
-
+                                    <Button onClick={handleToggleModal} className='h-8 w-8 p-0 hidden bg-placeholderText md:flex items-center rounded-md' variant="ghost">
                                         <CancelIcon className='w-4/5 p-0 text-profile font-bold' />
                                     </Button>
                                 </div>
@@ -167,7 +173,7 @@ const LikedModal = () => {
                                     </div>
 
                                     <div className=" flex justify-between content-center gap-2">
-                                        <Button variant="ghost" className='w-fit mx-auto bg-pink flex items-center h-8 shadow-custom-shadow ' >
+                                        <Button variant="ghost" className='w-fit mx-auto bg-pink flex items-center h-8 shadow-custom-shadow' onClick={handleGiftModal}>
                                             <GiftIcon className='p-1'/>
                                         </Button>
                                         <Separator className='w-[0.04rem] h-full bg-placeholderText hidden md:inline-flex' orientation='vertical' />

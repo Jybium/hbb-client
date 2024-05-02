@@ -15,7 +15,7 @@ const Profile = () => {
           />
         </div>
 
-        <div className="flex-1 flex md:ml-[4rem] md:mr-[2.94rem] px-[1rem]">
+        <div className="flex-1 w-full flex md:mx-[2rem] md:-[2.94rem px-[1rem]">
           <ProfileForm />
         </div>
       </section>
