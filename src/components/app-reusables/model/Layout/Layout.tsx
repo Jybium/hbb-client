@@ -2,17 +2,18 @@
 
 
 import React from 'react'
+import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import Logo from "@/public/icons/logo.svg";
 import Link from 'next/link';
 import NavBar from '@/src/components/app-reusables/model/NavBar';
 import { ModalProvider } from '@/src/state/context/modal';
 import EditModal from '../../EditModal';
-import VideoProcessingOverlay from '../VideoProcessingOverlay';
+import { ProfileIcon } from '@/src/components/svgs';
 
 
 const layout = ({ children }: { children: React.ReactNode }) => {
-
+    const path = usePathname()
 
     return (
         <ModalProvider>
@@ -39,6 +40,9 @@ const layout = ({ children }: { children: React.ReactNode }) => {
                                     </div>
                                 </div>
                                 <div className='flex gap-[1.50rem]'>
+                                    {path === "/dashboard/model/profile" &&
+                                <p className='w-[3.5rem] h-[3.5rem] rounded-full bg-tertiary flex justify-center items-center'><ProfileIcon /></p>
+                                    }
                                     <p className='w-[3.5rem] h-[3.5rem] rounded-full bg-tertiary flex items-center'></p>
                                 </div>
                             </div>
@@ -52,7 +56,7 @@ const layout = ({ children }: { children: React.ReactNode }) => {
 
             {/* Modals and Overlays */}
             <EditModal />
-            <VideoProcessingOverlay/>
+            {/* <VideoProcessingOverlay/> */}
             {/* Modals and Overlays */}
 
         </ModalProvider>

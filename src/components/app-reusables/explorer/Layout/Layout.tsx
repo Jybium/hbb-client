@@ -13,6 +13,7 @@ import ReportModal from '../ReportModal';
 import GiftModal from '../GiftModal';
 
 
+
 const Layout = ({ children }: { children: React.ReactNode }) => {
 
     return (

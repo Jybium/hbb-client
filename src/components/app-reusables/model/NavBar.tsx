@@ -12,7 +12,7 @@ const NavBar = () => {
     const path = usePathname();
 
     return (
-        <aside className="lg:w-[10rem] bg-black lg:relative fixed w-full bottom-0 left-0 z-50 md:grid flex justify-center md:py-[2rem]">
+        <aside className="lg:w-fit bg-black lg:relative fixed w-full bottom-0 left-0 z-50 md:grid flex justify-center md:py-[2rem]">
             <Link href="/" className="text-center w-full lg:w-auto hidden lg:block">
                 <Image
                     src={Logo}

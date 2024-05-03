@@ -83,7 +83,7 @@ const Page = () => {
                         <div className='relative'>
                             {/* <Image src={Logo} alt='image' className='w-[6rem] h-[6rem] rounded-full object-cover' /> */}
                             <div className='w-[5rem] h-[5rem] rounded-full object-cover bg-black relative'></div>
-                            <Camera className='p-2 bg-white absolute -left-0 bottom-0 text-base2 rounded-full' color='#E688A3' size={35} />
+                            <Camera className='p-2 bg-white absolute right-0 bottom-0 text-base2 rounded-full' color='#E688A3' size={35} />
                         </div>
                         <Button className='text-base2 h-[2rem] bg-white text-sm py-1 px-3 w-2/5 rounded-lg'>
                             Likes 200k
@@ -210,7 +210,7 @@ const Page = () => {
                 {/* Model Video */}
 
                 <div className='lg:w-[36%] rounded-lg backdrop-blur-sm'>
-                    <div className='relative h-3/5 rounded-lg'>
+                    <div className='relative h-3/5 lg:h-[65%] rounded-lg'>
                         <Button className='flex justify-end gap-1 border h-[2rem] border-white rounded-lg py-1 lg:py-[2px] px-3 bg-transparent absolute top-2 right-2 z-30' >
 
                             <p className='text-xs'>Edit</p>
@@ -291,7 +291,7 @@ const Page = () => {
 
                 {/* Model Appointment */}
                 <div className='lg:w-[36%] rounded-lg backdrop-blur-sm'>
-                    <div className='lg:h-3/5 px-[0.5rem] pt-[0.8rem]  bg-profile rounded-lg'>
+                    <div className='lg:h-[65%] px-[0.5rem] pt-[0.8rem]  bg-profile rounded-lg'>
 
                         <p>My appointment <span>12</span></p>
                         <div className='md:h-5/6 overflow-y-auto'>
