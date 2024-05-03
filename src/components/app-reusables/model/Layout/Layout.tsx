@@ -12,7 +12,7 @@ import EditModal from '../../EditModal';
 import { ProfileIcon } from '@/src/components/svgs';
 
 
-const layout = ({ children }: { children: React.ReactNode }) => {
+const Layout = ({ children }: { children: React.ReactNode }) => {
     const path = usePathname()
 
     return (
@@ -63,4 +63,4 @@ const layout = ({ children }: { children: React.ReactNode }) => {
     );
 };
 
-export default layout;
+export default Layout;
