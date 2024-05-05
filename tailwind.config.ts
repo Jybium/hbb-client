@@ -30,6 +30,7 @@ const config = {
         pink: "#E688A3",
         profile: "#F0B8C8",
         ash: "#9B978B",
+        lightGray:"#BEBEBE",
         red: "#EB5656",
         base: "#6AB5D2",
         base2: "#E688A3",

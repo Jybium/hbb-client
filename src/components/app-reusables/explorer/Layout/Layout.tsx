@@ -11,6 +11,7 @@ import EditModal from '../../EditModal';
 import LikedModal from '@/src/components/app-reusables/explorer/LikedModal';
 import ReportModal from '../ReportModal';
 import GiftModal from '../GiftModal';
+import RequestCallModal from '../RequestCallModal';
 
 
 
@@ -59,6 +60,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             <LikedModal/>
             <ReportModal/>
             <GiftModal/>
+            <RequestCallModal/>
             {/* Modals */}
 
         </ModalProvider>

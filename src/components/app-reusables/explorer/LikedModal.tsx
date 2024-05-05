@@ -32,7 +32,7 @@ const formSchema = z.object({
 
 
 const LikedModal = () => {
-    const { likeModal, setLikeModal, reportModal, setReportModal, giftModal, setGiftModal } = useModal()
+    const { likeModal, setLikeModal, reportModal, setReportModal, giftModal, setGiftModal, requestCallModal, setRequestCallModal } = useModal()
     const [goLive, setGoLive] = useState(false)
     const [offer, setOffer] = useState(25.00)
     const form = useForm(
@@ -68,8 +68,12 @@ const LikedModal = () => {
 
 
     const handleGiftModal = () => {
-       
         setGiftModal(!giftModal); // Toggle the modal state
+    };
+
+    const handleRequestCallToggleModal = () => {
+        setLikeModal(!likeModal)
+        setRequestCallModal(!requestCallModal); // Toggle the modal state
     };
 
 
@@ -167,7 +171,7 @@ const LikedModal = () => {
                                     {/* Bottom section */}
 
                                     <div className="flex justify-between w-full gap-2">
-                                        <Button variant="ghost" className="shadow-custom-shadow bg-pink w-full mx-auto flex items-center gap-3 lg:gap-2 h-8 border border-black text-black">
+                                        <Button variant="ghost" className="shadow-custom-shadow bg-pink w-full mx-auto flex items-center gap-3 lg:gap-2 h-8 border border-black text-black" onClick={handleRequestCallToggleModal}>
                                             Request Call <span><CallIcon /></span>
                                         </Button>
                                     </div>

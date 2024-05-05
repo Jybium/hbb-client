@@ -69,7 +69,7 @@ const ReportModal = () => {
 
                         {/* Close button */}
                         <div className='flex justify-end'>
-                            <Button onClick={handleToggleModal} className='h-8 w-8 p-0 hidden md:block bg-placeholderText flex items-center rounded-md' variant="ghost">
+                            <Button onClick={handleToggleModal} className='h-8 w-8 p-0 hidden bg-placeholderText md:flex items-center rounded-md' variant="ghost">
 
                                 <CancelIcon className='w-4/6 mx-auto p-0 text-profile' />
                             </Button>

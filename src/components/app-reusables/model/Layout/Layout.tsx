@@ -41,9 +41,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                                 </div>
                                 <div className='flex gap-[1.50rem]'>
                                     {path === "/dashboard/model/profile" &&
-                                <p className='w-[3.5rem] h-[3.5rem] rounded-full bg-tertiary flex justify-center items-center'><ProfileIcon /></p>
+                                <p className='w-[3.75rem] h-[3.75rem] rounded-full bg-tertiary flex justify-center items-center'><ProfileIcon /></p>
                                     }
-                                    <p className='w-[3.5rem] h-[3.5rem] rounded-full bg-tertiary flex items-center'></p>
+                                    <p className='w-[3.75rem] h-[3.75rem] rounded-full bg-tertiary flex items-center'></p>
                                 </div>
                             </div>
                         <div className='md:mt-3 mt-5 h-[calc(100%-160px)] lg:h-auto overflow-y-auto'>
