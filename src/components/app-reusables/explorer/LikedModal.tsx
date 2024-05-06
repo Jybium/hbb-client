@@ -116,9 +116,9 @@ const LikedModal = () => {
                                 <div className='my-3'>
                                     <p className='text-sm mb-3 md:mb-2'>My interests</p>
                                     <div className='flex flex-wrap gap-2 mb-4 md:mb-0'>
-                                        <p className='px-3 py-1 h-[2rem] text-center w-fit content-center grid bg-profile rounded-full text-xs'>Walking dog</p>
-                                        <p className='px-3 py-1 h-[2rem] text-center w-fit content-center grid bg-profile rounded-full text-xs'>Walking dog</p>
-                                        <p className='px-3 py-1 h-[2rem] text-center w-fit content-center grid bg-profile rounded-full text-xs'>Walking dog</p>
+                                        <p className='px-3 py-1 h-[2rem] text-center w-fit content-center grid bg-pink rounded-full text-xs'>Walking dog</p>
+                                        <p className='px-3 py-1 h-[2rem] text-center w-fit content-center grid bg-pink rounded-full text-xs'>Walking dog</p>
+                                        <p className='px-3 py-1 h-[2rem] text-center w-fit content-center grid bg-pink rounded-full text-xs'>Walking dog</p>
                                     </div>
                                 </div>
 
