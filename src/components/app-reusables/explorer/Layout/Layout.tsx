@@ -46,7 +46,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                             </div>
                         </div>
 
-                        <div className='md:mt-3 mt-5 h-[calc(100%-160px)] lg:h-auto overflow-y-hidden'>
+                        <div className='md:mt-3 mt-5 h-[calc(100%-140px)] sm:h-[calc(100%-180px)] lg:h-auto overflow-y-auto'>
                             {children}
                         </div>
                     </div>

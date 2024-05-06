@@ -31,29 +31,29 @@ const Discover = () => {
 
     return (
 
-        <div className='w-full h-[calc(100%-100px)] overflow-y-auto md:overscroll-none md:h-full bg-pink backdrop-blur-sm grid rounded-lg md:py-5'>
+        <div className='w-full h-[calc(100%-100px) h-full overflow-y-auto md:overscroll-none md:h-full bg-pink backdrop-blur-sm grid rounded-lg lg:py-5'>
 
             <Separator className='w-full h-[0.04rem] bg-placeholderText hidden md:block' orientation='horizontal' />
 
             {/* THE SECTION THAT CONTAINS THE USERS DETAILS */}
-            <div className=' md:px-[1rem] px-[1rem] md:pt-[1rem] py-[1rem] w-full mx-auto bg-base rounded-lg md:w-[65%] m-auto grid justify-center md:h-4/5 h-full my-lg:my-0'>
-                <section className='md:flex justify-between gap-[1rem] rounded-lg md:h-4/5'>
+            <div className=' md:px-[1rem] md:pt-[1rem] pb-[1rem] bg-base rounded-lg md:w-[65%] mx-auto grid justify-center lg:h-4/5 h-fit my-lg:my-0 m-4 w-[90%]'>
+                <section className='lg:flex justify-between gap-[1rem] rounded-lg lg:h-4/5'>
                     {/* USER IMAGE */}
-                    <Image src={userImage} alt='user image' className='md:w-1/2 md:h-5/5 hidden md:inline-flex w-full h-full mx-auto md:object-cover rounded-lg' priority />
+                    <Image src={userImage} alt='user image' className='lg:w-1/2 lg:h-5/5 hidden lg:inline-flex w-full h-full mx-auto md:object-cover rounded-lg' priority />
 
-                    <div className='block md:hidden'>
-                        <AspectRatio ratio={16 / 9} className='block md:hidden'>
-                            <Image src={userImage} alt='user image' className='md:hidden w-full h-full mx-auto object-cover rounded-lg mb-3' priority />
+                    <div className='block lg:hidden'>
+                        <AspectRatio ratio={16 / 9} className='block lg:hidden'>
+                            <Image src={userImage} alt='user image' className='lg:hidden w-full h-full mx-auto object-cover rounded-lg mb-3' priority />
                         </AspectRatio>
                     </div>
 
 
-                    <Separator className='w-[0.04rem] h-full bg-placeholderText hidden md:grid overflow-hidden ' orientation='vertical' />
+                    <Separator className='w-[0.04rem] h-full bg-placeholderText hidden lg:grid overflow-hidden ' orientation='vertical' />
 
                     {/* USER PROFILE */}
-                    <div className=' w-full rounded-lg flex flex-col justify-between h-5/5 overflow-y-auto'>
+                    <div className=' w-full rounded-lg flex flex-col justify-between h-5/5 overflow-y-auto px-[1rem] md:px-0'>
                         <div className='px-2 py-1 backdrop-blur-lg w-full lg:grid flex justify-between items-center'>
-                            <p className='text-xl flex items-center'>sazzy, <span>24</span></p>
+                            <p className='text-xl flex items-center'>sazzy, <span className='font-thin'>24</span></p>
                             <p className='text-xs font-light flex gap-2'><LocationIcon /> <span>Washington, D.C</span></p>
                         </div>
                         <hr className='my-3 md:my-2' />
@@ -94,7 +94,7 @@ const Discover = () => {
             </div>
 
             {/* CONTROL BUTTONS */}
-            <div className='flex items-center gap-x-[2rem] justify-center -mt-3'>
+            <div className='lg:flex hidden items-center gap-x-[2rem] justify-center -mt-3'>
 
                 <div className='text-center'>
                     <Button className='w-[3rem] h-[3rem] rounded-full bg-white'>
