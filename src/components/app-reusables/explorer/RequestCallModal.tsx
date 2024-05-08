@@ -6,8 +6,6 @@ import { Button } from '@/src/components/ui/button';
 import { toast } from 'sonner';
 import { useModal } from '@/src/state/context/modal';
 import { Separator } from '../../ui/separator';
-import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm } from "react-hook-form"
 import { z } from "zod"
 import CalendarTimePicker from './CalenderGrid';
 
