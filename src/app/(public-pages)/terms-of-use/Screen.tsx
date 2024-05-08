@@ -115,36 +115,29 @@ const Screen = () => {
                       {terms.description}
                     </h4>
                   </div>
-                  {activeHeadingIndex === index &&
-                    terms.slides.map((slide, slideIndex) => (
-                      <div key={slideIndex}>
-                        {activeSlideIndex === slideIndex &&
-                          slide.sections.map((section, sectionIndex) => (
-                            <div className="pb-[12px]" key={sectionIndex}>
-                              <div className="flex">
-                                <div className="w-[15px] flex justify-end mr-[10px]">
-                                  <h4 className=" text-[14px] font-[400] text-white leading-[21px]">
-                                    {section.number}.
-                                  </h4>
-                                </div>
-                                <div className="w-full">
-                                  <h3 className="text-[14px] font-[400] text-white leading-[21px]">
-                                    {section.title}
-                                  </h3>
-                                  {section.texts.map((text, textIndex) => (
-                                    <ul
-                                      className="list-disc mt-[10px] text-white font-[400] text-[14px] leading-[21px] -ml-[10px] md:ml-[20px]"
-                                      key={textIndex}
-                                    >
-                                      <li>{text}</li>
-                                    </ul>
-                                  ))}
-                                </div>
-                              </div>
-                            </div>
-                          ))}
+                  {activeHeadingIndex === index && terms.slides.map((slide, slideIndex) => (
+                    activeSlideIndex === slideIndex && (
+                      <div className="pb-12" key={slideIndex}>
+                        <div className="flex">
+                          <div className="w-15 flex justify-end mr-10">
+                            <h4 className="text-14 font-400 text-white leading-21">
+                              {slide.number}.
+                            </h4>
+                          </div>
+                          <div className="w-full">
+                            <h3 className="text-14 font-400 text-white leading-21">
+                              {slide.title}
+                            </h3>
+                            {slide.texts.map((text, textIndex) => (
+                              <ul className="list-disc mt-10 text-white font-400 text-14 leading-21 -ml-10 md:ml-20" key={textIndex}>
+                                <li>{text}</li>
+                              </ul>
+                            ))}
+                          </div>
+                        </div>
                       </div>
-                    ))}
+                    )
+                  ))}
                 </div>
               </div>
             ))}
