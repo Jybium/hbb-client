@@ -113,7 +113,7 @@ const ProfileForm = () => {
     }
   }
 
-  const isExplorer = pathname === "/explorer/profile"
+  const isExplorer = pathname === "/dashboard/explorer/profile" || "/explorer/profile"
 
   const click = (subscribe: string) => {
     setSubscription(subscribe)
@@ -123,7 +123,7 @@ const ProfileForm = () => {
 
 
   return (
-    <main className="w-full h-full ">
+    <main className="w-full h-full md:h-[76vh] ">
       {/* Beginning of page for both explorer and model */}
       <div className="w-full h-full py-4 grid content-center">
         <div className="grid md:gap-y-1 mb-[2rem] md:mb-0">
@@ -390,7 +390,7 @@ const ProfileForm = () => {
               <Button
                 onClick={handleRoute}
                 //   className="h-8 text-xs bg-white text-black w-1/2 mx-auto mt-[2rem] shadow-[8px_8px_0px_-5px_rgba(0,0,0,0.75)]"
-                className={`px-5 pt-3 rounded-full mt-[4rem] text-black font-normal mx-auto text-sm h-8 lg:w-1/2 w-full shadow-[8px_8px_0px_-5px_rgba(0,0,0,0.75)] ${!isDisabled
+                className={`px-5 pt-3 rounded-full mt-[4rem] md:mt-[2rem] text-black font-normal mx-auto text-sm h-8 lg:w-1/2 w-full shadow-[8px_8px_0px_-5px_rgba(0,0,0,0.75)] ${!isDisabled
                   ? "bg-lightgray cursor-not-allowed text-gray"
                   : "bg-tertiary hover:bg-tertiaryHover"
                   }`}

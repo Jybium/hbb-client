@@ -38,7 +38,7 @@ const layout = ({ children }: { children: React.ReactNode }) => {
                 <p className="w-[3.5rem] h-[3.5rem] rounded-full bg-tertiary flex items-center"></p>
               </div>
             </div>
-            <div className="md:mt-3 mt-5 h-[calc(100%-160px)] lg:h-auto overflow-y-auto">
+            <div className="md:mt-2 mt-5 h-[calc(100%-140px)] lg:h-auto overflow-y-auto">
               {children}
             </div>
           </div>
@@ -48,7 +48,7 @@ const layout = ({ children }: { children: React.ReactNode }) => {
 
       {/* Modals and Overlays */}
       <EditModal />
-      <VideoProcessingOverlay />
+      {/* <VideoProcessingOverlay /> */}
       {/* Modals and Overlays */}
     </ModalProvider>
   );
