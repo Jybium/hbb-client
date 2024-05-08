@@ -1,4 +1,4 @@
-const data = [
+const landingPageData = [
   {
     id: 1,
     heading: "Connect with a live model",
@@ -11,4 +11,4 @@ const data = [
   },
 ];
 
-export default data
+export default landingPageData;

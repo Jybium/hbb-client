@@ -161,7 +161,6 @@ const CalendarTimePicker: React.FC = () => {
 
     return (
         <div className="p-4">
-
             {/* Date Picker */}
             <div className="grid gap-y-1">
                 <p className="tracking-wide text-sm">Choose date</p>
@@ -236,11 +235,11 @@ const CalendarTimePicker: React.FC = () => {
 
             {/* Button group */}
             <div className="flex justify-between text-sm mt-3">
-                <Button className="border-[1.5px] border-pink bg-white h-10 w-fit px-7 rounded-lg" onClick={handleToggleModal}>
+                <Button className="border-[1.5px] border-pink bg-white h-10 w-fit px-7 rounded-lg" onClick={()=>setRequestCallModal(false)}>
                     Cancel
                 </Button>
 
-                <Button className="text-white bg-green-500 h-10 w-fit px-7 rounded-lg">
+                <Button className="text-white bg-green h-10 w-fit px-7 rounded-lg">
                     Save
                 </Button>
             </div>

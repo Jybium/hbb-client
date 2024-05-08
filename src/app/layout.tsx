@@ -1,16 +1,18 @@
-import type { Metadata } from 'next'
+import type { Metadata } from "next";
 import localFont from "next/font/local";
-import './globals.css'
+import "./globals.css";
 
-// Define local fonts
 const SpaceGrotesk = localFont({
   src: [
     { path: "/fonts/SpaceGrotesk-Light.ttf", weight: "300", style: "light" },
-    { path: "/fonts/SpaceGrotesk-Regular.ttf", weight: "400", style: "regular" },
+    {
+      path: "/fonts/SpaceGrotesk-Regular.ttf",
+      weight: "400",
+      style: "regular",
+    },
     { path: "/fonts/SpaceGrotesk-Medium.ttf", weight: "500", style: "medium" },
     { path: "/fonts/SpaceGrotesk-SemiBold.ttf", weight: "600", style: "bold" },
     { path: "/fonts/SpaceGrotesk-Bold.ttf", weight: "700", style: "bold" },
-    // { path: "/fonts/SpaceGrotesk-Black.ttf", weight: "700", style: "black" },
   ],
 });
 
@@ -23,14 +25,13 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
-      <body
-       className={SpaceGrotesk.className}
-      >{children}</body>
-     
+      <body className={SpaceGrotesk.className} suppressHydrationWarning>
+        {children}
+      </body>
     </html>
-  )
+  );
 }

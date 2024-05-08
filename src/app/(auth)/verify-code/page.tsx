@@ -6,6 +6,8 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { ChevronLeft, X } from "lucide-react";
+import { Input } from "@/src/components/ui/input";
+import { Button } from "@/src/components/ui/button";
 
 const Page = () => {
   const navigate = useRouter();
@@ -70,16 +72,16 @@ const Page = () => {
         <div className="bg-white md:rounded-[32px] rounded-[24px]  p-[1rem] md:p-[2.25rem] shadow-xl h-full flex flex-col">
           <div className="grid grid-cols-3 border-b-[1px] border-[#EFD378]  pb-[20px] items-center">
             <div className="flex justify-start">
-              <button
+              <Button
                 onClick={handleGoBack}
-                className="bg-[#F7F6F3] hover:bg-gray-200 rounded-[9px] w-[48px] h-[48px] flex justify-center items-center"
+                className="bg-borderWhite hover:bg-gray-200 rounded-[9px] w-[48px] h-[48px] flex justify-center items-center"
               >
                 <ChevronLeft
                   // className=" w-[9.5px]"
                   color="black"
                   size={20}
                 />
-              </button>
+              </Button>
             </div>
             <div className="flex justify-center">
               <Image
@@ -92,24 +94,24 @@ const Page = () => {
             </div>
             <div className="flex justify-end">
               <Link href="/">
-                <button className="bg-[#F7F6F3] hover:bg-gray-200 rounded-[9px] w-[48px] h-[48px] flex justify-center items-center">
+                <Button className="bg-borderWhite hover:bg-gray-200 rounded-[9px] w-[48px] h-[48px] flex justify-center items-center">
                   <X className="h-[16px] w-[16px]" color="black" size={30} />
-                </button>
+                </Button>
               </Link>
             </div>
           </div>
-          <h4 className="text-[18px] md:text-[24px] font-[500] leading-[22px] md:mt-[30px] mt-[30px] text-[#44464A] md:leading-[30px] text-center ">
+          <h4 className="text-[18px] md:text-[24px] font-[500] leading-[22px] md:mt-[30px] mt-[30px] text-darkGray md:leading-[30px] text-center ">
             Enter confirmation code
           </h4>
-          <h4 className="text-[14px] md:text-[16px] font-[400] text-[#44464A] md:mt-[12px] mt-[12px] text-center ">
+          <h4 className="text-[14px] md:text-[16px] font-[400] text-darkGray md:mt-[12px] mt-[12px] text-center ">
             Enter code sent to Honeybunnybun@gmail.com{" "}
             <span className="cursor-pointer text-base2 font-[700]">Resend</span>
           </h4>
           <form className="mt-[40px] lg:mt-[50px] ">
             <div className="flex justify-center max-w-[258px] h-[56px] mx-auto md:h-[64px]">
-              <div className="items-center space-x-[10px] border-[1px] border-[#BFBEB9] w-full flex justify-center rounded-[32px]">
+              <div className="items-center space-x-[10px] border-[1px] border-borderGray w-full flex justify-center rounded-[32px]">
                 {inputs.map((value, index) => (
-                  <input
+                  <Input
                     key={index}
                     ref={(el) => {
                       if (el) {
@@ -117,7 +119,7 @@ const Page = () => {
                       }
                     }}
                     type="number"
-                    className="w-[40px] h-[40px]  text-center border-b-[1px] border-[#BFBEB9]  focus:outline-none  font-[500] focus:border-primary2 text-[#44464A] text-[20px] md:text-[24px] placeholder:font-[500] placeholder:text-gray-300"
+                    className="w-[40px] h-[40px]  text-center border-b-[1px] border-borderGray  focus:outline-none  font-[500] focus:border-primary2 text-darkGray text-[20px] md:text-[24px] placeholder:font-[500] placeholder:text-gray-300"
                     maxLength={1}
                     value={value}
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) =>

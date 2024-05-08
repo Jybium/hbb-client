@@ -2,7 +2,7 @@
 
 import React from "react";
 import Logo from "@/public/icons/logo.svg";
-import {explorerData} from "@/src/constants/navBar";
+import { explorerData } from "@/src/constants/navBar";
 import Link from "next/link";
 import { Button } from "@/src/components/ui/button";
 import Image from "next/image";
@@ -24,8 +24,8 @@ const NavBar = () => {
             </Link>
             <nav className="lg:grid flex gap-y-3 w-full lg:py-3">
                 {explorerData.map((item) => {
-                    
-                 
+
+
                     // Determine if the current path matches the item's path
                     const isActive = path === item.to;
 

@@ -31,13 +31,13 @@ const Discover = () => {
 
     return (
 
-        <div className='w-full h-[calc(100%-100px) h-full overflow-y-auto md:overscroll-none md:h-full bg-pink backdrop-blur-sm grid rounded-lg lg:py-5'>
+        <div className='w-full lg:h-[calc(100vh-100px)] flex flex-col h-full overflow-y-auto md:overscroll-none bg-pink backdrop-blur-sm justify-evenly rounded-lg lg:py-5'>
 
             <Separator className='w-full h-[0.04rem] bg-placeholderText hidden md:block' orientation='horizontal' />
 
             {/* THE SECTION THAT CONTAINS THE USERS DETAILS */}
-            <div className=' md:px-[1rem] md:pt-[1rem] pb-[1rem] bg-base rounded-lg md:w-[65%] mx-auto grid justify-center lg:h-4/5 h-fit my-lg:my-0 m-4 w-[90%]'>
-                <section className='lg:flex justify-between gap-[1rem] rounded-lg lg:h-4/5'>
+            <div className=' md:px-[1rem] md:pt-[1rem] pb-[1rem] md:pb-0 bg-base rounded-lg md:w-[65%] mx-auto grid justify-center lg:h-[65%] h-fit my-lg:m-0 m-4 w-[90%]'>
+                <section className='lg:flex justify-between gap-[1rem] rounded-lg lg:h-[70%]'>
                     {/* USER IMAGE */}
                     <Image src={userImage} alt='user image' className='lg:w-1/2 lg:h-5/5 hidden lg:inline-flex w-full h-full mx-auto md:object-cover rounded-lg' priority />
 

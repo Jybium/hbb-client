@@ -1,9 +1,8 @@
-import Live from "@/public/assests/dashboard/goLive.svg"
-import Inbox from "@/public/assests/dashboard/inbox.svg"
-import Likes from "@/public/assests/dashboard/liked.svg"
-import Settings from "@/public/assests/dashboard/setting.svg"
-import Discover from "@/public/assests/dashboard/discover.svg"
-
+import Live from "@/public/assests/dashboard/goLive.svg";
+import Inbox from "@/public/assests/dashboard/inbox.svg";
+import Likes from "@/public/assests/dashboard/liked.svg";
+import Settings from "@/public/assests/dashboard/setting.svg";
+import Discover from "@/public/assests/dashboard/discover.svg";
 
 export const data = [
   {
@@ -31,7 +30,6 @@ export const data = [
     to: "/dashboard/model/settings",
   },
 ];
-
 
 export const explorerData = [
   {
@@ -65,5 +63,3 @@ export const explorerData = [
     to: "/dashboard/explorer/settings",
   },
 ];
-
-

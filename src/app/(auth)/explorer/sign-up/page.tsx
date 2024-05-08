@@ -1,10 +1,8 @@
-import React from 'react'
-import SignupForm from '@/src/components/app-reusables/form/SignupForm'
+import React from "react";
+import SignupForm from "@/src/components/app-reusables/form/SignupForm";
 
-const page = () => {
-  return (
-   <SignupForm/>
-  )
-}
+const Page = () => {
+  return <SignupForm />;
+};
 
-export default page
+export default Page;

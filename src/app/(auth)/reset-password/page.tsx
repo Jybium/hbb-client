@@ -75,7 +75,7 @@ const Page= () => {
               <Link href="/">
                 <Button
                   variant="ghost"
-                  className="bg-[#F7F6F3] hover:bg-gray-200 rounded-[9px] h-8 px-2"
+                  className="bg-borderWhite hover:bg-gray-200 rounded-[9px] h-8 px-2"
                 >
                   <CancelIcon className="w-4 h-4" />
                 </Button>
@@ -83,7 +83,7 @@ const Page= () => {
             </div>
           </div>
 
-          <h4 className="text-[18px] md:text-[24px] font-[500] leading-[22px] mt-[30px] md:mt-[20px] text-[#44464A] md:leading-[30px] text-center md:text-start">
+          <h4 className="text-[18px] md:text-[24px] font-[500] leading-[22px] mt-[30px] md:mt-[20px] text-darkGray md:leading-[30px] text-center md:text-start">
             Create new password
           </h4>
 

@@ -1,3 +1,5 @@
+const { Controller } = require("react-hook-form");
+
 <div
   className={`md:w-1/2 w-full px-4 h-[5rem] flex items-center justify-center text-center ${dropAreaStyle}`}
   onDragOver={handleDragOver}

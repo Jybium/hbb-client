@@ -1,32 +1,40 @@
 import React from "react";
 import Image from "next/image";
 
-import Logo from "@/public/icons/logo.svg";
 import Footer from "@/src/components/app-reusables/Footer";
+import AuthLayoutCardHeader from "@/src/components/AuthLayoutCardHeader";
 
 const layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <main className="md:h-screen h-screen w-full">
-      <section className="sm:grid lg:flex items-center content-center w-full h-[85vh] bg-background">
-        <section className="w-full flex flex-col lg:flex-row items-center justify-center gap-4 pt-4 lg:pt-0 lg:gap-32">
-          <div className="hidden lg:block text-center content-center w-full lg:w-auto">
-            <Image
-              src={Logo}
-              alt="logo"
-              width={400}
-              height={400}
-              className="block w-40 lg:w-80 mx-auto"
-            />
+    <div className="text-black h-full">
+      <div className="h-screen flex flex-col">
+        <div className="w-full h-full bg-background overflow-hidden">
+          <div className="w-full h-full py-[35px] px-4 lg:py-14 lg:px-[120px] md:px-20 md:py-12">
+            <div className="flex flex-col lg:flex-row w-full h-full lg:justify-between items-center">
+              <div className="hidden lg:flex justify-center lg:justify-start w-full lg:w-1/2 items-center">
+                <Image
+                  className="w-[168px] h-[168px] lg:w-[390px] lg:h-[390px] object-contain"
+                  width={91}
+                  height={91}
+                  src={"/assests/logo.svg"}
+                  alt="logo"
+                />
+              </div>
+
+              <div className="w-full lg:w-1/2 h-full">
+                <div className="bg-white h-full rounded-[32px] w-full lg:max-w-[565px] md:py-4 md:px-9 p-4 flex flex-col">
+                  <AuthLayoutCardHeader />
+
+                  <div className="h-full overflow-hidden">{children}</div>
+                </div>
+              </div>
+            </div>
           </div>
-          <section className="lg:w-[35rem] lg:h-[80%] items-center lg:justify-end content-center w-full sm:grid">
-            {children}
-          </section>
-        </section>
-      </section>
-      <div className="h-[15vh]">
+        </div>
+
         <Footer />
       </div>
-    </main>
+    </div>
   );
 };
 

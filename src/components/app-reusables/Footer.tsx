@@ -1,42 +1,28 @@
 import React from "react";
-import  Link  from "next/link";
+import Link from "next/link";
 import { Copyright } from "lucide-react";
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="h-full flex items-center justify-center w-full">
-      <div className="px-[4%] w-full">
-        <div className=" pb-[8px] border-b-[1px] border-[#D9D9D9] md:w-2/4 mx-auto">
-          <div className="flex justify-between lg:w-5/6 mx-auto items-center">
-            <Link href="/about-us">
-              <button className="text-[11px] md:text-xs text-text font-[400]">
-                About
-              </button>
-            </Link>
-            <Link href="/terms-of-use">
-              <button className="text-[11px] md:text-xs text-text font-[400]">
-                Terms of service
-              </button>
-            </Link>
-            <Link href="/privacy-policy">
-              <button className="text-[11px] md:text-xs text-text font-[400]">
-                Privacy policy
-              </button>
-            </Link>
-            <Link href="/contact-us">
-              <button className="text-[11px] md:text-xs text-text font-[400]">
-                Contact us
-              </button>
-            </Link>
-          </div>
-        </div>
-        <div className="flex justify-center items-center pt-[15px]">
-          <div className="mr-[4px]">
-            <Copyright color="#6C6D71" size={12}/>
-          </div>
-          <h4 className="text-[11px] text-text font-[400] ">
-            2024 Honey bunny bun{" "}
-          </h4>
+    <footer className="bg-white text-black w-full px-4 py-7">
+      <div className="w-full mx-auto flex flex-col justify-center items-center">
+        <ul className="flex items-center justify-between w-full lg:w-1/2 md:w-3/4 py-[10px] border-b border-[#D9D9D9] md:px-5">
+          {footerLinks.map((link, index) => (
+            <li key={index}>
+              <Link href={link.link} className="text-sm text-text">
+                {link.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+        <div className="mt-5 md:mt-4 flex justify-center items-center gap-1 md:gap-2">
+          <Copyright color="#6C6D71" size={16} />
+          <p className="text-xs md:text-sm text-text">
+            {currentYear} Honey bunny bun
+          </p>
         </div>
       </div>
     </footer>
@@ -44,3 +30,22 @@ const Footer = () => {
 };
 
 export default Footer;
+
+const footerLinks = [
+  {
+    name: "About",
+    link: "/about-us",
+  },
+  {
+    name: "Terms of service",
+    link: "/terms-of-use",
+  },
+  {
+    name: "Privacy policy",
+    link: "/privacy-policy",
+  },
+  {
+    name: "Contact us",
+    link: "/contact-us",
+  },
+];

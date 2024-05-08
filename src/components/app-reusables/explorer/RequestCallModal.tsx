@@ -20,9 +20,6 @@ const FormSchema = z.object({
 })
 
 
-
-
-
 const RequestCallModal = () => {
 
     const { requestCallModal, setRequestCallModal } = useModal()
@@ -34,10 +31,9 @@ const RequestCallModal = () => {
 
     return (
         <>
-
             {requestCallModal &&
 
-                <div className='w-full h-[calc(100%-100px)] overflow-y-auto md:h-screen backdrop-blur-sm absolute top-0 left-0 right-0 grid content-center shadow-2xl'>
+                <div className='w-full h-[calc(100%-100px)] mt-7  overflow-y-auto md:h-screen backdrop-blur-sm absolute top-0 left-0 right-0 grid content-center shadow-2xl'>
 
 
                     {/* The whole Modal screen */}
