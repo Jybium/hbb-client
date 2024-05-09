@@ -27,7 +27,9 @@ const config = {
         "custom-shadow": "2.5px 2.5px 1px 0px rgba(0,0,0,1)",
       },
       colors: {
+        light: "#D6D6D6",
         pink: "#E688A3",
+        deepRed:"#C60000",
         profile: "#F0B8C8",
         ash: "#9B978B",
         red: "#EB5656",

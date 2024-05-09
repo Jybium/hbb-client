@@ -1,8 +1,11 @@
+import { Settings } from '@/src/components/pages/dashboard/AccountSetting'
 import React from 'react'
 
 const page = () => {
   return (
-    <div>page</div>
+    <main className=''>
+      <Settings/>
+    </main>
   )
 }
 
