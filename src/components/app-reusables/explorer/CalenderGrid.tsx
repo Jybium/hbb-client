@@ -160,7 +160,7 @@ const CalendarTimePicker: React.FC = () => {
     };
 
     return (
-        <div className="p-4">
+        <div className="md:px-5 md:py-3 p-2">
             {/* Date Picker */}
             <div className="grid gap-y-1">
                 <p className="tracking-wide text-sm">Choose date</p>
@@ -217,7 +217,7 @@ const CalendarTimePicker: React.FC = () => {
 
                 <div className="bg-white rounded p-2">
                     {/* Display time intervals */}
-                    <div className="grid grid-cols-4 md:grid-cols-6 gap-3 md:gap-2">
+                    <div className="grid grid-cols-3 md:grid-cols-6 gap-3 md:gap-2">
                         {timeIntervals.map((time, index) => (
                             <button
                                 key={index}

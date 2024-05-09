@@ -79,7 +79,7 @@ const Page = () => {
             ) : (
               <Link
                 href={
-                  account === "model" ? "/model/referer" : "/explorer/signup"
+                  account === "model" ? "/model/referer" : "/explorer/sign-up"
                 }
               >
                 Next

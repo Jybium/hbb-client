@@ -9,6 +9,7 @@ import { X } from "lucide-react";
 const TermsOfUsePage = () => {
   const [selectedTermIndex, setSelectedTermIndex] = useState(0);
   const [openModal, setOpenModal] = useState(false);
+  const [itemSelected, setItemSelected] = useState(false);
   const [isPending, startTransition] = React.useTransition();
 
   const handleModalClose = () => {
@@ -53,12 +54,19 @@ const TermsOfUsePage = () => {
                         onClick={() => {
                           setSelectedTermIndex(index);
                           setOpenModal(true);
+                          setItemSelected(true);
                         }}
-                        className={`font-bold w-full cursor-pointer ${
-                          selectedTermIndex === index
+                        className={`font-bold w-full cursor-pointer ${selectedTermIndex === index
+                            ? "lg:text-[#F3E3AF] lg:underline"
+                            : ""
+                          } ${selectedTermIndex === index &&
+                            !openModal &&
+                            itemSelected
                             ? "text-[#F3E3AF] underline"
                             : ""
-                        }`}
+                          }
+                        
+                        `}
                       >
                         {term.title}
                       </p>

@@ -12,16 +12,6 @@ import { Separator } from '../../ui/separator';
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
-import {
-    Form,
-    FormControl,
-    FormDescription,
-    FormField,
-    FormItem,
-    FormLabel,
-    FormMessage,
-} from "@/src/components/ui/form"
-import { Input } from "@/src/components/ui/input"
 
 const formSchema = z.object({
     username: z.string().min(2, {
@@ -82,8 +72,11 @@ const LikedModal = () => {
 
             {likeModal &&
 
-                <div className='w-full h-[calc(100%-100px)] overflow-y-auto md:h-screen backdrop-blur-sm absolute top-0 left-0 right-0 grid justify-center content-center'>
-                    <div className=' md:px-[1rem] px-[1rem] md:py-[1rem] py-[1rem] w-[90%] mx-auto bg-base rounded-lg md:w-[65%] m-auto grid justify-center md:h-[87vh] h-full my-lg:my-0'>
+                <div className='fixed top-0 left-0 w-full h-full backdrop-blur-sm flex justify-center items-center z-50'>
+
+                    <div className='w-full h-full absolute bg-black opacity-50' onClick={handleToggleModal}></div>
+
+                    <div className='relative bg-base rounded-lg shadow-2xl p-3 md:p-5 md:w-1/2 w-11/12 md:max-h-[90vh] max-h-[80vh] overflow-auto'>
 
                         <section className='md:flex justify-between gap-[1rem]'>
 
@@ -137,37 +130,14 @@ const LikedModal = () => {
                                     <div className='mt-2 flex justify-between gap-3'>
                                         <div className='text-[0.7rem] w-full'>
                                             <p className='mb-2'>Current rate</p>
-                                            <p className={`${goLive ? "lg:w-full w-full" : "md:w-1/2 w-full"} h-12 flex items-center pl-3 rounded-lg bg-darkPurple text-black text-base`}>$ {offer}</p>
+                                            <p className={`${goLive ? "lg:w-full w-full" : "md:w-1/2 w-full"} h-12 flex items-center pl-3 rounded-lg bg-darkPurple text-black text-base w-fit`}>$ {offer}</p>
                                         </div>
-                                        {/* {goLive && (
-
-                                            <div className='w-full'>
-
-                                                <Form {...form} >
-                                                    <form onSubmit={form.handleSubmit(onHandleSubmit)} className="space-y-8 w-full">
-                                                        <FormField
-                                                            control={form.control}
-                                                            name="offer"
-                                                            render={({ field }) => (
-                                                                <FormItem className='text-[0.7rem] w-full'>
-                                                                    <FormLabel className='text-[0.7rem] text-white mb-2 md:mb-0'>Your Offer</FormLabel>
-                                                                    <FormControl className={`${goLive ? "lg:w-full w-1/2" : "md:w-1/2 w-full"} h-12 pl-3 rounded-lg bg-tertiary placeholder:text-black text-black text-base`}>
-                                                                        <Input placeholder="$ 00.00" {...field} className='border-none w-full text-black' />
-                                                                    </FormControl>
-                                                                    <FormMessage />
-                                                                </FormItem>
-                                                            )}
-                                                        />
-                                                    </form>
-                                                </Form>
-                                            </div>
-
-                                        )} */}
+                                       
                                     </div>
                                 </div>
 
                                 <Separator className='w-full h-[0.04rem] bg-placeholderText my-2' orientation='horizontal' />
-                                <div className='grid md:flex md:gap-x-[0.75rem] gap-x-[1rem]'>
+                                <div className='flex md:gap-x-[0.75rem] gap-x-[1rem]'>
                                     {/* Bottom section */}
 
                                     <div className="flex justify-between w-full gap-2">
@@ -176,7 +146,7 @@ const LikedModal = () => {
                                         </Button>
                                     </div>
 
-                                    <div className=" flex justify-between content-center gap-2">
+                                    <div className="flex justify-between content-center gap-2">
                                         <Button variant="ghost" className='w-fit mx-auto bg-pink flex items-center h-8 shadow-custom-shadow' onClick={handleGiftModal}>
                                             <GiftIcon className='p-1'/>
                                         </Button>

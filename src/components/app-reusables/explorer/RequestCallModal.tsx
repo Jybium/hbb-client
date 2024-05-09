@@ -19,42 +19,39 @@ const FormSchema = z.object({
 
 
 const RequestCallModal = () => {
-
     const { requestCallModal, setRequestCallModal } = useModal()
 
     const handleToggleModal = () => {
         setRequestCallModal(!requestCallModal); // Toggle the modal state
     };
 
-
     return (
         <>
             {requestCallModal &&
 
-                <div className='w-full h-[calc(100%-100px)] mt-7  overflow-y-auto md:h-screen backdrop-blur-sm absolute top-0 left-0 right-0 grid content-center shadow-2xl'>
+                <div className='fixed top-0 left-0 w-full h-full backdrop-blur-sm flex justify-center items-center z-50'>
+                    {/* Overlay */}
+                    <div className='w-full h-full absolute bg-black opacity-50' onClick={handleToggleModal}></div>
 
-
-                    {/* The whole Modal screen */}
-                    <div className=' md:px-[1rem] px-[1rem] md:py-[1rem] py-[1rem] md:w-[70%] lg:w-[50%] w-full mx-auto bg-base rounded-lg relative  md:h-[90vh] h-full my-lg:my-0'>
-
+                    {/* The modal content */}
+                    <div className='relative bg-base rounded-lg shadow-2xl p-3 md:p-5 md:w-1/2 w-11/12 md:max-h-[90vh] max-h-[80vh] overflow-auto text-black'>
                         {/* Close button */}
                         <div className='flex justify-end'>
-                            <Button onClick={handleToggleModal} className='h-8 w-8 p-0 hidden md:block bg-placeholderText items-center rounded-md' variant="ghost">
-
+                            <Button onClick={handleToggleModal} className='h-8 w-8 p-0 bg-placeholderText items-center rounded-md' variant="ghost">
                                 <CancelIcon className='w-4/6 mx-auto p-0 text-profile' />
                             </Button>
                         </div>
 
-                        <p className=''>Request call</p>
-                        <Separator className='w-full h-[0.04rem] bg-placeholderText my-1' orientation='horizontal' />
+                        {/* Modal header */}
+                        <div className='text-white'>
+                            <p className='text-xl font-bold'>Request Call</p>
+                            <Separator className='w-full h-[0.04rem] bg-placeholderText my-1' orientation='horizontal' />
+                        </div>
 
-
-                        {/* rest of the page that holds important modal details */}
-                        <section className='w-full md:h-[90%] h-full mt-[2rem] md:mt-[1.5rem] relative text-black  '>
-                            <div className='bg-white rounded-lg p-5 h-full md:h-[90%] shadow-custom-shadow'>
-
+                        {/* Modal body */}
+                        <section className='mt-4'>
+                            <div className='bg-white rounded-lg p-5 md:p-3'>
                                 <p className='font-bold text-center'>Change Time</p>
-
                                 <CalendarTimePicker />
                             </div>
                         </section>
@@ -65,4 +62,4 @@ const RequestCallModal = () => {
     )
 }
 
-export default RequestCallModal
+export default RequestCallModal;

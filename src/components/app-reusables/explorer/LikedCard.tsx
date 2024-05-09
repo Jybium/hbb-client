@@ -29,10 +29,10 @@ const LikedCard = ({ data, hideModal }: any) => {
                     <div className='hidden md:block h-6 w-6'></div>
                     <div className='md:grid flex items-center gap-2 lg:gap-1 md:text-center mx-auto w-fit'>
                         {/* Image */}
-                        <p className='bg-profile border-4 border-white h-[4rem] w-[4rem] mx-auto rounded-full'></p>
+                        <p className='bg-profile border-4 border-white h-[3rem] w-[3rem] md:h-[4rem] md:w-[4rem] mx-auto rounded-full'></p>
                         <div className='flex flex-col gap-1 items-center text-center'>
                             {/* Name */}
-                            <p className='font-bold mt-2 text-[1.25rem]'>Samuel Etoo, <span className="font-thin">24</span></p>
+                            <p className='font-bold mt-2 text-[1.25rem]'>Samuel E, <span className="font-thin">24</span></p>
                             {/* Location */}
                             <p className='flex items-center gap-2 text-sm'><LocationIcon /> Washington D.C</p>
                         </div>

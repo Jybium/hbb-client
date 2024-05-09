@@ -42,7 +42,7 @@ const AboutUsScreen = () => {
                 {textArray.map((item, index) => (
                   <CarouselItem
                     key={index}
-                    className="md:py-10 pt-6 border-t border-b border-white"
+                    className="md:py-10 py-6 border-t border-b border-white"
                   >
                     <p
                       key={index}

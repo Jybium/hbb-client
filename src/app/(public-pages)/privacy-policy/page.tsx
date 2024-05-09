@@ -9,6 +9,7 @@ import { X } from "lucide-react";
 const PrivacyPolicyPage = () => {
   const [selectedTermIndex, setSelectedTermIndex] = useState(0);
   const [openModal, setOpenModal] = useState(false);
+  const [itemSelected, setItemSelected] = useState(false);
   const [isPending, startTransition] = React.useTransition();
 
   const handleModalClose = () => {
@@ -36,7 +37,7 @@ const PrivacyPolicyPage = () => {
               <div className="w-full lg:w-1/2 lg:overflow-y-scroll no-scrollbar h-full pr-10">
                 <div className="pb-5 lg:pb-6 border-b border-white">
                   <h3 className="font-medium lg:text-4xl text-32px mb-4 lg:mb-5">
-                    Terms of service
+                    Privacy policy
                   </h3>
                   <p className="">
                     At Honey Bunny Bun, we highly value your privacy and trust.
@@ -53,12 +54,19 @@ const PrivacyPolicyPage = () => {
                         onClick={() => {
                           setSelectedTermIndex(index);
                           setOpenModal(true);
+                          setItemSelected(true);
                         }}
-                        className={`font-bold w-full cursor-pointer ${
-                          selectedTermIndex === index
+                        className={`font-bold w-full cursor-pointer ${selectedTermIndex === index
+                            ? "lg:text-[#F3E3AF] lg:underline"
+                            : ""
+                          } ${selectedTermIndex === index &&
+                            !openModal &&
+                            itemSelected
                             ? "text-[#F3E3AF] underline"
                             : ""
-                        }`}
+                          }
+                        
+                        `}
                       >
                         {policy.title}
                       </p>
