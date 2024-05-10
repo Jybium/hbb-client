@@ -50,7 +50,7 @@ const RequestCallModal = () => {
 
                         {/* Modal body */}
                         <section className='mt-4'>
-                            <div className='bg-white rounded-lg p-5 md:p-3'>
+                            <div className='bg-white rounded-lg p-2 md:p-3'>
                                 <p className='font-bold text-center'>Change Time</p>
                                 <CalendarTimePicker />
                             </div>

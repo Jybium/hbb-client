@@ -1,7 +1,8 @@
 "use client"
 
 import React, { useEffect, useState } from 'react'
-import { CallIcon, CancelIcon, GiftIcon, LocationIcon } from '@/src/components/svgs'
+import { useRouter } from 'next/navigation';
+import { LocationIcon } from '@/src/components/svgs'
 import { Button } from '@/src/components/ui/button';
 import userImage from "@/public/assests/dashboard/userImage.svg"
 import { toast } from 'sonner';
@@ -9,13 +10,15 @@ import Image from "next/image"
 import { useModal } from '@/src/state/context/modal';
 import { AspectRatio } from '../../ui/aspect-ratio';
 import { Separator } from '../../ui/separator';
-import { Check, X } from 'lucide-react';
+import { Check, MoveRight, X } from 'lucide-react';
 
 
 
 const Discover = () => {
 
     const [isPending, startTransition] = React.useTransition();
+
+    const router = useRouter()
 
     const onHandleSubmit = async (data: any) => {
         startTransition(async () => {
@@ -84,7 +87,10 @@ const Discover = () => {
                             <div className='mt-2 flex justify-between gap-3'>
                                 <div className='text-[0.7rem] w-full'>
                                     <p className='mb-2'>Current rate</p>
-                                    <p className="lg:w-1/2 w-full md:w-1/2 h-12 flex items-center pl-3 rounded-lg bg-darkPurple text-black text-base">$ 25</p>
+                                    <div className='flex justify-between items-center w-full'>
+                                        <p className="w-1/2 h-12 flex items-center pl-3 rounded-lg bg-darkPurple text-white text-base">$ 25</p>
+                                        <p className="flex items-center cursor-pointer md:hidden gap-x-2 text-base text-white" onClick={()=> router.back()}>Exit view <span><MoveRight /></span></p>
+                                    </div>
                                 </div>
 
                             </div>

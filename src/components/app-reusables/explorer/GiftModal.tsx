@@ -1,9 +1,8 @@
 "use client"
 
-import React, { useEffect, useState } from 'react'
-import { CallIcon, CancelIcon, GiftIcon, LocationIcon } from '@/src/components/svgs'
+import React, { useState } from 'react'
+import { CancelIcon} from '@/src/components/svgs'
 import { Button } from '@/src/components/ui/button';
-import userImage from "@/public/assests/dashboard/userImage.svg"
 import { toast } from 'sonner';
 import Image from "next/image"
 import { useModal } from '@/src/state/context/modal';
@@ -12,17 +11,6 @@ import { Separator } from '../../ui/separator';
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
-import {
-    Form,
-    FormControl,
-    FormDescription,
-    FormField,
-    FormItem,
-    FormLabel,
-    FormMessage,
-} from "@/src/components/ui/form"
-import { Input } from "@/src/components/ui/input"
-import { Textarea } from '../../ui/textarea';
 import data from '@/src/constants/gifts';
 
 const FormSchema = z.object({
@@ -67,12 +55,14 @@ const GiftModal = () => {
 
             {giftModal &&
 
-                <div className='w-full h-[calc(100%-100px)] overflow-y-auto md:h-screen backdrop-blur-sm absolute top-0 left-0 right-0 grid content-center'>
-                    <div className=' md:px-[1rem] px-[1rem] md:py-[1rem] py-[1rem] md:w-[70%] lg:w-[50%] w-full mx-auto bg-pink rounded-lg relative  md:h-[75vh] h-full my-lg:my-0'>
+                <div className='fixed top-0 left-0 w-full h-full backdrop-blur-sm flex justify-center items-center z-50'>
 
+                    <div className='w-full h-full absolute bg-black opacity-50' onClick={handleToggleModal}></div>
+
+                    <div className='relative bg-pink rounded-lg shadow-2xl p-3 md:p-5 md:w-1/2 w-11/12 md:max-h-[90vh] max-h-[80vh] overflow-auto'>
                         {/* Close button */}
                         <div className='flex justify-end'>
-                            <Button onClick={handleToggleModal} className='h-8 w-8 p-0 hidden md:flex bg-placeholderText  items-center rounded-md' variant="ghost">
+                            <Button onClick={handleToggleModal} className='h-8 w-8 p-0 flex bg-placeholderText  items-center rounded-md' variant="ghost">
 
                                 <CancelIcon className='w-4/6 mx-auto p-0 text-profile' />
                             </Button>

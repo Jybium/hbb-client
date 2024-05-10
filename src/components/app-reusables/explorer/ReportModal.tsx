@@ -64,12 +64,14 @@ const ReportModal = () => {
 
             {reportModal &&
 
-                <div className='w-full h-[calc(100%-100px)] overflow-y-auto md:h-screen backdrop-blur-sm absolute top-0 left-0 right-0 grid content-center'>
-                    <div className=' md:px-[1rem] px-[1rem] md:py-[1rem] py-[1rem] md:w-[70%] lg:w-[50%] w-full mx-auto bg-base rounded-lg relative  md:h-[75vh] h-full my-lg:my-0'>
+                <div className='fixed top-0 left-0 w-full h-full backdrop-blur-sm flex justify-center items-center z-50'>
+                    <div className='w-full h-full absolute bg-black opacity-50' onClick={handleToggleModal}></div>
+
+                    <div className='relative bg-base rounded-lg shadow-2xl p-3 md:p-5 md:w-1/2 w-11/12 md:max-h-[90vh] max-h-[80vh] overflow-auto'>
 
                         {/* Close button */}
                         <div className='flex justify-end'>
-                            <Button onClick={handleToggleModal} className='h-8 w-8 p-0 hidden md:block bg-placeholderText flex items-center rounded-md' variant="ghost">
+                            <Button onClick={handleToggleModal} className='h-8 w-8 p-0 hidden bg-placeholderText md:flex items-center rounded-md' variant="ghost">
 
                                 <CancelIcon className='w-4/6 mx-auto p-0 text-profile' />
                             </Button>
@@ -162,13 +164,13 @@ const ReportModal = () => {
                                     </div>
 
                                     {/* Bottom section */}
-                                    <div className='md:absolute bottom-0 md:left-1/2 md:-translate-x-1/2 text-center grid gap-3 w-full mt-5 md:mt-0'>
+                                    <div className='md:absolute bottom-0 md:left-1/2 md:-translate-x-1/2 text-center grid gap-3 w-full mt-8 md:mt-0'>
 
                                         <Button variant="ghost" className="bg-tertiary shadow-custom-shadow w-2/4 mx-auto flex items-center lg:gap-2 h-8 border border-white text-black text-sm">
                                             Send Report
                                         </Button>
 
-                                        <Button variant="ghost" className='mt-6 md:mt-3 h-0 p-0 text-xs text-center' onClick={handleToggleModal}>cancel</Button>
+                                        <Button variant="ghost" className='mt-3 md:mt-3 h-0 p-0 text-xs text-center' onClick={handleToggleModal}>cancel</Button>
                                     </div>
 
                                 </form>

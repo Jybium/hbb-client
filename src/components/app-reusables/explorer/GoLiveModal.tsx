@@ -69,8 +69,11 @@ const GoLiveModal = () => {
 
             {goModal &&
 
-                <div className='w-full h-[calc(100%-100px)] overflow-y-auto md:h-screen backdrop-blur-sm absolute top-0 left-0 right-0 grid justify-center content-center'>
-                    <div className=' md:px-[1rem] px-[1rem] md:py-[1rem] py-[1rem] w-[90%] mx-auto bg-base rounded-lg md:w-[65%] m-auto grid justify-center md:h-[87vh] h-full my-lg:my-0'>
+                <div className='fixed top-0 left-0 w-full h-full backdrop-blur-sm flex justify-center items-center z-50'>
+
+                    <div className='w-full h-full absolute bg-black opacity-50' onClick={handleToggleModal}></div>
+                    {/* The modal content */}
+                    <div className='relative bg-base rounded-lg shadow-2xl p-3 md:p-5 md:w-1/2 w-11/12 md:max-h-[90vh] max-h-[80vh] overflow-auto pb-5'>
 
                         <section className='md:flex justify-between gap-[1rem]'>
 

@@ -2,7 +2,7 @@
 
  const subscription = {
    
-        call:"Free call (limited)",
+        call:"Free call",
         discover:"Discover",
         like:"Like",
         request:"Request call"
