@@ -268,7 +268,7 @@ input[type="checkbox"] {
 }
 
 .scrollbar::-webkit-scrollbar-track {
-  background: var(--foreground);
+  background: transparent;
   border-radius: 0px;
 }
 
@@ -305,13 +305,13 @@ input[type="checkbox"] {
 
 /* the draggable part of the scrollbar */
 *::-webkit-scrollbar-thumb {
-    background-color: #4A90E2; 
+    background-color: transparent; 
     border-radius: 5px;
 }
 
 /* the background of the scrollbar */
 *::-webkit-scrollbar-track {
-    background-color: #E0E0E0; 
+    background-color: #ffff; 
     border-radius: 5px;
 }
 

@@ -16,15 +16,17 @@ const LikedCard = ({ data, hideModal }: any) => {
     };
     return (
 
-        <div className="relative md:h-[16rem] h-[13rem] md:w-[15rem] lg:mx-auto w-full rounded-lg text-black" onClick={handleToggleModal}>
+        <div className="relative h-full lg:mx-auto w-full rounded-lg text-black" onClick={handleToggleModal}>
+
+
             {/* Background  tag */}
-            <p className='bg-base relative  h-full w-full rounded-lg shadow-custom-shadow mx-auto'></p>
+            <div className='bg-base relative  h-full w-full rounded-lg shadow-custom-shadow mx-auto'>
 
             {/* Content divs on top of background */}
-            <div className="absolute flex flex-col top-0 left-0 justify-between h-full w-full px-3 pt-[1rem] text-sm">
+            <div className="flex flex-col justify-between h-full w-full gap-y-4 px-3 pt-[1rem] text-sm">
 
                 {/* Top section */}
-                <div className="grid grid-flow-col justify-between items-start w-full">
+                <div className="flex flex-flow-col justify-between gap-y-3 items-start w-full">
 
                     <div className='hidden md:block h-6 w-6'></div>
                     <div className='md:grid flex items-center gap-2 lg:gap-1 md:text-center mx-auto w-fit'>
@@ -71,6 +73,9 @@ const LikedCard = ({ data, hideModal }: any) => {
                 </div>
 
             </div>
+
+            </div>
+
         </div>
     );
 }

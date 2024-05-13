@@ -25,6 +25,7 @@ const config = {
       },
       boxShadow: {
         "custom-shadow": "2.5px 2.5px 1px 0px rgba(0,0,0,1)",
+        "custom-shadow-big": "4px 4px 1px 0px rgba(0,0,0,1)",
       },
       colors: {
         light: "#D6D6D6",

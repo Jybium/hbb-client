@@ -1,4 +1,6 @@
 "use client"
+
+
 import React, { useState, useEffect, useRef } from "react";
 import { onSubmitError } from "@/src/lib/utils";
 import {
@@ -41,7 +43,9 @@ export function Settings() {
 
     const [isPending, startTransition] = React.useTransition();
 
-    const isMobile = window.innerWidth <= 768;
+
+    const isMobile = typeof window !== 'undefined' && window.innerWidth <= 768;
+
 
     const [currentTab, setCurrentTab] = useState(`${isMobile ? "" : 'account'}`);
 
@@ -134,7 +138,7 @@ export function Settings() {
 
             {currentTab === "account" &&
 
-                <TabsContent value="account" className="w-full md:w-[65%] md:py-4 md:px-1 border-l overflow-y-auto border-light/55 mt-0">
+                <TabsContent value="account" className="w-full md:w-[65%] md:py-4 md:px-1 md:mt-[1rem] border-l overflow-y-auto border-light/55 mt-0">
 
                     <Card className="border-0 shadow-none drop-shadow-none md:mt-[rem] flex flex-col justify-center">
                         <CardHeader className="md:p-6 px-6 pt-6 pb-0">
@@ -299,7 +303,7 @@ export function Settings() {
 
             {currentTab === "security" &&
 
-                <TabsContent value="security" className="w-full md:w-[65%] md:py-4 md:px-1 border-l border-light/55 mt-0">
+                <TabsContent value="security" className="w-full md:w-[65%] md:py-4 md:px-1 md:mt-[1rem] border-l border-light/55 mt-0">
 
                     <Card className="border-0 shadow-none drop-shadow-none mt-[1rem] flex flex-col justify-center gap-y-5">
                         <CardHeader className="md:p-6 px-6 pt-6 pb-0">

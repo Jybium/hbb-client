@@ -67,7 +67,7 @@ const ReportModal = () => {
                 <div className='fixed top-0 left-0 w-full h-full backdrop-blur-sm flex justify-center items-center z-50'>
                     <div className='w-full h-full absolute bg-black opacity-50' onClick={handleToggleModal}></div>
 
-                    <div className='relative bg-base rounded-lg shadow-2xl p-3 md:p-5 md:w-1/2 w-11/12 md:max-h-[90vh] max-h-[80vh] overflow-auto'>
+                    <div className='relative bg-base rounded-lg shadow-2xl p-3 md:p-5 md:w-1/2 w-11/12 md:h-[90vh] max-h-[80vh] overflow-auto'>
 
                         {/* Close button */}
                         <div className='flex justify-end'>

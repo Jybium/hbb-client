@@ -48,9 +48,9 @@ const GoLive = () => {
 
 
     return (
-        <div className='relative'>
-        <div className='py-6 px-4'>
-            <section className='grid md:grid-cols-4 grid-cols-1 gap-y-4 md:gap-y-3 mx-auto'>
+        <div className='relative h-full'>
+        <div className='py-6 px-4 h-full'>
+            <section className='grid md:grid-cols-4 grid-cols-1 gap-y-4 gap-x-4 md:gap-y-3 mx-auto md:h-[85%]'>
                 {currentItems.map((item) =>
                     <div key={item.id}>
                         <GoLiveCard data={item} hideModal={modalControl}/>
@@ -59,7 +59,7 @@ const GoLive = () => {
             </section>
 
             {/* Button group for navigation */}
-            <div className="flex items-center gap-[3rem] text-right justify-center mt-4 py- lg:py- lg:pt-4">
+            <div className="flex items-center gap-[3rem] text-right justify-center mt-4 lg:pt-4">
                 {/* Previous button */}
                 <Button
                     size="sm"

@@ -22,25 +22,23 @@ const formSchema = z.object({
 
 
 const LikedModal = () => {
-    const { likeModal, setLikeModal, reportModal, setReportModal, giftModal, setGiftModal, requestCallModal, setRequestCallModal } = useModal()
-    const [goLive, setGoLive] = useState(false)
-    const [offer, setOffer] = useState(25.00)
-    const form = useForm(
-        {
-            defaultValues: {
-                offer: 0
-            }
+    const { likeModal, setLikeModal, reportModal, setReportModal, giftModal, setGiftModal, requestCallModal, setRequestCallModal } = useModal();
+    const [goLive, setGoLive] = useState(false);
+    const [offer, setOffer] = useState(25.00);
+    const form = useForm({
+        defaultValues: {
+            offer: 0
         }
-    )
+    });
 
-    const readOffer = form.watch("offer")
+    const readOffer = form.watch("offer");
 
     const [isPending, startTransition] = React.useTransition();
 
     const onHandleSubmit = async (data: any) => {
         startTransition(async () => {
             try {
-                //   code to hit backend
+                // code to hit backend
             } catch (error: any) {
                 console.error("Error logging in:", error.message);
                 // Handle any errors here, such as displaying an error message to the user
@@ -49,39 +47,36 @@ const LikedModal = () => {
         });
     };
 
-
     const handleToggleModal = () => {
         setLikeModal(!likeModal); // Toggle the modal state
         setReportModal(!reportModal); // Toggle the modal state
         setGiftModal(!giftModal); // Toggle the modal state
     };
 
-
     const handleGiftModal = () => {
         setGiftModal(!giftModal); // Toggle the modal state
     };
 
     const handleRequestCallToggleModal = () => {
-        setLikeModal(!likeModal)
+        setLikeModal(!likeModal);
         setRequestCallModal(!requestCallModal); // Toggle the modal state
     };
 
-
     return (
         <>
-
             {likeModal &&
+                <div className='fixed top-0 left-0 w-full h-full backdrop-blur-sm overflow-auto flex justify-center items-center z-50'>
 
-                <div className='fixed top-0 left-0 w-full h-full backdrop-blur-sm flex justify-center items-center z-50'>
 
                     <div className='w-full h-full absolute bg-black opacity-50' onClick={handleToggleModal}></div>
 
-                    <div className='relative bg-base rounded-lg shadow-2xl p-3 md:p-5 md:w-4/6 w-11/12 md:max-h-[90vh] max-h-[80vh] overflow-auto'>
+                    <div className='relative bg-base rounded-lg shadow-2xl p-3 md:p-5 md:w-4/6 w-11/12 md:max-h-[90vh] max-h-[70vh] overflow-auto'>
 
-                        <section className='md:flex justify-between gap-[1rem]'>
-                            <div className='md:block hidden'>
-                                <AspectRatio ratio={4 / 2} className='md:block hidden'>
-                                    <Image src={userImage} alt='user image' className=' hidden md:grid w-full h-full mx-auto md:object-cover rounded-lg' priority />
+                        <section className='md:flex justify-center md:justify-between gap-[1rem]'>
+
+                            <div className='md:grid hidden w-full object-cover'>
+                                <AspectRatio ratio={4 / 3} className='w-full object-cover'>
+                                    <Image src={userImage} alt='user image' className='hidden md:grid w-full h-full mx-auto md:object-cover rounded-lg' priority />
                                 </AspectRatio>
                             </div>
 
@@ -90,11 +85,11 @@ const LikedModal = () => {
                                     <Image src={userImage} alt='user image' className='md:hidden w-full h-full mx-auto object-cover rounded-lg mb-3' priority />
                                 </AspectRatio>
                             </div>
+
                             <Separator className='w-[0.04rem] h-full bg-placeholderText hidden md:inline-flex' orientation='vertical' />
 
-                            <div className=' w-full rounded-lg flex flex-col justify-between h-4/6'>
+                            <div className='w-full rounded-lg flex flex-col justify-between md:h-4/6'>
                                 <div className='flex justify-end'>
-
                                     <Button onClick={handleToggleModal} className='h-8 w-8 p-0 hidden bg-placeholderText md:flex items-center rounded-md' variant="ghost">
                                         <CancelIcon className='w-4/5 p-0 text-profile font-bold' />
                                     </Button>
@@ -140,10 +135,10 @@ const LikedModal = () => {
                                 </div>
 
                                 <Separator className='w-full h-[0.04rem] bg-placeholderText my-2' orientation='horizontal' />
-                                <div className='flex md:gap-x-[0.75rem] gap-x-[0.5rem] text-sm font-medium'>
+                                <div className='flex md:gap-x-[0.75rem] gap-x-[0.5rem] text-sm font-medium w-full'>
                                     {/* Bottom section */}
 
-                                    <div className="flex justify-between w-fit md:w-full gap-2 ">
+                                    <div className="flex justify-between w-full md:w-full gap-2 ">
                                         <Button variant="ghost" className="shadow-custom-shadow bg-pink w-full mx-auto flex items-center gap-1 lg:gap-2 h-8 border border-black text-black" onClick={handleRequestCallToggleModal}>
                                             Request Call <span><CallIcon /></span>
                                         </Button>
@@ -170,4 +165,4 @@ const LikedModal = () => {
     )
 }
 
-export default LikedModal
+export default LikedModal;

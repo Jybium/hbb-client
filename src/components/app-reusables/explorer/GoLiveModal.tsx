@@ -36,13 +36,14 @@ const GoLiveModal = () => {
     const [goLive, setGoLive] = useState(false)
     const [offer, setOffer] = useState(25.00)
     const form = useForm(
-        {defaultValues:{
-            offer: 0
+        {
+            defaultValues: {
+                offer: 0
+            }
         }
-    }
     )
 
-   const readOffer = form.watch("offer")
+    const readOffer = form.watch("offer")
 
     const [isPending, startTransition] = React.useTransition();
 
@@ -73,20 +74,26 @@ const GoLiveModal = () => {
 
                     <div className='w-full h-full absolute bg-black opacity-50' onClick={handleToggleModal}></div>
                     {/* The modal content */}
-                    <div className='relative bg-base rounded-lg shadow-2xl p-3 md:p-5 md:w-1/2 w-11/12 md:max-h-[90vh] max-h-[80vh] overflow-auto pb-5'>
+                    <div className='relative bg-base rounded-lg shadow-2xl p-3 md:p-5 md:w-4/6 w-11/12 md:max-h-[90vh] max-h-[80vh] overflow-auto pb-5'>
 
-                        <section className='md:flex justify-between gap-[1rem]'>
+                        <section className='md:flex justify-between gap-[1rem] h-full'>
 
-                            <Image src={userImage} alt='user image' className='md:w-1/2 hidden md:inline-flex w-full h-full mx-auto md:object-cover rounded-lg' priority />
+
+                            <div className='md:grid hidden w-full object-cover w-3/5'>
+                                <AspectRatio ratio={4 / 2} className='w-full object-cover'>
+                                    <Image src={userImage} alt='user image' className='hidden md:grid w-full h-full mx-auto md:object-cover rounded-lg' priority />
+                                </AspectRatio>
+                            </div>
+
                             <div className='block md:hidden'>
 
-                            <AspectRatio ratio={16 / 9} className='block md:hidden'>
-                                <Image src={userImage} alt='user image' className='md:hidden w-full h-full mx-auto object-cover rounded-lg mb-3' priority />
-                            </AspectRatio>
+                                <AspectRatio ratio={16 / 9} className='block md:hidden'>
+                                    <Image src={userImage} alt='user image' className='md:hidden w-full h-full mx-auto object-cover rounded-lg mb-3' priority />
+                                </AspectRatio>
                             </div>
                             <Separator className='w-[0.04rem] h-full bg-placeholderText hidden md:inline-flex' orientation='vertical' />
 
-                            <div className='md:w-[45] w-full rounded-lg flex flex-col justify-between'>
+                            <div className='md:w-[45] w-full rounded-lg flex flex-col justify-between md:h-4/6 overflow-y-auto'>
                                 <div className='flex justify-end'>
 
                                     <Button onClick={handleToggleModal} className='h-5 w-6 p-0 hidden md:block' variant="ghost">
@@ -127,11 +134,11 @@ const GoLiveModal = () => {
                                     </div>}
                                     <div className='mt-2 flex justify-between gap-3'>
                                         <div className='text-[0.7rem] w-full'>
-                                            <p className='mb-2 md:mb-0'>Current rate</p>
+                                            <p className=' md:mb-0'>Current rate</p>
                                             <p className={`${goLive ? "lg:w-full w-full" : "md:w-1/2 w-full"} h-12 flex items-center pl-3 rounded-lg bg-ash text-black text-base`}>$ {offer}</p>
                                         </div>
                                         {goLive && (
-                                         
+
                                             <div className='w-full'>
 
                                                 <Form {...form} >
@@ -159,7 +166,7 @@ const GoLiveModal = () => {
 
                                 <Button variant="ghost" className='w-full mx-auto bg-placeholderText text-black flex items-center h-8 mt-[1.78rem] md:mt-[1rem] shadow-custom-shadow' onClick={() => setGoLive(true)}>
 
-                                 
+
 
                                     {readOffer !== 0 ? (
                                         goLive ? "Enter your offer to go live" : "Join Live"
@@ -172,6 +179,8 @@ const GoLiveModal = () => {
 
                             </div>
                         </section>
+
+
                     </div>
                 </div>
             }

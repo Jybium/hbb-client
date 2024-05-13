@@ -123,7 +123,7 @@ const ProfileForm = () => {
 
 
   return (
-    <main className="w-full h-full md:h-[76vh] ">
+    <main className="w-full h-full md:h-[75.5vh] ">
       {/* Beginning of page for both explorer and model */}
       <div className="w-full h-full py-4 grid content-center">
         <div className="grid md:gap-y-1 mb-[2rem] md:mb-0">

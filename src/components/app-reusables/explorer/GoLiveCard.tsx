@@ -12,12 +12,13 @@ const GoLiveCard = ({data, hideModal}:any) => {
     };
     return (
         
-        <div className="relative md:h-[12rem] h-[14rem] md:w-[15rem] mx-auto w-full rounded-lg" onClick={handleToggleModal}>
+        <div className="relative w-full h-full mx-auto w-full rounded-lg shadow-custom-shadow-big" onClick={handleToggleModal}>
             {/* Background  tag */}
-            <p className='bg-base absolute top-0 left-0 h-full w-full rounded-lg'></p>
+            <div className='bg-base h-full w-full rounded-lg'>
+                
 
             {/* Content divs on top of background */}
-            <div className="absolute flex flex-col justify-between h-full w-full p-2">
+            <div className="flex flex-col justify-between h-full w-full p-2">
                 {/* Top section */}
                 <div className="flex justify-end">
                     {data.liked ?
@@ -40,6 +41,9 @@ const GoLiveCard = ({data, hideModal}:any) => {
                     </p>
                 </div>
             </div>
+
+            </div>
+
         </div>
     );
 }
